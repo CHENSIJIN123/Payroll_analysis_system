@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdministratorDisplay</class>
+ <widget class="QWidget" name="AdministratorDisplay">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>793</width>
+    <height>473</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tb_change_employee_info">
+      <attribute name="title">
+       <string>修改员工信息</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tb_view_salary">
+      <attribute name="title">
+       <string>查看工资</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tb_view_attendance">
+      <attribute name="title">
+       <string>查看考勤</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tb_set_date_of_salary_settlement">
+      <attribute name="title">
+       <string>设定工资结算的日期</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tb_department_salary_compare">
+      <attribute name="title">
+       <string>部门薪资比较</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -9,6 +9,7 @@ public:
     dealMsg();
     void judge_operator(MyProtocol *msg);
     void judgeAccountPsw(MyProtocol *msg);
+    void judgeAccountPswAndPunch(MyProtocol *msg);
 private:
     bool result;
     backenddb db;

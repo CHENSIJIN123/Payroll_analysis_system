@@ -1,0 +1,16 @@
+INPUT(
+./debug\myprotocol.o
+./debug\dealsocket.o
+./debug\logicdeal.o
+./debug\dealmsg.o
+./debug\main.o
+./debug\widget.o
+./debug\employeedisplay.o
+./debug\administratordisplay.o
+./debug\moc_dealsocket.o
+./debug\moc_logicdeal.o
+./debug\moc_dealmsg.o
+./debug\moc_widget.o
+./debug\moc_employeedisplay.o
+./debug\moc_administratordisplay.o
+);

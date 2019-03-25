@@ -14,6 +14,7 @@ public:
 
 signals:
     void returnToLoginButtonResult(QString result);
+    void returnToLoginButtonResultPunch(QString result);
 };
 
 #endif // DEALMSG_H

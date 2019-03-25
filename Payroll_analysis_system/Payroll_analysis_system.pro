@@ -17,10 +17,16 @@ include (./protocol/protocol.pri)
 include (./dealMsg/dealMsg.pri)
 
 SOURCES += main.cpp\
-        widget.cpp
+        widget.cpp \
+    employeedisplay.cpp \
+    administratordisplay.cpp
 
-HEADERS  += widget.h
+HEADERS  += widget.h \
+    employeedisplay.h \
+    administratordisplay.h
 
-FORMS    += widget.ui
+FORMS    += widget.ui \
+    employeedisplay.ui \
+    administratordisplay.ui
 CONFIG += C++11
 

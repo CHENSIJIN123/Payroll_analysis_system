@@ -18,7 +18,10 @@ void dealMsg::judge_operator(MyProtocol *msg)
             break;
         }       
         case PUNCH_THE_CLOCK:           //打卡
-        break;
+        {
+            JudgeAccountPsw(msg);
+             break;
+        }
         case WATCH_PAYROLL:             //查看工资
         break;
         case WATCH_ATTENDANCE_RATE:     //查看考勤率
@@ -37,5 +40,9 @@ void dealMsg::judge_operator(MyProtocol *msg)
 void dealMsg::JudgeAccountPsw(MyProtocol *msg)
 {
     cout << msg->getMsgContent();
-    emit returnToLoginButtonResult(msg->getMsgContent());
+    if(msg->getMsgOperate() == LOGIN)
+        emit returnToLoginButtonResult(msg->getMsgContent());
+    if(msg->getMsgOperate() == PUNCH_THE_CLOCK)
+        emit returnToLoginButtonResultPunch(msg->getMsgContent());
+
 }
