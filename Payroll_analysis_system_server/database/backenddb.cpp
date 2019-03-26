@@ -18,6 +18,96 @@ backenddb::backenddb()
 }
 
 /*
+ * 函数功能: 查询某个人多个月得工资情况
+*/
+QString backenddb::queryWatchMultiMonthDisplay(QString account,QString search)
+{
+    QString month_salary = "";
+    QSqlQuery query;
+    QString queryString = QString("select month,salary from EmployeeInfo,Salaryinfo where Salaryinfo.Job_ID = EmployeeInfo.Job_ID"
+                                  " and Salaryinfo.year ='%1' and EmployeeInfo.NAME_OF_WORKER = '%2'")
+                                   .arg(search)
+                                   .arg(account);
+    cout << queryString;
+    if(query.exec(queryString))
+    {
+        int salary_idx = query.record().indexOf("salary");
+        int month_idx = query.record().indexOf("month");
+        while(query.next())
+        {
+            QString salary = query.value(salary_idx).toString();
+            QString month = query.value(month_idx).toString();
+            month_salary+=month +"*"+salary+"/";
+        }
+        return month_salary;
+    }else
+    {
+        return "no";
+    }
+}
+
+/*
+ * 查询某个人的工资情况
+*/
+QString backenddb::queryWatchTableDisplay(QString account,QString search)
+{
+    QStringList yearAndMonth = search.split("/");
+    QSqlQuery query;
+    QString queryString = QString("select * from EmployeeInfo,Salaryinfo where Salaryinfo.Job_ID = EmployeeInfo.Job_ID and"
+                                  " Salaryinfo.year ='%1' and Salaryinfo.month ='%2' and EmployeeInfo.NAME_OF_WORKER = '%3'")
+                                  .arg(yearAndMonth[0])
+                                  .arg(yearAndMonth[1])
+                                  .arg(account);
+    cout << queryString;
+
+    if(query.exec(queryString))
+    {
+        cout << 1;
+        int name_idx = query.record().indexOf("NAME_OF_WORKER");
+        int jobId_idx = query.record().indexOf("Job_ID");
+        int post_idx = query.record().indexOf("post");
+        int depId_idx = query.record().indexOf("Department ID");
+        int retryTime_idx = query.record().indexOf("Entry Time");
+        int turn_idx = query.record().indexOf("Turn positive time");
+        int edu_idx = query.record().indexOf("Education");
+        int basicWage_idx = query.record().indexOf("Basic wage");
+        int Transport_idx = query.record().indexOf("Transportation subsidy");
+        int meal_idx = query.record().indexOf("Meal supplement");
+        int house_idx = query.record().indexOf("Housing subsidy");
+        int pwd_idx = query.record().indexOf("Password");
+        int year_idx = query.record().indexOf("year");
+        int month_idx = query.record().indexOf("month");
+        int five_one_idx = query.record().indexOf("Five insurance and one gold");
+        int Tax_idx = query.record().indexOf("Tax deduction");
+        int Absence_idx = query.record().indexOf("Absence of absence");
+        int bonus_idx = query.record().indexOf("bonus");
+        int salary_idx = query.record().indexOf("salary");
+
+        if(query.next())
+        {
+            QString search_result = query.value(name_idx).toString()+ "/" +query.value(jobId_idx).toString()
+                    +"/" + query.value(post_idx).toString()+"/"+query.value(depId_idx).toString()
+                    +"/" + query.value(retryTime_idx).toString() + "/"+query.value(turn_idx).toString()
+                    +"/" + query.value(edu_idx).toString() + "/" + query.value(basicWage_idx).toString()
+                    +"/" + query.value(Transport_idx).toString() + "/"+query.value(meal_idx).toString()
+                    +"/" + query.value(house_idx).toString() + "/" + query.value(pwd_idx).toString()
+                    +"/" + query.value(year_idx).toString() + "/" + query.value(month_idx).toString()
+                    +"/" + query.value(five_one_idx).toString() + "/" + query.value(Tax_idx).toString()
+                    +"/" + query.value(Absence_idx).toString() + "/" + query.value(bonus_idx).toString()
+                    +"/" + query.value(salary_idx).toString();
+            return search_result;
+        }else
+        {
+            return "no";
+        }
+    }else
+    {
+        cout << 2;
+        return "no";
+    }
+}
+
+/*
  * 函数查看数据库中是否有对应的账号和密码
  * 返回：true :存在
  *      false:不存在

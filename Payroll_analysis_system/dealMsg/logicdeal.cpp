@@ -12,6 +12,18 @@ LogicDeal::LogicDeal(QWidget *parent) :
     deal = new dealMsg();
     connect(deal,SIGNAL(returnToLoginButtonResult(QString)),this,SLOT(dealreturnToLoginButtonResult(QString)));
     connect(deal,SIGNAL(returnToLoginButtonResultPunch(QString)),this,SLOT(dealreturnToLoginButtonResultPunch(QString)));
+    connect(deal,SIGNAL(signal_watch_table_display(QString)),this,SLOT(slot_watch_table_display(QString)));
+    connect(deal,SIGNAL(signal_watch_multi_month_display(QString)),this,SLOT(slot_watch_multi_month_display(QString)));
+}
+
+void LogicDeal::slot_watch_multi_month_display(QString info)
+{
+    emit tellTheEmployeeShowMultiSalaryInfo(info);
+}
+
+void LogicDeal::slot_watch_table_display(QString result)
+{
+    emit tellTheEmployeeShowSalaryInfo(result);
 }
 
 /*
@@ -64,6 +76,7 @@ bool LogicDeal::ifTheAccountPswIsCorrect(QString account, QString password)
     msg->clearMsgPackage();
 
     msg->setMsgName(account.toUtf8());
+    name  = account;
     msg->setMsgOperate(LOGIN);
     msg->setMsgCommand(COMMAND_NONE);
     msg->setMsgContent(password.toUtf8());
@@ -87,9 +100,48 @@ bool LogicDeal::ifTheAccountPswIsCorrectAndPunch(QString account, QString passwo
     msg->clearMsgPackage();
 
     msg->setMsgName(account.toUtf8());
+    name  = account;
     msg->setMsgOperate(PUNCH_THE_CLOCK);
     msg->setMsgCommand(COMMAND_NONE);
     msg->setMsgContent(pwdAndtime.toUtf8());
+    msg->setMsgStatus(EMPLOYEE);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}
+
+/*
+ * 处理前端请求得多月柱状图显示，给服务器端发送消息，请求查询
+*/
+void LogicDeal::dealshow_multi_salary_info(QString info)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+
+    msg->setMsgName(name.toUtf8());
+    msg->setMsgOperate(WATCH_PAYROLL);
+    msg->setMsgCommand(HISTOGRAM_DISPLAY);
+    msg->setMsgContent(info);
+    msg->setMsgStatus(EMPLOYEE);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}
+
+/*
+ * 处理表格显示的前端请求，给服务器端发送消息，请求查询
+*/
+void LogicDeal::dealtable_show_salary_info(QString info)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+
+    msg->setMsgName(name.toUtf8());
+    msg->setMsgOperate(WATCH_PAYROLL);
+    msg->setMsgCommand(TABLE_DISPLAY);
+    msg->setMsgContent(info);
     msg->setMsgStatus(EMPLOYEE);
     msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
     block = *(msg->packageMsg());

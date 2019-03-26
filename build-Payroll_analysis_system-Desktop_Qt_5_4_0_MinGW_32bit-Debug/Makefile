@@ -163,6 +163,7 @@ Makefile: ../Payroll_analysis_system/Payroll_analysis_system.pro E:/Qt/Qt5.4.0/5
 		E:/Qt/Qt5.4.0/5.4/mingw491_32/mkspecs/features/win32/default_pre.prf \
 		../Payroll_analysis_system/protocol/protocol.pri \
 		../Payroll_analysis_system/dealMsg/dealMsg.pri \
+		../Payroll_analysis_system/analysis/analysis.pri \
 		E:/Qt/Qt5.4.0/5.4/mingw491_32/mkspecs/features/resolve_config.prf \
 		E:/Qt/Qt5.4.0/5.4/mingw491_32/mkspecs/features/exclusive_builds_post.prf \
 		E:/Qt/Qt5.4.0/5.4/mingw491_32/mkspecs/features/default_post.prf \
@@ -292,6 +293,7 @@ E:\Qt\Qt5.4.0\5.4\mingw491_32\mkspecs\features\default_pre.prf:
 E:\Qt\Qt5.4.0\5.4\mingw491_32\mkspecs\features\win32\default_pre.prf:
 ..\Payroll_analysis_system\protocol\protocol.pri:
 ..\Payroll_analysis_system\dealMsg\dealMsg.pri:
+..\Payroll_analysis_system\analysis\analysis.pri:
 E:\Qt\Qt5.4.0\5.4\mingw491_32\mkspecs\features\resolve_config.prf:
 E:\Qt\Qt5.4.0\5.4\mingw491_32\mkspecs\features\exclusive_builds_post.prf:
 E:\Qt\Qt5.4.0\5.4\mingw491_32\mkspecs\features\default_post.prf:

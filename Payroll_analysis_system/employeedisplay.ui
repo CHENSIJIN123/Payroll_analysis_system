@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tb_view_salary">
       <attribute name="title">
@@ -27,7 +27,7 @@
        <item row="0" column="0">
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="pg_choose_view_way">
           <widget class="QPushButton" name="pb_view_one_month_info">
@@ -59,38 +59,14 @@
          </widget>
          <widget class="QWidget" name="pb_choose_one_month_view">
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <widget class="QComboBox" name="cb_choose_year">
-             <item>
-              <property name="text">
-               <string>2016年</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>2017年</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>2018年</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>2019年</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <spacer name="horizontalSpacer_3">
+           <item row="0" column="3">
+            <spacer name="horizontalSpacer_2">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>92</width>
+               <width>91</width>
                <height>20</height>
               </size>
              </property>
@@ -160,14 +136,64 @@
              </item>
             </widget>
            </item>
-           <item row="0" column="3">
-            <spacer name="horizontalSpacer_2">
+           <item row="0" column="0">
+            <widget class="QComboBox" name="cb_choose_year">
+             <item>
+              <property name="text">
+               <string>2016年</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2017年</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2018年</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2019年</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>92</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="7">
+            <spacer name="horizontalSpacer_4">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
                <width>91</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="5">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>92</width>
                <height>20</height>
               </size>
              </property>
@@ -187,19 +213,6 @@
              </item>
             </widget>
            </item>
-           <item row="0" column="5">
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>92</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
            <item row="0" column="6">
             <widget class="QPushButton" name="pb_watch">
              <property name="text">
@@ -207,28 +220,118 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="7">
-            <spacer name="horizontalSpacer_4">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>91</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
            <item row="1" column="0" colspan="8">
             <widget class="QStackedWidget" name="show_way">
-             <widget class="QWidget" name="table_show"/>
-             <widget class="QWidget" name="pie_chart_show"/>
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <widget class="QWidget" name="table_show">
+              <layout class="QGridLayout" name="gridLayout_4">
+               <item row="0" column="0">
+                <widget class="QWidget" name="table_show_widget" native="true">
+                 <layout class="QGridLayout" name="gridLayout_5">
+                  <item row="0" column="0">
+                   <widget class="QTextEdit" name="textEdit"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="pie_chart_show">
+              <layout class="QGridLayout" name="gridLayout_6">
+               <item row="0" column="0">
+                <widget class="Pie" name="w_pie_view" native="true"/>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="pg_choose_more_month_view"/>
+         <widget class="QWidget" name="pg_choose_more_month_view">
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="0">
+            <widget class="QWidget" name="widget" native="true">
+             <layout class="QGridLayout" name="gridLayout_8">
+              <item row="0" column="0">
+               <spacer name="horizontalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>166</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1">
+               <widget class="QComboBox" name="cb_year_choose">
+                <item>
+                 <property name="text">
+                  <string>2016年</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>2017年</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>2018年</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>2019年</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>165</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="3">
+               <widget class="QPushButton" name="pb_search">
+                <property name="text">
+                 <string>查询</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <spacer name="horizontalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>166</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="0" colspan="5">
+               <widget class="Histogram" name="w_his_view" native="true"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -247,6 +350,20 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Histogram</class>
+   <extends>QWidget</extends>
+   <header location="global">histogram.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Pie</class>
+   <extends>QWidget</extends>
+   <header>pie.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

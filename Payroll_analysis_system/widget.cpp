@@ -23,7 +23,12 @@ Widget::Widget(QWidget *parent) :
     connect(mytimer,SIGNAL(timeout()),this,SLOT(dealtime()));
     connect(my_logicdeal,SIGNAL(tellTheWidgetIfItCanLoginSuccess(bool)),this,SLOT(dealtellTheWidgetIfItCanLoginSuccess(bool)));
     connect(my_logicdeal,SIGNAL(tellTheWidgetIfItCanPunchSuccess(bool)),this,SLOT(dealtellTheWidgetIfItCanPunchSuccess(bool)));
+    connect(employee_display,SIGNAL(table_show_salary_info(QString)),my_logicdeal,SLOT(dealtable_show_salary_info(QString)));
+    connect(my_logicdeal,SIGNAL(tellTheEmployeeShowSalaryInfo(QString)),employee_display,SLOT(dealtellTheEmployeeShowSalaryInfo(QString)));
+    connect(employee_display,SIGNAL(show_multi_salary_info(QString)),my_logicdeal,SLOT(dealshow_multi_salary_info(QString)));
+    connect(my_logicdeal,SIGNAL(tellTheEmployeeShowMultiSalaryInfo(QString)),employee_display,SLOT(dealtellTheEmployeeShowMultiSalaryInfo(QString)));
 }
+
 
 Widget::~Widget()
 {
@@ -74,10 +79,7 @@ void Widget::on_pb_login_clicked()  //登录按钮按下
     if(ui->le_psw->text()=="")
     {
        ui->le_psw->setPlaceholderText("请输入密码");
-    }
-    else{
-        my_logicdeal->ifTheAccountPswIsCorrect(ui->le_name->text(),ui->le_psw->text());
-    }
+    }  
     if(ui->le_name->text() == "123")  //如果是管理员的话，显示管理员界面
     {
         if(ui->le_psw->text() == "123")
@@ -88,6 +90,8 @@ void Widget::on_pb_login_clicked()  //登录按钮按下
         {
             QMessageBox::information(this,"登录","登录失败，请重新管理员正确的密码",QMessageBox::Ok);   //输出提示信息
         }
+    }else{
+        my_logicdeal->ifTheAccountPswIsCorrect(ui->le_name->text(),ui->le_psw->text());
     }
 }
 

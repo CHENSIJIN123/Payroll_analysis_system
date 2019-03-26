@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_dealMsg_t {
-    QByteArrayData data[5];
-    char stringdata[73];
+    QByteArrayData data[7];
+    char stringdata[133];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,11 +33,15 @@ QT_MOC_LITERAL(0, 0, 7), // "dealMsg"
 QT_MOC_LITERAL(1, 8, 25), // "returnToLoginButtonResult"
 QT_MOC_LITERAL(2, 34, 0), // ""
 QT_MOC_LITERAL(3, 35, 6), // "result"
-QT_MOC_LITERAL(4, 42, 30) // "returnToLoginButtonResultPunch"
+QT_MOC_LITERAL(4, 42, 30), // "returnToLoginButtonResultPunch"
+QT_MOC_LITERAL(5, 73, 26), // "signal_watch_table_display"
+QT_MOC_LITERAL(6, 100, 32) // "signal_watch_multi_month_display"
 
     },
     "dealMsg\0returnToLoginButtonResult\0\0"
-    "result\0returnToLoginButtonResultPunch"
+    "result\0returnToLoginButtonResultPunch\0"
+    "signal_watch_table_display\0"
+    "signal_watch_multi_month_display"
 };
 #undef QT_MOC_LITERAL
 
@@ -47,18 +51,22 @@ static const uint qt_meta_data_dealMsg[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x06 /* Public */,
-       4,    1,   27,    2, 0x06 /* Public */,
+       1,    1,   34,    2, 0x06 /* Public */,
+       4,    1,   37,    2, 0x06 /* Public */,
+       5,    1,   40,    2, 0x06 /* Public */,
+       6,    1,   43,    2, 0x06 /* Public */,
 
  // signals: parameters
+    QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
 
@@ -72,6 +80,8 @@ void dealMsg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         switch (_id) {
         case 0: _t->returnToLoginButtonResult((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->returnToLoginButtonResultPunch((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 2: _t->signal_watch_table_display((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 3: _t->signal_watch_multi_month_display((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -87,6 +97,18 @@ void dealMsg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
             typedef void (dealMsg::*_t)(QString );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&dealMsg::returnToLoginButtonResultPunch)) {
                 *result = 1;
+            }
+        }
+        {
+            typedef void (dealMsg::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&dealMsg::signal_watch_table_display)) {
+                *result = 2;
+            }
+        }
+        {
+            typedef void (dealMsg::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&dealMsg::signal_watch_multi_month_display)) {
+                *result = 3;
             }
         }
     }
@@ -117,13 +139,13 @@ int dealMsg::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }
@@ -140,5 +162,19 @@ void dealMsg::returnToLoginButtonResultPunch(QString _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void dealMsg::signal_watch_table_display(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void dealMsg::signal_watch_multi_month_display(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 QT_END_MOC_NAMESPACE

@@ -3,6 +3,8 @@ INPUT(
 ./debug\dealsocket.o
 ./debug\logicdeal.o
 ./debug\dealmsg.o
+./debug\histogram.o
+./debug\pie.o
 ./debug\main.o
 ./debug\widget.o
 ./debug\employeedisplay.o
@@ -10,6 +12,7 @@ INPUT(
 ./debug\moc_dealsocket.o
 ./debug\moc_logicdeal.o
 ./debug\moc_dealmsg.o
+./debug\moc_pie.o
 ./debug\moc_widget.o
 ./debug\moc_employeedisplay.o
 ./debug\moc_administratordisplay.o

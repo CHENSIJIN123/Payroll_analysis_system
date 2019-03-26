@@ -15,15 +15,22 @@ public:
 public slots:
     void dealreturnToLoginButtonResult(QString result);
     void dealreturnToLoginButtonResultPunch(QString result);
+    void dealtable_show_salary_info(QString info);
+    void slot_watch_table_display(QString result);
+    void dealshow_multi_salary_info(QString info);
+    void slot_watch_multi_month_display(QString info);
 
 signals:
     void tellTheWidgetIfItCanLoginSuccess(bool);
     void tellTheWidgetIfItCanPunchSuccess(bool);
+    void tellTheEmployeeShowSalaryInfo(QString info);
+    void tellTheEmployeeShowMultiSalaryInfo(QString info);
 
 public:
     MyProtocol *msg;
     dealSocket *my_sock;
     static dealMsg *deal;
+    QString name;
 };
 
 #endif // LOGICDEAL_H

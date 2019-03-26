@@ -15,6 +15,7 @@ TEMPLATE = app
 
 include (./protocol/protocol.pri)
 include (./dealMsg/dealMsg.pri)
+include (./analysis/analysis.pri)
 
 SOURCES += main.cpp\
         widget.cpp \
