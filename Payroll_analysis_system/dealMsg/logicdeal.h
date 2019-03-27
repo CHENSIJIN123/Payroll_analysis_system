@@ -19,12 +19,18 @@ public slots:
     void slot_watch_table_display(QString result);
     void dealshow_multi_salary_info(QString info);
     void slot_watch_multi_month_display(QString info);
+    void dealSalaryRankingView(void);
+    void slot_watchSalaryRankingView(QString info);
+    void dealadmin_change_employee_info(QString employee_name);
+    void slot_change_the_employee_info(QString employee_info);
 
 signals:
     void tellTheWidgetIfItCanLoginSuccess(bool);
     void tellTheWidgetIfItCanPunchSuccess(bool);
     void tellTheEmployeeShowSalaryInfo(QString info);
     void tellTheEmployeeShowMultiSalaryInfo(QString info);
+    void tellTheEmployeeShowSalaryRanking(QString info);
+    void tellTheAdminEmployeeInfo(QString info);
 
 public:
     MyProtocol *msg;

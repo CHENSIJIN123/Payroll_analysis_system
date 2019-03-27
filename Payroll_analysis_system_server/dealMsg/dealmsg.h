@@ -12,6 +12,8 @@ public:
     void judgeAccountPswAndPunch(MyProtocol *msg);
     void watch_table_display(MyProtocol *msg);
     void watch_multi_display(MyProtocol *msg);
+    void watch_SalaryRankingView(MyProtocol *msg);
+    void get_employee_info(MyProtocol *msg);
 private:
     bool result;
     backenddb db;

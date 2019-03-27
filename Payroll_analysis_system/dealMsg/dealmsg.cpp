@@ -41,14 +41,45 @@ void dealMsg::judge_operator(MyProtocol *msg)
         case WATCH_ATTENDANCE_RATE:     //查看考勤率
         break;
         case COMPETITIVE_ANALYSIS:      //竞争力分析
-        break;
+        {
+            switch(msg->getMsgCommand())
+            {
+                case VIEW_RANKING:
+                {
+                    watchSalaryRankingView(msg);
+                }
+            }
+            break;
+        }
         case SET_THE_DATE_OF_SALARY:    //设置工资结算日期
         break;
         case MODIFY_EMPLOYEE_INFO:      //修改员工信息
-        break;
+        {
+            switch(msg->getMsgCommand())
+            {
+                case MODIFY_EMPLOYEE:
+                {
+                    change_the_employee_info(msg);
+                    break;
+                }
+            }
+            break;
+        }
         case DEPARTMENT_SALARY_COMPARE:{}
         break;
     }
+}
+
+void dealMsg::change_the_employee_info(MyProtocol *msg)
+{
+    cout << msg->getMsgContent();
+    emit signal_change_the_employee_info(msg->getMsgContent());
+}
+
+void dealMsg::watchSalaryRankingView(MyProtocol *msg)
+{
+    cout << msg->getMsgContent();
+    emit signal_watchSalaryRankingView(msg->getMsgContent());
 }
 
 void dealMsg::watch_multi_month_display(MyProtocol *msg)

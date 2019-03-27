@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_EmployeeDisplay_t {
-    QByteArrayData data[13];
-    char stringdata[285];
+    QByteArrayData data[15];
+    char stringdata[340];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,25 +34,28 @@ QT_MOC_LITERAL(1, 16, 22), // "table_show_salary_info"
 QT_MOC_LITERAL(2, 39, 0), // ""
 QT_MOC_LITERAL(3, 40, 4), // "info"
 QT_MOC_LITERAL(4, 45, 22), // "show_multi_salary_info"
-QT_MOC_LITERAL(5, 68, 33), // "on_pb_view_one_month_info_cli..."
-QT_MOC_LITERAL(6, 102, 35), // "on_pb_view_multi_month_info_c..."
-QT_MOC_LITERAL(7, 138, 26), // "on_tabWidget_tabBarClicked"
-QT_MOC_LITERAL(8, 165, 5), // "index"
-QT_MOC_LITERAL(9, 171, 19), // "on_pb_watch_clicked"
-QT_MOC_LITERAL(10, 191, 33), // "dealtellTheEmployeeShowSalary..."
-QT_MOC_LITERAL(11, 225, 38), // "dealtellTheEmployeeShowMultiS..."
-QT_MOC_LITERAL(12, 264, 20) // "on_pb_search_clicked"
+QT_MOC_LITERAL(5, 68, 17), // "SalaryRankingView"
+QT_MOC_LITERAL(6, 86, 33), // "on_pb_view_one_month_info_cli..."
+QT_MOC_LITERAL(7, 120, 35), // "on_pb_view_multi_month_info_c..."
+QT_MOC_LITERAL(8, 156, 26), // "on_tabWidget_tabBarClicked"
+QT_MOC_LITERAL(9, 183, 5), // "index"
+QT_MOC_LITERAL(10, 189, 19), // "on_pb_watch_clicked"
+QT_MOC_LITERAL(11, 209, 33), // "dealtellTheEmployeeShowSalary..."
+QT_MOC_LITERAL(12, 243, 38), // "dealtellTheEmployeeShowMultiS..."
+QT_MOC_LITERAL(13, 282, 20), // "on_pb_search_clicked"
+QT_MOC_LITERAL(14, 303, 36) // "dealtellTheEmployeeShowSalary..."
 
     },
     "EmployeeDisplay\0table_show_salary_info\0"
     "\0info\0show_multi_salary_info\0"
-    "on_pb_view_one_month_info_clicked\0"
+    "SalaryRankingView\0on_pb_view_one_month_info_clicked\0"
     "on_pb_view_multi_month_info_clicked\0"
     "on_tabWidget_tabBarClicked\0index\0"
     "on_pb_watch_clicked\0"
     "dealtellTheEmployeeShowSalaryInfo\0"
     "dealtellTheEmployeeShowMultiSalaryInfo\0"
-    "on_pb_search_clicked"
+    "on_pb_search_clicked\0"
+    "dealtellTheEmployeeShowSalaryRanking"
 };
 #undef QT_MOC_LITERAL
 
@@ -62,38 +65,42 @@ static const uint qt_meta_data_EmployeeDisplay[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   59,    2, 0x06 /* Public */,
-       4,    1,   62,    2, 0x06 /* Public */,
+       1,    1,   69,    2, 0x06 /* Public */,
+       4,    1,   72,    2, 0x06 /* Public */,
+       5,    0,   75,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   65,    2, 0x08 /* Private */,
-       6,    0,   66,    2, 0x08 /* Private */,
-       7,    1,   67,    2, 0x08 /* Private */,
-       9,    0,   70,    2, 0x08 /* Private */,
-      10,    1,   71,    2, 0x08 /* Private */,
-      11,    1,   74,    2, 0x08 /* Private */,
-      12,    0,   77,    2, 0x08 /* Private */,
+       6,    0,   76,    2, 0x08 /* Private */,
+       7,    0,   77,    2, 0x08 /* Private */,
+       8,    1,   78,    2, 0x08 /* Private */,
+      10,    0,   81,    2, 0x08 /* Private */,
+      11,    1,   82,    2, 0x08 /* Private */,
+      12,    1,   85,    2, 0x08 /* Private */,
+      13,    0,   88,    2, 0x08 /* Private */,
+      14,    1,   89,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    3,
 
        0        // eod
 };
@@ -105,13 +112,15 @@ void EmployeeDisplay::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         switch (_id) {
         case 0: _t->table_show_salary_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->show_multi_salary_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->on_pb_view_one_month_info_clicked(); break;
-        case 3: _t->on_pb_view_multi_month_info_clicked(); break;
-        case 4: _t->on_tabWidget_tabBarClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: _t->on_pb_watch_clicked(); break;
-        case 6: _t->dealtellTheEmployeeShowSalaryInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 7: _t->dealtellTheEmployeeShowMultiSalaryInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 8: _t->on_pb_search_clicked(); break;
+        case 2: _t->SalaryRankingView(); break;
+        case 3: _t->on_pb_view_one_month_info_clicked(); break;
+        case 4: _t->on_pb_view_multi_month_info_clicked(); break;
+        case 5: _t->on_tabWidget_tabBarClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->on_pb_watch_clicked(); break;
+        case 7: _t->dealtellTheEmployeeShowSalaryInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 8: _t->dealtellTheEmployeeShowMultiSalaryInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 9: _t->on_pb_search_clicked(); break;
+        case 10: _t->dealtellTheEmployeeShowSalaryRanking((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -127,6 +136,12 @@ void EmployeeDisplay::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
             typedef void (EmployeeDisplay::*_t)(QString );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&EmployeeDisplay::show_multi_salary_info)) {
                 *result = 1;
+            }
+        }
+        {
+            typedef void (EmployeeDisplay::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&EmployeeDisplay::SalaryRankingView)) {
+                *result = 2;
             }
         }
     }
@@ -157,13 +172,13 @@ int EmployeeDisplay::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }
@@ -180,5 +195,11 @@ void EmployeeDisplay::show_multi_salary_info(QString _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void EmployeeDisplay::SalaryRankingView()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

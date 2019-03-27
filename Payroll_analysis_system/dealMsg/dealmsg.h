@@ -13,12 +13,16 @@ public:
     void JudgeAccountPsw(MyProtocol *msg);
     void watch_table_display(MyProtocol *msg);
     void watch_multi_month_display(MyProtocol *msg);
+    void watchSalaryRankingView(MyProtocol *msg);
+    void change_the_employee_info(MyProtocol *msg);
 
 signals:
     void returnToLoginButtonResult(QString result);
     void returnToLoginButtonResultPunch(QString result);
     void signal_watch_table_display(QString result);
     void signal_watch_multi_month_display(QString result);
+    void signal_watchSalaryRankingView(QString result);
+    void signal_change_the_employee_info(QString result);
 };
 
 #endif // DEALMSG_H

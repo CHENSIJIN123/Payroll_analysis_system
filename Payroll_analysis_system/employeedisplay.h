@@ -18,7 +18,7 @@ public:
 signals:
     void table_show_salary_info(QString info);
     void show_multi_salary_info(QString info);
-
+    void SalaryRankingView(void);
 
 private slots:
     void on_pb_view_one_month_info_clicked();
@@ -35,8 +35,11 @@ private slots:
 
     void on_pb_search_clicked();
 
+    void dealtellTheEmployeeShowSalaryRanking(QString info);
+
 private:
     Ui::EmployeeDisplay *ui;
+    QString employee_info;
 };
 
 #endif // EMPLOYEEDISPLAY_H

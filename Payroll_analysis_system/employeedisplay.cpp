@@ -20,8 +20,16 @@ EmployeeDisplay::~EmployeeDisplay()
     delete ui;
 }
 
+void EmployeeDisplay::dealtellTheEmployeeShowSalaryRanking(QString info)
+{
+    QString test = "您的工资在本公司排名为 " + info;
+    cout << test;
+    ui->lb_result->setText(test);
+}
+
 void EmployeeDisplay::dealtellTheEmployeeShowSalaryInfo(QString info)
 {
+    employee_info = info;
     if(ui->show_way->currentIndex() == 0)
         ui->textEdit->setText(info);
     if(ui->show_way->currentIndex() == 1)
@@ -65,7 +73,8 @@ void EmployeeDisplay::dealtellTheEmployeeShowSalaryInfo(QString info)
 */
 void EmployeeDisplay::dealtellTheEmployeeShowMultiSalaryInfo(QString info)
 {
-    ui->w_his_view->SetMaxValue(10000);
+    ui->w_his_view->Clear();
+    ui->w_his_view->SetMaxValue(20000);
     QStringList salary_info = info.split("/");
     for(int i = 0;i < salary_info.size() - 1;i++)
     {
@@ -96,7 +105,23 @@ void EmployeeDisplay::on_pb_view_multi_month_info_clicked()
 */
 void EmployeeDisplay::on_tabWidget_tabBarClicked(int index)
 {
-    ui->stackedWidget->setCurrentIndex(0);
+    switch(index)
+    {
+        case 0:{  //薪资查询
+            ui->stackedWidget->setCurrentIndex(0);
+            break;
+        }
+        case 1:{  //考勤率查看
+            ui->stackedWidget->setCurrentIndex(1);
+            break;
+        }
+        case 2:{   //竞争力分析
+            ui->stackedWidget->setCurrentIndex(2);
+            emit SalaryRankingView();
+            ui->te_process->setText("");
+            break;
+        }
+    }
 }
 
 /*

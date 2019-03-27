@@ -10,13 +10,12 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    cout << "hello widget";
 
     ui->lb_time_show->setText(QDateTime::currentDateTime().toString("hh:mm:ss"));
 
-    my_logicdeal = new LogicDeal();
-    employee_display = new EmployeeDisplay();
-    admin_display = new AdministratorDisplay();
+    my_logicdeal = new LogicDeal();   //创建逻辑处理对象
+    employee_display = new EmployeeDisplay();    //创建普通用户对象
+    admin_display = new AdministratorDisplay();    //创建管理员对象
 
     mytimer = new QTimer(this);
     mytimer->start(1000);
@@ -27,6 +26,10 @@ Widget::Widget(QWidget *parent) :
     connect(my_logicdeal,SIGNAL(tellTheEmployeeShowSalaryInfo(QString)),employee_display,SLOT(dealtellTheEmployeeShowSalaryInfo(QString)));
     connect(employee_display,SIGNAL(show_multi_salary_info(QString)),my_logicdeal,SLOT(dealshow_multi_salary_info(QString)));
     connect(my_logicdeal,SIGNAL(tellTheEmployeeShowMultiSalaryInfo(QString)),employee_display,SLOT(dealtellTheEmployeeShowMultiSalaryInfo(QString)));
+    connect(employee_display,SIGNAL(SalaryRankingView()),my_logicdeal,SLOT(dealSalaryRankingView()));
+    connect(my_logicdeal,SIGNAL(tellTheEmployeeShowSalaryRanking(QString)),employee_display,SLOT(dealtellTheEmployeeShowSalaryRanking(QString)));
+    connect(admin_display,SIGNAL(admin_change_employee_info(QString)),my_logicdeal,SLOT(dealadmin_change_employee_info(QString)));
+    connect(my_logicdeal,SIGNAL(tellTheAdminEmployeeInfo(QString)),admin_display,SLOT(dealtellTheAdminEmployeeInfo(QString)));
 }
 
 

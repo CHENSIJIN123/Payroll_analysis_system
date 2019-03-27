@@ -31,3 +31,4 @@ FORMS    += widget.ui \
     administratordisplay.ui
 CONFIG += C++11
 
+

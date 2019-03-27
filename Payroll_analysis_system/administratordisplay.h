@@ -14,6 +14,15 @@ class AdministratorDisplay : public QWidget
 public:
     explicit AdministratorDisplay(QWidget *parent = 0);
     ~AdministratorDisplay();
+signals:
+    void admin_change_employee_info(QString name);
+
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pb_choose_is_change_clicked();
+
+    void dealtellTheAdminEmployeeInfo(QString employee_info);
 
 private:
     Ui::AdministratorDisplay *ui;

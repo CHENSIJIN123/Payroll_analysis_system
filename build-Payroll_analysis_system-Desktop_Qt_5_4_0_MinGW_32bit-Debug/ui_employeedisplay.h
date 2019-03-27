@@ -16,6 +16,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
@@ -69,6 +70,8 @@ public:
     Histogram *w_his_view;
     QWidget *tb_attendance_rate;
     QWidget *tb_competitive_analysis;
+    QTextEdit *te_process;
+    QLabel *lb_result;
 
     void setupUi(QWidget *EmployeeDisplay)
     {
@@ -215,6 +218,13 @@ public:
         tabWidget->addTab(tb_attendance_rate, QString());
         tb_competitive_analysis = new QWidget();
         tb_competitive_analysis->setObjectName(QStringLiteral("tb_competitive_analysis"));
+        te_process = new QTextEdit(tb_competitive_analysis);
+        te_process->setObjectName(QStringLiteral("te_process"));
+        te_process->setGeometry(QRect(50, 30, 631, 131));
+        lb_result = new QLabel(tb_competitive_analysis);
+        lb_result->setObjectName(QStringLiteral("lb_result"));
+        lb_result->setGeometry(QRect(110, 230, 521, 101));
+        lb_result->setStyleSheet(QStringLiteral("background-color: rgb(248, 138, 255);"));
         tabWidget->addTab(tb_competitive_analysis, QString());
 
         gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
@@ -273,6 +283,7 @@ public:
         pb_search->setText(QApplication::translate("EmployeeDisplay", "\346\237\245\350\257\242", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_view_salary), QApplication::translate("EmployeeDisplay", "\346\237\245\347\234\213\345\267\245\350\265\204", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_attendance_rate), QApplication::translate("EmployeeDisplay", "\346\237\245\347\234\213\350\200\203\345\213\244\347\216\207", 0));
+        lb_result->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tb_competitive_analysis), QApplication::translate("EmployeeDisplay", "\347\253\236\344\272\211\345\212\233\345\210\206\346\236\220", 0));
     } // retranslateUi
 

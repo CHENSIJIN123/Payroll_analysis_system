@@ -798,6 +798,38 @@ release/widget.o: ../Payroll_analysis_system_server/widget.cpp ../Payroll_analys
 		../Payroll_analysis_system_server/database/backenddb.h \
 		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtCore/QObject \
 		ui_widget.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtCore/QVariant \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/QAction \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtGui/qicon.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/QApplication \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qframe.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtGui/qvalidator.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qstyle.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
+		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
 		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtCore/QDataStream \
 		E:/Qt/Qt5.4.0/5.4/mingw491_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\widget.o ..\Payroll_analysis_system_server\widget.cpp

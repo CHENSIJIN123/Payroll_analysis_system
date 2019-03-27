@@ -14,6 +14,13 @@ LogicDeal::LogicDeal(QWidget *parent) :
     connect(deal,SIGNAL(returnToLoginButtonResultPunch(QString)),this,SLOT(dealreturnToLoginButtonResultPunch(QString)));
     connect(deal,SIGNAL(signal_watch_table_display(QString)),this,SLOT(slot_watch_table_display(QString)));
     connect(deal,SIGNAL(signal_watch_multi_month_display(QString)),this,SLOT(slot_watch_multi_month_display(QString)));
+    connect(deal,SIGNAL(signal_watchSalaryRankingView(QString)),this,SLOT(slot_watchSalaryRankingView(QString)));
+    connect(deal,SIGNAL(signal_change_the_employee_info(QString)),this,SLOT(slot_change_the_employee_info(QString)));
+}
+
+void LogicDeal::slot_change_the_employee_info(QString employee_info)
+{
+    emit tellTheAdminEmployeeInfo(employee_info);
 }
 
 void LogicDeal::slot_watch_multi_month_display(QString info)
@@ -24,6 +31,14 @@ void LogicDeal::slot_watch_multi_month_display(QString info)
 void LogicDeal::slot_watch_table_display(QString result)
 {
     emit tellTheEmployeeShowSalaryInfo(result);
+}
+
+/*
+ * 获得薪资排名的处理函数
+*/
+void LogicDeal::slot_watchSalaryRankingView(QString info)
+{
+    emit tellTheEmployeeShowSalaryRanking(info);
 }
 
 /*
@@ -142,6 +157,42 @@ void LogicDeal::dealtable_show_salary_info(QString info)
     msg->setMsgOperate(WATCH_PAYROLL);
     msg->setMsgCommand(TABLE_DISPLAY);
     msg->setMsgContent(info);
+    msg->setMsgStatus(EMPLOYEE);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}
+
+/*
+ * 薪资排名查看
+*/
+void LogicDeal::dealSalaryRankingView(void)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+
+    msg->setMsgName(name.toUtf8());
+    msg->setMsgOperate(COMPETITIVE_ANALYSIS);
+    msg->setMsgCommand(VIEW_RANKING);
+    msg->setMsgStatus(EMPLOYEE);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}
+
+/*
+ * 得到员工信息
+*/
+void LogicDeal::dealadmin_change_employee_info(QString employee_name)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+
+    msg->setMsgName(employee_name.toUtf8());
+    msg->setMsgOperate(MODIFY_EMPLOYEE_INFO);
+    msg->setMsgCommand(MODIFY_EMPLOYEE);
     msg->setMsgStatus(EMPLOYEE);
     msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
     block = *(msg->packageMsg());

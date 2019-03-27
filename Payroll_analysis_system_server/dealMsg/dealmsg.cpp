@@ -39,11 +39,59 @@ void dealMsg::judge_operator(MyProtocol *msg)
             break;
         }
         case WATCH_ATTENDANCE_RATE:     //查看考勤率
+        case COMPETITIVE_ANALYSIS:
+        {
+            switch(msg->getMsgCommand())
+            {
+                case VIEW_RANKING:
+                {
+                    watch_SalaryRankingView(msg);
+                    break;
+                }
+            }
+        }
         case SET_THE_DATE_OF_SALARY:    //设置工资结算日期
         case MODIFY_EMPLOYEE_INFO:      //修改员工信息
+        {
+            switch(msg->getMsgCommand())
+            {
+                case MODIFY_EMPLOYEE:
+                {
+                    get_employee_info(msg);
+                    break;
+                }
+            }
+            break;
+        }
         case DEPARTMENT_SALARY_COMPARE:{}
 
     }
+}
+
+/*
+ * 获得员工信息，让管理员进行修改
+*/
+void dealMsg::get_employee_info(MyProtocol *msg)
+{
+    QString info = db.query_employee_info(msg->getMsgName());
+    if(info == "no")
+        msg->setMsgContent("no");
+    else
+        msg->setMsgContent(info);
+    cout << msg->getMsgContent();
+}
+
+/*
+ * 查看薪资排名
+*/
+void dealMsg::watch_SalaryRankingView(MyProtocol *msg)
+{
+    QString info = db.querywatch_SalaryRankingView(msg->getMsgName());
+    if(info == "no")
+        msg->setMsgContent("no");
+    else
+        msg->setMsgContent(info);
+    cout << msg->getMsgContent();
 }
 
 void dealMsg::watch_multi_display(MyProtocol *msg)

@@ -38,15 +38,30 @@ public:
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
         Widget->resize(819, 494);
+        Widget->setStyleSheet(QStringLiteral(""));
         widget = new QWidget(Widget);
         widget->setObjectName(QStringLiteral("widget"));
         widget->setGeometry(QRect(200, 120, 371, 241));
+        widget->setStyleSheet(QLatin1String("border-image:none;\n"
+"border-radius:16px;\n"
+"background:rgba(0,0,0,0.3);\n"
+"color:#fff"));
         le_name = new QLineEdit(widget);
         le_name->setObjectName(QStringLiteral("le_name"));
         le_name->setGeometry(QRect(40, 70, 201, 31));
+        le_name->setStyleSheet(QLatin1String("border-radius: 10px;\n"
+"border: 1px solid #4288CE;\n"
+"background:rgba(0,0,0,0.2);\n"
+"color:#fff;\n"
+"border-image:none;"));
         le_psw = new QLineEdit(widget);
         le_psw->setObjectName(QStringLiteral("le_psw"));
         le_psw->setGeometry(QRect(40, 150, 201, 31));
+        le_psw->setStyleSheet(QLatin1String("border-radius: 10px;\n"
+"border: 1px solid #4288CE;\n"
+"background:rgba(0,0,0,0.2);\n"
+"color:#fff;\n"
+"border-image:none;"));
         label = new QLabel(widget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(270, 70, 61, 21));
@@ -56,9 +71,23 @@ public:
         pb_login = new QPushButton(Widget);
         pb_login->setObjectName(QStringLiteral("pb_login"));
         pb_login->setGeometry(QRect(260, 400, 61, 23));
+        pb_login->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;\n"
+""));
         pb_punch = new QPushButton(Widget);
         pb_punch->setObjectName(QStringLiteral("pb_punch"));
         pb_punch->setGeometry(QRect(420, 400, 61, 23));
+        pb_punch->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;\n"
+""));
         lb_time_show = new QLabel(Widget);
         lb_time_show->setObjectName(QStringLiteral("lb_time_show"));
         lb_time_show->setGeometry(QRect(290, 50, 161, 41));

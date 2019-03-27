@@ -15,6 +15,65 @@ backenddb::backenddb()
 {    
     //insert_test();
     //insert_putch();
+    //insert_salary();
+}
+
+QString backenddb::query_employee_info(QString account)
+{
+    QSqlQuery query;
+    QString queryString = QString("select EMPLOYEEINFO.[NAME_OF_WORKER],EMPLOYEEINFO.[Job_ID],EMPLOYEEINFO.[post],EMPLOYEEINFO.[EntryTime],EMPLOYEEINFO.[Turnpositivetime],"
+                                  "employeeinfo.[Education],employeeinfo.[Basicwage],employeeinfo.[Transportationsubsidy],employeeinfo.[Mealsupplement],"
+                                  "employeeinfo.[Housingsubsidy],employeeinfo.[Password],departmentinfo.[DEPARTMENT_NAME] from employeeinfo,departmentinfo where "
+                                  "employeeinfo.[DepartmentID]=departmentinfo.[DEPARTMENT_ID] and employeeinfo.[NAME_OF_WORKER]='%1'")
+                                    .arg(account);
+    if(query.exec(queryString))
+    {
+        int name_idx = query.record().indexOf("NAME_OF_WORKER");
+        int job_idx = query.record().indexOf("Job_ID");
+        int post_idx = query.record().indexOf("post");
+        int entry_idx = query.record().indexOf("EntryTime");
+        int turn_idx = query.record().indexOf("Turnpositivetime");
+        int edu_idx = query.record().indexOf("Education");
+        int basic_idx = query.record().indexOf("Basicwage");
+        int transport_idx = query.record().indexOf("Transportationsubsidy");
+        int meal_idx = query.record().indexOf("Mealsupplement");
+        int house_idx = query.record().indexOf("Housingsubsidy");
+        int pwd_idx = query.record().indexOf("Password");
+        int department_idx = query.record().indexOf("DEPARTMENT_NAME");
+        if(query.next())
+        {
+            QString employee_info = query.value(name_idx).toString() + "/" +query.value(job_idx).toString()
+                    +"/" +query.value(post_idx).toString()
+                    +"/"+query.value(entry_idx).toString() + "/" + query.value(turn_idx).toString()
+                    +"/"+query.value(edu_idx).toString() + "/" + query.value(basic_idx).toString()
+                    +"/"+query.value(transport_idx).toString()+"/"+query.value(meal_idx).toString()
+                    +"/"+query.value(house_idx).toString() + "/"+query.value(pwd_idx).toString()
+                    +"/"+query.value(department_idx).toString();
+            return employee_info;
+        }else
+            return "no";
+    }else
+        return "no";
+}
+
+QString backenddb::querywatch_SalaryRankingView(QString account)
+{
+    QSqlQuery query;
+    QString queryString = QString("select count(*) from employeeinfo where basicwage > (select basicwage "
+                                  "from employeeinfo where  NAME_OF_WORKER  = '%1') order by Basicwage DESC")
+                                    .arg(account);
+    cout << queryString;
+    if(query.exec(queryString))
+    {
+        int result_idx = query.record().indexOf("count(*)");
+        if(query.next())
+        {
+            QString result = query.value(result_idx).toString();
+            return result;
+        }else
+            return "no";
+    }else
+        return "no";
 }
 
 /*
@@ -66,20 +125,20 @@ QString backenddb::queryWatchTableDisplay(QString account,QString search)
         int name_idx = query.record().indexOf("NAME_OF_WORKER");
         int jobId_idx = query.record().indexOf("Job_ID");
         int post_idx = query.record().indexOf("post");
-        int depId_idx = query.record().indexOf("Department ID");
-        int retryTime_idx = query.record().indexOf("Entry Time");
-        int turn_idx = query.record().indexOf("Turn positive time");
+        int depId_idx = query.record().indexOf("DepartmentID");
+        int retryTime_idx = query.record().indexOf("EntryTime");
+        int turn_idx = query.record().indexOf("Turnpositivetime");
         int edu_idx = query.record().indexOf("Education");
-        int basicWage_idx = query.record().indexOf("Basic wage");
-        int Transport_idx = query.record().indexOf("Transportation subsidy");
-        int meal_idx = query.record().indexOf("Meal supplement");
-        int house_idx = query.record().indexOf("Housing subsidy");
+        int basicWage_idx = query.record().indexOf("Basicwage");
+        int Transport_idx = query.record().indexOf("Transportationsubsidy");
+        int meal_idx = query.record().indexOf("Mealsupplement");
+        int house_idx = query.record().indexOf("Housingsubsidy");
         int pwd_idx = query.record().indexOf("Password");
         int year_idx = query.record().indexOf("year");
         int month_idx = query.record().indexOf("month");
-        int five_one_idx = query.record().indexOf("Five insurance and one gold");
+        int five_one_idx = query.record().indexOf("Fiveinsuranceandonegold");
         int Tax_idx = query.record().indexOf("Tax deduction");
-        int Absence_idx = query.record().indexOf("Absence of absence");
+        int Absence_idx = query.record().indexOf("Absenceofabsence");
         int bonus_idx = query.record().indexOf("bonus");
         int salary_idx = query.record().indexOf("salary");
 
@@ -121,7 +180,7 @@ bool backenddb::queryAccountPsw(QString account,QString password)
     cout << queryString;
     if(query.exec(queryString))
     {
-        int name_idx = query.record().indexOf("NAME_OF_WORKER");
+//        int name_idx = query.record().indexOf("NAME_OF_WORKER");
         int psw_idx = query.record().indexOf("Password");
         if(query.next())
         {
@@ -184,7 +243,7 @@ bool backenddb::queryAccountPswAndPunch(QString account,QString pwdAndTime)
                 */
                 if((timeList[0].toInt()>=0) && (timeList[0].toInt()< 12))
                 {
-                    queryString = QString("insert into AttendanceInfo(Job_ID,year,month,day,Working hours) "
+                    queryString = QString("insert into AttendanceInfo(Job_ID,year,month,day,Workinghours) "
                                           "values(%1,'%2'','%3'','%4'','%5'')")
                                             .arg(jobId)
                                             .arg(current_year_month_day[0])
@@ -193,7 +252,7 @@ bool backenddb::queryAccountPswAndPunch(QString account,QString pwdAndTime)
                                             .arg(list[1]);
                 }
                 else{
-                    queryString = QString("insert into AttendanceInfo(Job_ID,year,month,day,After get off work time) "
+                    queryString = QString("insert into AttendanceInfo(Job_ID,year,month,day,Aftergetoffworktime) "
                                           "values(%1,'%2'','%3'','%4'','%5'')")
                                             .arg(jobId)
                                             .arg(current_year_month_day[0])
@@ -272,6 +331,39 @@ void backenddb::insert_putch()
                                    .arg(list[3])
                                    .arg(list[4])
                                    .arg(list[5]);
+            cout << queryString;
+            query.exec(queryString);
+
+        }
+
+    }
+}
+
+void backenddb::insert_salary()
+{
+    QFile examplefile("C:/Users/capitek/Desktop/salary.txt");
+    if (examplefile.open(QFile::ReadOnly|QFile::Text))
+    {
+        while(!examplefile.atEnd())
+        {
+            QByteArray line = examplefile.readLine();
+            cout << line;
+            QString str(line);
+            QStringList list = str.split(",");
+            QSqlQuery query;
+            QString queryString = QString("insert into Salaryinfo(`Job_ID`,`year`,`month`,"
+                                          "`Basic wage`,`Five insurance and one gold`,`Tax deduction`,"
+                                          "`Absence of absence`,`bonus`,`salary`) "
+                                   "values('%1','%2','%3','%4','%5','%6','%7','%8','%9')")
+                                   .arg(list[0].toInt())
+                                   .arg(list[1])
+                                   .arg(list[2])
+                                   .arg(list[3].toInt())
+                                   .arg(list[4].toFloat())
+                                   .arg(list[5].toFloat())
+                                   .arg(list[6].toFloat())
+                                   .arg(list[7].toFloat())
+                                   .arg(list[8].toFloat());
             cout << queryString;
             query.exec(queryString);
 

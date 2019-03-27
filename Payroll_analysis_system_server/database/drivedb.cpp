@@ -15,6 +15,6 @@ Drivedb::Drivedb()
     {
         qDebug()<<"succeed open database!";
     }
-    backdb = new backenddb();
+   // backdb = new backenddb();
 }
 
