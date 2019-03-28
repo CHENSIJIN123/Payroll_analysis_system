@@ -14,6 +14,7 @@ public:
     static QString queryWatchMultiMonthDisplay(QString account,QString search);
     static QString querywatch_SalaryRankingView(QString account);
     static QString query_employee_info(QString account);
+    static QString update_employee_info(QString info);
     void insert_test();
     void insert_putch();
     void insert_salary();

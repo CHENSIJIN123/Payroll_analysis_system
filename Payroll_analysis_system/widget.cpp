@@ -30,6 +30,7 @@ Widget::Widget(QWidget *parent) :
     connect(my_logicdeal,SIGNAL(tellTheEmployeeShowSalaryRanking(QString)),employee_display,SLOT(dealtellTheEmployeeShowSalaryRanking(QString)));
     connect(admin_display,SIGNAL(admin_change_employee_info(QString)),my_logicdeal,SLOT(dealadmin_change_employee_info(QString)));
     connect(my_logicdeal,SIGNAL(tellTheAdminEmployeeInfo(QString)),admin_display,SLOT(dealtellTheAdminEmployeeInfo(QString)));
+    connect(admin_display,SIGNAL(ModifyEmployeeInformationSubmission(QString)),my_logicdeal,SLOT(dealModifyEmployeeInformationSubmission(QString)));
 }
 
 

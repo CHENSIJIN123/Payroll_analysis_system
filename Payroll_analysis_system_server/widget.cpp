@@ -27,7 +27,6 @@ void Widget::init_tcp_socket()
                cout << "成功连接"<<endl;
                tcpsocket = tcpserver->nextPendingConnection();
                connect(tcpsocket,SIGNAL(readyRead()),this,SLOT(recvMsg()));
-
             }
            );
 }
@@ -44,7 +43,6 @@ void Widget::recvMsg(void)
 
 void Widget::sendMessage(void)
 {
-    //用于暂存我们要发送的数据
     QByteArray block;
     block = *(msg->packageMsg());
     tcpsocket->write(block);

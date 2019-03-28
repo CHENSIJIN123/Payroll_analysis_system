@@ -43,7 +43,8 @@ enum COMPETITIVE_ANALYSIS_COMMAND{
 enum MODIFY_EMPLOYEE_INFO_COMMAND{
     ADD_EMPLOYEE,  //添加员工
     DEL_EMPLOYEE,   //删除员工
-    MODIFY_EMPLOYEE   //修改员工信息
+    MODIFY_EMPLOYEE,   //修改员工信息
+    COMMIT_MODIFY_EMPLOYEE  //提交修改员工信息
 };
 
 class MyProtocol

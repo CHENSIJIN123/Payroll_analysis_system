@@ -18,6 +18,18 @@ backenddb::backenddb()
     //insert_salary();
 }
 
+
+QString backenddb::update_employee_info(QString info)
+{
+    QStringList employee_info  = info.split("/");
+    QSqlQuery query;
+    QString queryString  = QString("update");
+    if(query.exec(queryString))
+    {
+
+    }
+}
+
 QString backenddb::query_employee_info(QString account)
 {
     QSqlQuery query;

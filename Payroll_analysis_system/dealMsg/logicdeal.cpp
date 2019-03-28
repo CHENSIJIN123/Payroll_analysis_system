@@ -199,3 +199,22 @@ void LogicDeal::dealadmin_change_employee_info(QString employee_name)
 
     dealSocket::tcpsocket->write(block);
 }
+
+/*
+ * 提交给服务器 修改后得员工信息
+*/
+void LogicDeal::dealModifyEmployeeInformationSubmission(QString info)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+
+    msg->setMsgName(employee_name.toUtf8());
+    msg->setMsgOperate(MODIFY_EMPLOYEE_INFO);
+    msg->setMsgCommand(COMMIT_MODIFY_EMPLOYEE);
+    msg->setMsgContent(info);
+    msg->setMsgStatus(EMPLOYEE);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}

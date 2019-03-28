@@ -16,6 +16,7 @@ public:
     ~AdministratorDisplay();
 signals:
     void admin_change_employee_info(QString name);
+    void ModifyEmployeeInformationSubmission(QString info);
 
 private slots:
     void on_pushButton_clicked();
@@ -23,6 +24,8 @@ private slots:
     void on_pb_choose_is_change_clicked();
 
     void dealtellTheAdminEmployeeInfo(QString employee_info);
+
+    void on_pb_commit_clicked();
 
 private:
     Ui::AdministratorDisplay *ui;

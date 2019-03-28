@@ -23,6 +23,7 @@ public slots:
     void slot_watchSalaryRankingView(QString info);
     void dealadmin_change_employee_info(QString employee_name);
     void slot_change_the_employee_info(QString employee_info);
+    void dealModifyEmployeeInformationSubmission(QString info);
 
 signals:
     void tellTheWidgetIfItCanLoginSuccess(bool);

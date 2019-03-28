@@ -60,12 +60,25 @@ void dealMsg::judge_operator(MyProtocol *msg)
                     get_employee_info(msg);
                     break;
                 }
+                case COMMIT_MODIFY_EMPLOYEE:
+                {
+                    commit_modify_employee_info(msg);
+                    break;
+                }
             }
             break;
         }
         case DEPARTMENT_SALARY_COMPARE:{}
 
     }
+}
+
+/*
+ * 向数据库中进行update操作，进行员工信息表得更新
+*/
+void dealMsg::commit_modify_employee_info(MyProtocol *msg)
+{
+    QString db = db.update_employee_info(msg->getMsgContent());
 }
 
 /*

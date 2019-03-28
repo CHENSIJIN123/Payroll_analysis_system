@@ -52,3 +52,16 @@ void AdministratorDisplay::on_pb_choose_is_change_clicked()
         emit admin_change_employee_info(ui->le_choose_employee_name->text());
     }
 }
+
+/*
+ * 提交按钮按下
+*/
+void AdministratorDisplay::on_pb_commit_clicked()
+{
+    QStringList employee = ui->le_name->text() + "/" + ui->le_job_id->text()+
+    ui->le_post->text() + "/" + ui->le_entry_time->text() + "/" + ui->le_turn_time->text()+"/"+
+    ui->le_education->text() + "/"+  ui->le_basic_wage->text() + "/" + ui->le_transport->text()+"/"+
+    ui->le_meal->text() + "/"+ ui->le_house->text()+ "/"+ui->le_pwd->text()+ "/"+ui->le_department->text();
+
+    emit
+}
