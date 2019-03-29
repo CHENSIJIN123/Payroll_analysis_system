@@ -78,7 +78,9 @@ void dealMsg::judge_operator(MyProtocol *msg)
 */
 void dealMsg::commit_modify_employee_info(MyProtocol *msg)
 {
-    QString db = db.update_employee_info(msg->getMsgContent());
+    QString info = db.update_employee_info(msg->getMsgContent());
+    msg->setMsgContent(info);
+    cout << msg->getMsgContent();
 }
 
 /*

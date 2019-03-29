@@ -27,6 +27,12 @@ private slots:
 
     void on_pb_commit_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void dealtellTheAdminCommitSucceed(QString info);
+
+    void on_pb_inrease_employee_clicked();
+
 private:
     Ui::AdministratorDisplay *ui;
 };

@@ -15,6 +15,7 @@ public:
     void watch_multi_month_display(MyProtocol *msg);
     void watchSalaryRankingView(MyProtocol *msg);
     void change_the_employee_info(MyProtocol *msg);
+    void commit_modify_employee_info(MyProtocol *msg);
 
 signals:
     void returnToLoginButtonResult(QString result);
@@ -23,6 +24,7 @@ signals:
     void signal_watch_multi_month_display(QString result);
     void signal_watchSalaryRankingView(QString result);
     void signal_change_the_employee_info(QString result);
+    void signal_commit_modify_employee_info(QString result);
 };
 
 #endif // DEALMSG_H

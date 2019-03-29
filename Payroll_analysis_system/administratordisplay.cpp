@@ -1,7 +1,9 @@
 #include "administratordisplay.h"
 #include "ui_administratordisplay.h"
 #include <QMessageBox>
+#include <QDebug>
 
+#define cout qDebug()<<"["<<__FILE__<<":"<<__LINE__<<"]"
 AdministratorDisplay::AdministratorDisplay(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::AdministratorDisplay)
@@ -58,10 +60,43 @@ void AdministratorDisplay::on_pb_choose_is_change_clicked()
 */
 void AdministratorDisplay::on_pb_commit_clicked()
 {
-    QStringList employee = ui->le_name->text() + "/" + ui->le_job_id->text()+
+    QString employee = ui->le_name->text() + "/" + ui->le_job_id->text()+ "/" +
     ui->le_post->text() + "/" + ui->le_entry_time->text() + "/" + ui->le_turn_time->text()+"/"+
     ui->le_education->text() + "/"+  ui->le_basic_wage->text() + "/" + ui->le_transport->text()+"/"+
     ui->le_meal->text() + "/"+ ui->le_house->text()+ "/"+ui->le_pwd->text()+ "/"+ui->le_department->text();
+    cout << employee;
 
-    emit
+    emit ModifyEmployeeInformationSubmission(employee);
+}
+
+/*
+ * 提示是否 提交员工修改信息成功
+*/
+void AdministratorDisplay::dealtellTheAdminCommitSucceed(QString info)
+{
+    if(info == "ok")
+    {
+        QMessageBox::information(this,"修改员工信息","修改员工信息成功",QMessageBox::Ok);   //输出提示信息
+    }else{
+        QMessageBox::information(this,"修改员工信息","修改员工信息失败，请重试",QMessageBox::Ok);   //输出提示信息
+    }
+}
+
+/*
+ * 增加员工信息
+*/
+void AdministratorDisplay::on_pushButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+/*
+ * 提交 增加员工信息
+*/
+void AdministratorDisplay::on_pb_inrease_employee_clicked()
+{
+    if(ui->lb_name_2 == "" || ui->lb_job_id_2="")
+    {
+        QMessageBox::information(this,"增加员工信息","姓名与工号不能为空",QMessageBox::Ok);   //输出提示信息
+    }
 }

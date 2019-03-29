@@ -62,12 +62,23 @@ void dealMsg::judge_operator(MyProtocol *msg)
                     change_the_employee_info(msg);
                     break;
                 }
+                case COMMIT_MODIFY_EMPLOYEE:
+                {
+                    commit_modify_employee_info(msg);
+                    break;
+                }
             }
             break;
         }
         case DEPARTMENT_SALARY_COMPARE:{}
         break;
     }
+}
+
+void dealMsg::commit_modify_employee_info(MyProtocol *msg)
+{
+    cout << msg->getMsgContent();
+    emit signal_commit_modify_employee_info(msg->getMsgContent());
 }
 
 void dealMsg::change_the_employee_info(MyProtocol *msg)

@@ -78,6 +78,7 @@ public:
     QLineEdit *le_pwd;
     QPushButton *pb_commit;
     QPushButton *pb_cancel;
+    QWidget *page;
     QWidget *tb_view_salary;
     QWidget *tb_view_attendance;
     QWidget *tb_set_date_of_salary_settlement;
@@ -251,6 +252,9 @@ public:
         pb_cancel->setObjectName(QStringLiteral("pb_cancel"));
         pb_cancel->setGeometry(QRect(390, 370, 75, 23));
         stackedWidget->addWidget(pb_change_employee_info);
+        page = new QWidget();
+        page->setObjectName(QStringLiteral("page"));
+        stackedWidget->addWidget(page);
 
         gridLayout_2->addWidget(stackedWidget, 0, 0, 1, 1);
 

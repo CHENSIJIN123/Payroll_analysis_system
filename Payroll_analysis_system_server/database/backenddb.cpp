@@ -22,12 +22,35 @@ backenddb::backenddb()
 QString backenddb::update_employee_info(QString info)
 {
     QStringList employee_info  = info.split("/");
+    cout << info;
+    //赵四/4/人事/20160115/20160415/本科/4497/100/300/500/123/新业务产品部"
+    // 0  1  2   3           4      5   6    7   8   9  10    11
     QSqlQuery query;
-    QString queryString  = QString("update");
+    QString queryString  = QString("update employeeinfo set DEPARTMENTID = "
+                                   "(select DEPARTMENT_ID from departmentinfo where "
+                                   "DEPARTMENT_NAME = '%1'),JOB_ID = %2 ,"
+                                   "post='%3',entrytime ='%4',turnpositivetime = '%5',"
+                                   "education='%6',basicwage = %7,transportationsubsidy = %8,"
+                                   "mealsupplement=%9,housingsubsidy=%10,password=%11 "
+                                   "where NAME_OF_WORKER ='%12' ")
+                                    .arg(employee_info[11])
+                                    .arg(employee_info[1].toInt())
+                                    .arg(employee_info[2])
+                                    .arg(employee_info[3])
+                                    .arg(employee_info[4])
+                                    .arg(employee_info[5])
+                                    .arg(employee_info[6].toInt())
+                                    .arg(employee_info[7].toInt())
+                                    .arg(employee_info[8].toInt())
+                                    .arg(employee_info[9].toInt())
+                                    .arg(employee_info[10])
+                                    .arg(employee_info[0]);
+    cout << queryString;
     if(query.exec(queryString))
     {
-
-    }
+        return "ok";
+    }else
+        return "no";
 }
 
 QString backenddb::query_employee_info(QString account)

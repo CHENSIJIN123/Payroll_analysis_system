@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_dealMsg_t {
-    QByteArrayData data[9];
-    char stringdata[195];
+    QByteArrayData data[10];
+    char stringdata[230];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,7 +37,8 @@ QT_MOC_LITERAL(4, 42, 30), // "returnToLoginButtonResultPunch"
 QT_MOC_LITERAL(5, 73, 26), // "signal_watch_table_display"
 QT_MOC_LITERAL(6, 100, 32), // "signal_watch_multi_month_display"
 QT_MOC_LITERAL(7, 133, 29), // "signal_watchSalaryRankingView"
-QT_MOC_LITERAL(8, 163, 31) // "signal_change_the_employee_info"
+QT_MOC_LITERAL(8, 163, 31), // "signal_change_the_employee_info"
+QT_MOC_LITERAL(9, 195, 34) // "signal_commit_modify_employee..."
 
     },
     "dealMsg\0returnToLoginButtonResult\0\0"
@@ -45,7 +46,8 @@ QT_MOC_LITERAL(8, 163, 31) // "signal_change_the_employee_info"
     "signal_watch_table_display\0"
     "signal_watch_multi_month_display\0"
     "signal_watchSalaryRankingView\0"
-    "signal_change_the_employee_info"
+    "signal_change_the_employee_info\0"
+    "signal_commit_modify_employee_info"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,22 +57,24 @@ static const uint qt_meta_data_dealMsg[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       6,       // signalCount
+       7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   44,    2, 0x06 /* Public */,
-       4,    1,   47,    2, 0x06 /* Public */,
-       5,    1,   50,    2, 0x06 /* Public */,
-       6,    1,   53,    2, 0x06 /* Public */,
-       7,    1,   56,    2, 0x06 /* Public */,
-       8,    1,   59,    2, 0x06 /* Public */,
+       1,    1,   49,    2, 0x06 /* Public */,
+       4,    1,   52,    2, 0x06 /* Public */,
+       5,    1,   55,    2, 0x06 /* Public */,
+       6,    1,   58,    2, 0x06 /* Public */,
+       7,    1,   61,    2, 0x06 /* Public */,
+       8,    1,   64,    2, 0x06 /* Public */,
+       9,    1,   67,    2, 0x06 /* Public */,
 
  // signals: parameters
+    QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
@@ -92,6 +96,7 @@ void dealMsg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 3: _t->signal_watch_multi_month_display((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 4: _t->signal_watchSalaryRankingView((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 5: _t->signal_change_the_employee_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 6: _t->signal_commit_modify_employee_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -133,6 +138,12 @@ void dealMsg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
                 *result = 5;
             }
         }
+        {
+            typedef void (dealMsg::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&dealMsg::signal_commit_modify_employee_info)) {
+                *result = 6;
+            }
+        }
     }
 }
 
@@ -161,13 +172,13 @@ int dealMsg::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }
@@ -212,5 +223,12 @@ void dealMsg::signal_change_the_employee_info(QString _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void dealMsg::signal_commit_modify_employee_info(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 6, _a);
 }
 QT_END_MOC_NAMESPACE

@@ -24,6 +24,7 @@ public slots:
     void dealadmin_change_employee_info(QString employee_name);
     void slot_change_the_employee_info(QString employee_info);
     void dealModifyEmployeeInformationSubmission(QString info);
+    void slot_commit_modify_employee_info(QString info);
 
 signals:
     void tellTheWidgetIfItCanLoginSuccess(bool);
@@ -32,6 +33,7 @@ signals:
     void tellTheEmployeeShowMultiSalaryInfo(QString info);
     void tellTheEmployeeShowSalaryRanking(QString info);
     void tellTheAdminEmployeeInfo(QString info);
+    void tellTheAdminCommitSucceed(QString info);
 
 public:
     MyProtocol *msg;

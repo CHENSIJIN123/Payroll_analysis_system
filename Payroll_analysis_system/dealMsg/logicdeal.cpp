@@ -16,6 +16,12 @@ LogicDeal::LogicDeal(QWidget *parent) :
     connect(deal,SIGNAL(signal_watch_multi_month_display(QString)),this,SLOT(slot_watch_multi_month_display(QString)));
     connect(deal,SIGNAL(signal_watchSalaryRankingView(QString)),this,SLOT(slot_watchSalaryRankingView(QString)));
     connect(deal,SIGNAL(signal_change_the_employee_info(QString)),this,SLOT(slot_change_the_employee_info(QString)));
+    connect(deal,SIGNAL(signal_commit_modify_employee_info(QString)),this,SLOT(slot_commit_modify_employee_info(QString)));
+}
+
+void LogicDeal::slot_commit_modify_employee_info(QString info)
+{
+    emit tellTheAdminCommitSucceed(info);
 }
 
 void LogicDeal::slot_change_the_employee_info(QString employee_info)
@@ -208,7 +214,7 @@ void LogicDeal::dealModifyEmployeeInformationSubmission(QString info)
     QByteArray block;
     msg->clearMsgPackage();
 
-    msg->setMsgName(employee_name.toUtf8());
+    msg->setMsgName(name.toUtf8());
     msg->setMsgOperate(MODIFY_EMPLOYEE_INFO);
     msg->setMsgCommand(COMMIT_MODIFY_EMPLOYEE);
     msg->setMsgContent(info);
@@ -218,3 +224,4 @@ void LogicDeal::dealModifyEmployeeInformationSubmission(QString info)
 
     dealSocket::tcpsocket->write(block);
 }
+
