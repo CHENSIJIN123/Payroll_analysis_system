@@ -9,6 +9,7 @@ dealMsg::dealMsg()
 
 void dealMsg::judge_operator(MyProtocol *msg)
 {
+
     switch(msg->getMsgOperate())
     {
         case  LOGIN:                    //登录
@@ -23,19 +24,39 @@ void dealMsg::judge_operator(MyProtocol *msg)
         }
         case WATCH_PAYROLL:             //查看工资
         {
-            switch(msg->getMsgCommand())
+            switch(msg->getMsgStatus())
             {
-                case TABLE_DISPLAY:
+                case EMPLOYEE:
                 {
-                    watch_table_display(msg);
+                    switch(msg->getMsgCommand())
+                    {
+                        case TABLE_DISPLAY:
+                        {
+                            watch_table_display(msg);
+                            break;
+                        }
+                        case HISTOGRAM_DISPLAY:
+                        {
+                            watch_multi_display(msg);
+                            break;
+                        }
+                    }
                     break;
                 }
-                case HISTOGRAM_DISPLAY:
+                case ADMINISTRATOR:
                 {
-                    watch_multi_display(msg);
+                    switch(msg->getMsgCommand())
+                    {
+                        case TABLE_DISPLAY:
+                        {
+                            Admin_watch_table_display(msg);
+                            break;
+                        }
+                    }
                     break;
                 }
             }
+
             break;
         }
         case WATCH_ATTENDANCE_RATE:     //查看考勤率
@@ -65,12 +86,52 @@ void dealMsg::judge_operator(MyProtocol *msg)
                     commit_modify_employee_info(msg);
                     break;
                 }
+                case ADD_EMPLOYEE:
+                {
+                    add_employee_info(msg);
+                    break;
+                }
+                case DEL_EMPLOYEE:
+                {
+                    delete_employee_info(msg);
+                    break;
+                }
             }
             break;
         }
         case DEPARTMENT_SALARY_COMPARE:{}
 
     }
+}
+
+/*
+ * 管理员查看 员工薪资信息
+*/
+void dealMsg::Admin_watch_table_display(MyProtocol *msg)
+{
+    QString info = db.AdminqueryWatchTableDisplay(msg->getMsgContent());
+    msg->setMsgContent(info);
+    cout << msg->getMsgContent();
+}
+
+/*
+ * 删除员工信息，进行员工信息表的更新
+*/
+void dealMsg::delete_employee_info(MyProtocol *msg)
+{
+    QString info = db.delete_employee_infomation(msg->getMsgContent());
+    msg->setMsgContent(info);
+    cout << msg->getMsgContent();
+}
+
+/*
+ * 添加员工信息,进行员工信息表的更新
+*/
+void dealMsg::add_employee_info(MyProtocol *msg)
+{
+     QString info = db.add_employee_infomation(msg->getMsgContent());
+     msg->setMsgContent(info);
+     cout << msg->getMsgContent();
 }
 
 /*

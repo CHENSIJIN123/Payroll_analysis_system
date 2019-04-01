@@ -232,9 +232,9 @@ public:
 
         retranslateUi(EmployeeDisplay);
 
-        tabWidget->setCurrentIndex(2);
-        stackedWidget->setCurrentIndex(2);
-        show_way->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
+        show_way->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(EmployeeDisplay);

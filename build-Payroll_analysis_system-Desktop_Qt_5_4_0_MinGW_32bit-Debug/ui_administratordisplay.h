@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -21,6 +22,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -77,9 +79,70 @@ public:
     QLineEdit *le_house;
     QLineEdit *le_pwd;
     QPushButton *pb_commit;
-    QPushButton *pb_cancel;
+    QWidget *pb_increase_employee_info;
+    QGridLayout *gridLayout_4;
+    QWidget *widget;
+    QLineEdit *le_job_id_2;
+    QLabel *lb_house_2;
+    QLabel *lb_basic_wage_2;
+    QLineEdit *le_pwd_2;
+    QLabel *lb_education_2;
+    QLabel *lb_food_2;
+    QLabel *lb_department_2;
+    QLabel *lb_trasport_2;
+    QLineEdit *le_transport_2;
+    QLineEdit *le_basic_wage_2;
+    QLineEdit *le_name_2;
+    QLineEdit *le_education_2;
+    QLabel *lb_turn_time_2;
+    QLineEdit *le_department_2;
+    QLabel *lb_pwd_2;
+    QLineEdit *le_meal_2;
+    QLineEdit *le_entry_time_2;
+    QLabel *lb_entry_time_2;
+    QLineEdit *le_post_2;
+    QLabel *lb_name_2;
+    QLabel *lb_job_id_2;
+    QLineEdit *le_turn_time_2;
+    QLineEdit *le_house_2;
+    QLabel *lb_post_2;
+    QPushButton *pb_inrease_employee;
     QWidget *page;
+    QLineEdit *le_delete_name;
+    QPushButton *pb_delete;
     QWidget *tb_view_salary;
+    QGridLayout *gridLayout_5;
+    QStackedWidget *stackedWidget_2;
+    QWidget *page_2;
+    QGridLayout *gridLayout_6;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *horizontalSpacer_7;
+    QPushButton *pb_view_person;
+    QSpacerItem *horizontalSpacer_8;
+    QSpacerItem *verticalSpacer_6;
+    QSpacerItem *horizontalSpacer_10;
+    QPushButton *pb_view_department;
+    QSpacerItem *horizontalSpacer_9;
+    QSpacerItem *verticalSpacer_7;
+    QWidget *page_3;
+    QGridLayout *gridLayout_7;
+    QWidget *widget_2;
+    QGridLayout *gridLayout_8;
+    QLabel *label;
+    QLineEdit *le_search_name;
+    QSpacerItem *horizontalSpacer_13;
+    QComboBox *cb_choose_year;
+    QSpacerItem *horizontalSpacer_12;
+    QComboBox *cb_choose_month;
+    QSpacerItem *horizontalSpacer_14;
+    QComboBox *cb_choose_view_way;
+    QSpacerItem *horizontalSpacer_11;
+    QPushButton *pb_watch;
+    QStackedWidget *stackedWidget_3;
+    QWidget *page_4;
+    QGridLayout *gridLayout_9;
+    QTextEdit *te_salary_info;
+    QWidget *page_5;
     QWidget *tb_view_attendance;
     QWidget *tb_set_date_of_salary_settlement;
     QWidget *tb_department_salary_compare;
@@ -247,13 +310,101 @@ public:
         le_pwd->setGeometry(QRect(470, 320, 151, 20));
         pb_commit = new QPushButton(pb_change_employee_info);
         pb_commit->setObjectName(QStringLiteral("pb_commit"));
-        pb_commit->setGeometry(QRect(180, 370, 75, 23));
-        pb_cancel = new QPushButton(pb_change_employee_info);
-        pb_cancel->setObjectName(QStringLiteral("pb_cancel"));
-        pb_cancel->setGeometry(QRect(390, 370, 75, 23));
+        pb_commit->setGeometry(QRect(280, 370, 75, 23));
         stackedWidget->addWidget(pb_change_employee_info);
+        pb_increase_employee_info = new QWidget();
+        pb_increase_employee_info->setObjectName(QStringLiteral("pb_increase_employee_info"));
+        gridLayout_4 = new QGridLayout(pb_increase_employee_info);
+        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        widget = new QWidget(pb_increase_employee_info);
+        widget->setObjectName(QStringLiteral("widget"));
+        le_job_id_2 = new QLineEdit(widget);
+        le_job_id_2->setObjectName(QStringLiteral("le_job_id_2"));
+        le_job_id_2->setGeometry(QRect(140, 100, 151, 20));
+        lb_house_2 = new QLabel(widget);
+        lb_house_2->setObjectName(QStringLiteral("lb_house_2"));
+        lb_house_2->setGeometry(QRect(410, 250, 61, 21));
+        lb_basic_wage_2 = new QLabel(widget);
+        lb_basic_wage_2->setObjectName(QStringLiteral("lb_basic_wage_2"));
+        lb_basic_wage_2->setGeometry(QRect(410, 100, 54, 20));
+        le_pwd_2 = new QLineEdit(widget);
+        le_pwd_2->setObjectName(QStringLiteral("le_pwd_2"));
+        le_pwd_2->setGeometry(QRect(500, 300, 151, 20));
+        lb_education_2 = new QLabel(widget);
+        lb_education_2->setObjectName(QStringLiteral("lb_education_2"));
+        lb_education_2->setGeometry(QRect(410, 52, 54, 20));
+        lb_food_2 = new QLabel(widget);
+        lb_food_2->setObjectName(QStringLiteral("lb_food_2"));
+        lb_food_2->setGeometry(QRect(410, 200, 61, 21));
+        lb_department_2 = new QLabel(widget);
+        lb_department_2->setObjectName(QStringLiteral("lb_department_2"));
+        lb_department_2->setGeometry(QRect(70, 200, 61, 21));
+        lb_trasport_2 = new QLabel(widget);
+        lb_trasport_2->setObjectName(QStringLiteral("lb_trasport_2"));
+        lb_trasport_2->setGeometry(QRect(410, 150, 61, 21));
+        le_transport_2 = new QLineEdit(widget);
+        le_transport_2->setObjectName(QStringLiteral("le_transport_2"));
+        le_transport_2->setGeometry(QRect(500, 150, 151, 20));
+        le_basic_wage_2 = new QLineEdit(widget);
+        le_basic_wage_2->setObjectName(QStringLiteral("le_basic_wage_2"));
+        le_basic_wage_2->setGeometry(QRect(500, 100, 151, 20));
+        le_name_2 = new QLineEdit(widget);
+        le_name_2->setObjectName(QStringLiteral("le_name_2"));
+        le_name_2->setGeometry(QRect(140, 50, 151, 20));
+        le_education_2 = new QLineEdit(widget);
+        le_education_2->setObjectName(QStringLiteral("le_education_2"));
+        le_education_2->setGeometry(QRect(500, 50, 151, 20));
+        lb_turn_time_2 = new QLabel(widget);
+        lb_turn_time_2->setObjectName(QStringLiteral("lb_turn_time_2"));
+        lb_turn_time_2->setGeometry(QRect(70, 300, 54, 21));
+        le_department_2 = new QLineEdit(widget);
+        le_department_2->setObjectName(QStringLiteral("le_department_2"));
+        le_department_2->setGeometry(QRect(140, 200, 151, 20));
+        lb_pwd_2 = new QLabel(widget);
+        lb_pwd_2->setObjectName(QStringLiteral("lb_pwd_2"));
+        lb_pwd_2->setGeometry(QRect(410, 300, 61, 21));
+        le_meal_2 = new QLineEdit(widget);
+        le_meal_2->setObjectName(QStringLiteral("le_meal_2"));
+        le_meal_2->setGeometry(QRect(500, 200, 151, 20));
+        le_entry_time_2 = new QLineEdit(widget);
+        le_entry_time_2->setObjectName(QStringLiteral("le_entry_time_2"));
+        le_entry_time_2->setGeometry(QRect(140, 250, 151, 20));
+        lb_entry_time_2 = new QLabel(widget);
+        lb_entry_time_2->setObjectName(QStringLiteral("lb_entry_time_2"));
+        lb_entry_time_2->setGeometry(QRect(70, 250, 61, 21));
+        le_post_2 = new QLineEdit(widget);
+        le_post_2->setObjectName(QStringLiteral("le_post_2"));
+        le_post_2->setGeometry(QRect(140, 150, 151, 20));
+        lb_name_2 = new QLabel(widget);
+        lb_name_2->setObjectName(QStringLiteral("lb_name_2"));
+        lb_name_2->setGeometry(QRect(70, 50, 61, 21));
+        lb_job_id_2 = new QLabel(widget);
+        lb_job_id_2->setObjectName(QStringLiteral("lb_job_id_2"));
+        lb_job_id_2->setGeometry(QRect(70, 100, 54, 21));
+        le_turn_time_2 = new QLineEdit(widget);
+        le_turn_time_2->setObjectName(QStringLiteral("le_turn_time_2"));
+        le_turn_time_2->setGeometry(QRect(140, 300, 151, 20));
+        le_house_2 = new QLineEdit(widget);
+        le_house_2->setObjectName(QStringLiteral("le_house_2"));
+        le_house_2->setGeometry(QRect(500, 250, 151, 20));
+        lb_post_2 = new QLabel(widget);
+        lb_post_2->setObjectName(QStringLiteral("lb_post_2"));
+        lb_post_2->setGeometry(QRect(70, 150, 54, 21));
+        pb_inrease_employee = new QPushButton(widget);
+        pb_inrease_employee->setObjectName(QStringLiteral("pb_inrease_employee"));
+        pb_inrease_employee->setGeometry(QRect(300, 350, 121, 23));
+
+        gridLayout_4->addWidget(widget, 0, 0, 1, 1);
+
+        stackedWidget->addWidget(pb_increase_employee_info);
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
+        le_delete_name = new QLineEdit(page);
+        le_delete_name->setObjectName(QStringLiteral("le_delete_name"));
+        le_delete_name->setGeometry(QRect(180, 160, 191, 31));
+        pb_delete = new QPushButton(page);
+        pb_delete->setObjectName(QStringLiteral("pb_delete"));
+        pb_delete->setGeometry(QRect(400, 160, 75, 31));
         stackedWidget->addWidget(page);
 
         gridLayout_2->addWidget(stackedWidget, 0, 0, 1, 1);
@@ -261,6 +412,132 @@ public:
         tabWidget->addTab(tb_change_employee_info, QString());
         tb_view_salary = new QWidget();
         tb_view_salary->setObjectName(QStringLiteral("tb_view_salary"));
+        gridLayout_5 = new QGridLayout(tb_view_salary);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        stackedWidget_2 = new QStackedWidget(tb_view_salary);
+        stackedWidget_2->setObjectName(QStringLiteral("stackedWidget_2"));
+        page_2 = new QWidget();
+        page_2->setObjectName(QStringLiteral("page_2"));
+        gridLayout_6 = new QGridLayout(page_2);
+        gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
+        verticalSpacer = new QSpacerItem(20, 98, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_6->addItem(verticalSpacer, 0, 1, 1, 1);
+
+        horizontalSpacer_7 = new QSpacerItem(301, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_7, 1, 0, 1, 1);
+
+        pb_view_person = new QPushButton(page_2);
+        pb_view_person->setObjectName(QStringLiteral("pb_view_person"));
+
+        gridLayout_6->addWidget(pb_view_person, 1, 1, 1, 1);
+
+        horizontalSpacer_8 = new QSpacerItem(301, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_8, 1, 2, 1, 1);
+
+        verticalSpacer_6 = new QSpacerItem(20, 83, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_6->addItem(verticalSpacer_6, 2, 1, 1, 1);
+
+        horizontalSpacer_10 = new QSpacerItem(301, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_10, 3, 0, 1, 1);
+
+        pb_view_department = new QPushButton(page_2);
+        pb_view_department->setObjectName(QStringLiteral("pb_view_department"));
+
+        gridLayout_6->addWidget(pb_view_department, 3, 1, 1, 1);
+
+        horizontalSpacer_9 = new QSpacerItem(301, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_9, 3, 2, 1, 1);
+
+        verticalSpacer_7 = new QSpacerItem(20, 138, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_6->addItem(verticalSpacer_7, 4, 1, 1, 1);
+
+        stackedWidget_2->addWidget(page_2);
+        page_3 = new QWidget();
+        page_3->setObjectName(QStringLiteral("page_3"));
+        gridLayout_7 = new QGridLayout(page_3);
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        widget_2 = new QWidget(page_3);
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+        gridLayout_8 = new QGridLayout(widget_2);
+        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        label = new QLabel(widget_2);
+        label->setObjectName(QStringLiteral("label"));
+
+        gridLayout_8->addWidget(label, 0, 0, 1, 1);
+
+        le_search_name = new QLineEdit(widget_2);
+        le_search_name->setObjectName(QStringLiteral("le_search_name"));
+
+        gridLayout_8->addWidget(le_search_name, 0, 1, 1, 1);
+
+        horizontalSpacer_13 = new QSpacerItem(38, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_8->addItem(horizontalSpacer_13, 0, 2, 1, 1);
+
+        cb_choose_year = new QComboBox(widget_2);
+        cb_choose_year->setObjectName(QStringLiteral("cb_choose_year"));
+
+        gridLayout_8->addWidget(cb_choose_year, 0, 3, 1, 1);
+
+        horizontalSpacer_12 = new QSpacerItem(57, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_8->addItem(horizontalSpacer_12, 0, 4, 1, 1);
+
+        cb_choose_month = new QComboBox(widget_2);
+        cb_choose_month->setObjectName(QStringLiteral("cb_choose_month"));
+
+        gridLayout_8->addWidget(cb_choose_month, 0, 5, 1, 1);
+
+        horizontalSpacer_14 = new QSpacerItem(48, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_8->addItem(horizontalSpacer_14, 0, 6, 1, 1);
+
+        cb_choose_view_way = new QComboBox(widget_2);
+        cb_choose_view_way->setObjectName(QStringLiteral("cb_choose_view_way"));
+
+        gridLayout_8->addWidget(cb_choose_view_way, 0, 7, 1, 1);
+
+        horizontalSpacer_11 = new QSpacerItem(57, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_8->addItem(horizontalSpacer_11, 0, 8, 1, 1);
+
+        pb_watch = new QPushButton(widget_2);
+        pb_watch->setObjectName(QStringLiteral("pb_watch"));
+
+        gridLayout_8->addWidget(pb_watch, 0, 9, 1, 1);
+
+        stackedWidget_3 = new QStackedWidget(widget_2);
+        stackedWidget_3->setObjectName(QStringLiteral("stackedWidget_3"));
+        page_4 = new QWidget();
+        page_4->setObjectName(QStringLiteral("page_4"));
+        gridLayout_9 = new QGridLayout(page_4);
+        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
+        te_salary_info = new QTextEdit(page_4);
+        te_salary_info->setObjectName(QStringLiteral("te_salary_info"));
+
+        gridLayout_9->addWidget(te_salary_info, 0, 0, 1, 1);
+
+        stackedWidget_3->addWidget(page_4);
+        page_5 = new QWidget();
+        page_5->setObjectName(QStringLiteral("page_5"));
+        stackedWidget_3->addWidget(page_5);
+
+        gridLayout_8->addWidget(stackedWidget_3, 1, 0, 1, 10);
+
+
+        gridLayout_7->addWidget(widget_2, 0, 0, 1, 1);
+
+        stackedWidget_2->addWidget(page_3);
+
+        gridLayout_5->addWidget(stackedWidget_2, 0, 0, 1, 1);
+
         tabWidget->addTab(tb_view_salary, QString());
         tb_view_attendance = new QWidget();
         tb_view_attendance->setObjectName(QStringLiteral("tb_view_attendance"));
@@ -277,8 +554,10 @@ public:
 
         retranslateUi(AdministratorDisplay);
 
-        tabWidget->setCurrentIndex(0);
-        stackedWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(3);
+        stackedWidget_2->setCurrentIndex(1);
+        stackedWidget_3->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(AdministratorDisplay);
@@ -305,8 +584,52 @@ public:
         lb_house->setText(QApplication::translate("AdministratorDisplay", "\344\275\217\346\210\277\350\241\245\350\264\264\357\274\232", 0));
         lb_pwd->setText(QApplication::translate("AdministratorDisplay", "\345\257\206\347\240\201\357\274\232", 0));
         pb_commit->setText(QApplication::translate("AdministratorDisplay", "\346\217\220\344\272\244", 0));
-        pb_cancel->setText(QApplication::translate("AdministratorDisplay", "\345\217\226\346\266\210", 0));
+        lb_house_2->setText(QApplication::translate("AdministratorDisplay", "\344\275\217\346\210\277\350\241\245\350\264\264\357\274\232", 0));
+        lb_basic_wage_2->setText(QApplication::translate("AdministratorDisplay", "\345\237\272\346\234\254\345\267\245\350\265\204\357\274\232", 0));
+        lb_education_2->setText(QApplication::translate("AdministratorDisplay", "\346\225\231\350\202\262\347\273\217\345\216\206\357\274\232", 0));
+        lb_food_2->setText(QApplication::translate("AdministratorDisplay", "\351\244\220\350\241\245\357\274\232", 0));
+        lb_department_2->setText(QApplication::translate("AdministratorDisplay", "\346\211\200\345\261\236\351\203\250\351\227\250\357\274\232", 0));
+        lb_trasport_2->setText(QApplication::translate("AdministratorDisplay", "\344\272\244\351\200\232\350\241\245\350\264\264\357\274\232", 0));
+        lb_turn_time_2->setText(QApplication::translate("AdministratorDisplay", "\350\275\254\346\255\243\346\227\266\351\227\264\357\274\232", 0));
+        lb_pwd_2->setText(QApplication::translate("AdministratorDisplay", "\345\257\206\347\240\201\357\274\232", 0));
+        lb_entry_time_2->setText(QApplication::translate("AdministratorDisplay", "\345\205\245\350\201\214\346\227\266\351\227\264\357\274\232", 0));
+        lb_name_2->setText(QApplication::translate("AdministratorDisplay", "\345\247\223\345\220\215\357\274\232", 0));
+        lb_job_id_2->setText(QApplication::translate("AdministratorDisplay", "\345\267\245\345\217\267\357\274\232", 0));
+        lb_post_2->setText(QApplication::translate("AdministratorDisplay", "\345\262\227\344\275\215\357\274\232", 0));
+        pb_inrease_employee->setText(QApplication::translate("AdministratorDisplay", "\346\267\273\345\212\240\350\257\245\345\221\230\345\267\245", 0));
+        pb_delete->setText(QApplication::translate("AdministratorDisplay", "\345\210\240\351\231\244", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_change_employee_info), QApplication::translate("AdministratorDisplay", "\344\277\256\346\224\271\345\221\230\345\267\245\344\277\241\346\201\257", 0));
+        pb_view_person->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213\344\270\252\344\272\272\350\226\252\350\265\204\344\277\241\346\201\257", 0));
+        pb_view_department->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213\351\203\250\351\227\250\350\226\252\350\265\204\344\277\241\346\201\257", 0));
+        label->setText(QApplication::translate("AdministratorDisplay", "\345\247\223\345\220\215\357\274\232", 0));
+        cb_choose_year->clear();
+        cb_choose_year->insertItems(0, QStringList()
+         << QApplication::translate("AdministratorDisplay", "2016\345\271\264", 0)
+         << QApplication::translate("AdministratorDisplay", "2017\345\271\264", 0)
+         << QApplication::translate("AdministratorDisplay", "2018\345\271\264", 0)
+         << QApplication::translate("AdministratorDisplay", "2019\345\271\264", 0)
+        );
+        cb_choose_month->clear();
+        cb_choose_month->insertItems(0, QStringList()
+         << QApplication::translate("AdministratorDisplay", "1\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "2\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "3\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "4\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "5\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "6\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "7\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "8\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "9\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "10\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "11\346\234\210", 0)
+         << QApplication::translate("AdministratorDisplay", "12\346\234\210", 0)
+        );
+        cb_choose_view_way->clear();
+        cb_choose_view_way->insertItems(0, QStringList()
+         << QApplication::translate("AdministratorDisplay", "\350\241\250\346\240\274\346\230\276\347\244\272", 0)
+         << QApplication::translate("AdministratorDisplay", "\351\245\274\347\212\266\345\233\276\346\230\276\347\244\272", 0)
+        );
+        pb_watch->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_view_salary), QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213\345\267\245\350\265\204", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_view_attendance), QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213\350\200\203\345\213\244", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_set_date_of_salary_settlement), QApplication::translate("AdministratorDisplay", "\350\256\276\345\256\232\345\267\245\350\265\204\347\273\223\347\256\227\347\232\204\346\227\245\346\234\237", 0));

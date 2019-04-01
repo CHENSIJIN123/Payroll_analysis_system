@@ -9,6 +9,7 @@ AdministratorDisplay::AdministratorDisplay(QWidget *parent) :
     ui(new Ui::AdministratorDisplay)
 {
     ui->setupUi(this);
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 AdministratorDisplay::~AdministratorDisplay()
@@ -95,8 +96,94 @@ void AdministratorDisplay::on_pushButton_2_clicked()
 */
 void AdministratorDisplay::on_pb_inrease_employee_clicked()
 {
-    if(ui->lb_name_2 == "" || ui->lb_job_id_2="")
+    if(ui->lb_name_2->text() == "" || ui->lb_job_id_2->text() == "")
     {
         QMessageBox::information(this,"增加员工信息","姓名与工号不能为空",QMessageBox::Ok);   //输出提示信息
     }
+    QString employee = ui->le_name_2->text() + "/" + ui->le_job_id_2->text()+ "/" +
+    ui->le_post_2->text() + "/" + ui->le_entry_time_2->text() + "/" + ui->le_turn_time_2->text()+"/"+
+    ui->le_education_2->text() + "/"+  ui->le_basic_wage_2->text() + "/" + ui->le_transport_2->text()+"/"+
+    ui->le_meal_2->text() + "/"+ ui->le_house_2->text()+ "/"+ui->le_pwd_2->text()+ "/"+ui->le_department_2->text();
+    cout << employee;
+
+    emit AddEmployeeInformation(employee);
+}
+
+/*
+ * 收到服务器的插入成功信息
+*/
+void AdministratorDisplay::dealtellTheAdminInsertSucceed(QString info)
+{
+    cout << info;
+    if(info == "ok")
+        QMessageBox::information(this,"增加员工信息","添加员工信息成功",QMessageBox::Ok);   //输出提示信息
+    else
+        QMessageBox::information(this,"增加员工信息","添加员工信息失败，请重新录入信息",QMessageBox::Ok);   //输出提示信息
+
+    ui->le_name_2->clear();
+    ui->le_job_id_2->clear();
+    ui->le_post_2->clear();
+    ui->le_entry_time_2->clear();
+    ui->le_turn_time_2->clear();
+    ui->le_education_2->clear();
+    ui->le_basic_wage_2->clear();
+    ui->le_transport_2->clear();
+    ui->le_meal_2->clear();
+    ui->le_house_2->clear();
+    ui->le_pwd_2->clear();
+    ui->le_department_2->clear();
+}
+
+void AdministratorDisplay::on_pushButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void AdministratorDisplay::on_pb_delete_clicked()
+{
+    if(ui->le_delete_name->text()=="")
+        QMessageBox::information(this,"删除员工信息","请输入删除的员工名字",QMessageBox::Ok);   //输出提示信息
+    else
+        emit DeleteEmployeeInfomation(ui->le_delete_name->text());
+}
+
+void AdministratorDisplay::dealtellTheAdminDeleteSucceed(QString info)
+{
+    if(info == "ok")
+        QMessageBox::information(this,"删除员工信息","删除员工信息成功",QMessageBox::Ok);   //输出提示信息
+    else
+        QMessageBox::information(this,"删除员工信息","删除员工信息失败，请重新输入员工名字",QMessageBox::Ok);   //输出提示信息
+    ui->le_delete_name->clear();
+}
+
+/*
+ * 员工薪资查看按钮按下 处理事件
+*/
+void AdministratorDisplay::on_pb_watch_clicked()
+{
+    if(ui->le_search_name->text()== "")
+    {
+        QMessageBox::information(this,"查看员工薪资","员工名字不能为空",QMessageBox::Ok);   //输出提示信息
+    }else{
+
+        QString name = ui->le_search_name->text();
+        QString choose_way = ui->cb_choose_view_way->currentText();
+        QStringList tmp_year = ui->cb_choose_year->currentText().split("年");
+        QStringList tmp_month = ui->cb_choose_month->currentText().split("月");
+        QString search_info = tmp_year[0]+"/"+tmp_month[0] + "/" + name;
+
+        if(choose_way == "表格显示")
+        {
+            ui->stackedWidget_3->setCurrentIndex(0);
+            cout << search_info;
+        }else{
+            ui->stackedWidget_3->setCurrentIndex(1);
+        }
+        emit admin_table_show_salary_info(search_info);
+    }
+}
+
+void AdministratorDisplay::dealtellTheEmployeeShowSalaryInfo(QString info)
+{
+    ui->te_salary_info->setText(info);
 }

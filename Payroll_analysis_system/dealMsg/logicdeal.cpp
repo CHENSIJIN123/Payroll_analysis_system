@@ -17,6 +17,18 @@ LogicDeal::LogicDeal(QWidget *parent) :
     connect(deal,SIGNAL(signal_watchSalaryRankingView(QString)),this,SLOT(slot_watchSalaryRankingView(QString)));
     connect(deal,SIGNAL(signal_change_the_employee_info(QString)),this,SLOT(slot_change_the_employee_info(QString)));
     connect(deal,SIGNAL(signal_commit_modify_employee_info(QString)),this,SLOT(slot_commit_modify_employee_info(QString)));
+    connect(deal,SIGNAL(signal_add_employee_information(QString)),this,SLOT(slot_add_employee_information(QString)));
+    connect(deal,SIGNAL(signal_delete_employee_information(QString)),this,SLOT(slot_delete_employee_information(QString)));
+}
+
+void LogicDeal::slot_delete_employee_information(QString info)
+{
+    emit tellTheAdminDeleteSucceed(info);
+}
+
+void LogicDeal::slot_add_employee_information(QString info)
+{
+    emit tellTheAdminInsertSucceed(info);
 }
 
 void LogicDeal::slot_commit_modify_employee_info(QString info)
@@ -171,6 +183,24 @@ void LogicDeal::dealtable_show_salary_info(QString info)
 }
 
 /*
+ * 管理员查看员工薪资信息
+*/
+void LogicDeal::deal_Admin_table_show_salary_info(QString info)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+    cout << info;
+    msg->setMsgOperate(WATCH_PAYROLL);
+    msg->setMsgCommand(TABLE_DISPLAY);
+    msg->setMsgContent(info);
+    msg->setMsgStatus(ADMINISTRATOR);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}
+
+/*
  * 薪资排名查看
 */
 void LogicDeal::dealSalaryRankingView(void)
@@ -225,3 +255,37 @@ void LogicDeal::dealModifyEmployeeInformationSubmission(QString info)
     dealSocket::tcpsocket->write(block);
 }
 
+/*
+ * 提交服务器，添加员工信息
+*/
+void LogicDeal::dealAddEmployeeInformation(QString info)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+
+    msg->setMsgName(name.toUtf8());
+    msg->setMsgOperate(MODIFY_EMPLOYEE_INFO);
+    msg->setMsgCommand(ADD_EMPLOYEE);
+    msg->setMsgContent(info);
+    msg->setMsgStatus(EMPLOYEE);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}
+
+void LogicDeal::dealDeleteEmployeeInfomation(QString info)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+
+    msg->setMsgName(name.toUtf8());
+    msg->setMsgOperate(MODIFY_EMPLOYEE_INFO);
+    msg->setMsgCommand(DEL_EMPLOYEE);
+    msg->setMsgContent(info);
+    msg->setMsgStatus(EMPLOYEE);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}

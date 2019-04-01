@@ -24,18 +24,39 @@ void dealMsg::judge_operator(MyProtocol *msg)
         }
         case WATCH_PAYROLL:             //查看工资
         {
-            switch(msg->getMsgCommand())
+            switch(msg->getMsgStatus())
             {
-                case TABLE_DISPLAY:
+                case EMPLOYEE:
                 {
-                    watch_table_display(msg);
+                    switch(msg->getMsgCommand())
+                    {
+                        case TABLE_DISPLAY:
+                        {
+                            watch_table_display(msg);
+                            break;
+                        }
+                        case HISTOGRAM_DISPLAY:
+                        {
+                            watch_multi_month_display(msg);
+                        }
+                    }
                     break;
                 }
-                case HISTOGRAM_DISPLAY:
+                case ADMINISTRATOR:
                 {
-                    watch_multi_month_display(msg);
+                    switch(msg->getMsgCommand())
+                    {
+                        case TABLE_DISPLAY:
+                        {
+                            admin_watch_table_display(msg);
+                            break;
+                        }
+                    }
+                    break;
                 }
             }
+
+
             break;
         }
         case WATCH_ATTENDANCE_RATE:     //查看考勤率
@@ -67,12 +88,40 @@ void dealMsg::judge_operator(MyProtocol *msg)
                     commit_modify_employee_info(msg);
                     break;
                 }
+                case ADD_EMPLOYEE:
+                {
+                    add_employee_information(msg);
+                    break;
+                }
+                case DEL_EMPLOYEE:
+                {
+                    delete_employee_information(msg);
+                    break;
+                }
             }
             break;
         }
         case DEPARTMENT_SALARY_COMPARE:{}
         break;
     }
+}
+
+void dealMsg::admin_watch_table_display(MyProtocol *msg)
+{
+    cout << msg->getMsgContent();
+    signal_watch_table_display(msg->getMsgContent());
+}
+
+void dealMsg::delete_employee_information(MyProtocol *msg)
+{
+    cout << msg->getMsgContent();
+    emit signal_delete_employee_information(msg->getMsgContent());
+}
+
+void dealMsg::add_employee_information(MyProtocol *msg)
+{
+    cout << msg->getMsgContent();
+    emit signal_add_employee_information(msg->getMsgContent());
 }
 
 void dealMsg::commit_modify_employee_info(MyProtocol *msg)

@@ -27,7 +27,7 @@
        <item row="0" column="0">
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="pb_choose">
           <layout class="QGridLayout" name="gridLayout">
@@ -826,6 +826,31 @@
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="page">
+          <widget class="QLineEdit" name="le_delete_name">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>160</y>
+             <width>191</width>
+             <height>31</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pb_delete">
+           <property name="geometry">
+            <rect>
+             <x>400</x>
+             <y>160</y>
+             <width>75</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>删除</string>
+           </property>
+          </widget>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -834,6 +859,320 @@
       <attribute name="title">
        <string>查看工资</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QStackedWidget" name="stackedWidget_2">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="page_2">
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="0" column="1">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>98</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="0">
+            <spacer name="horizontalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>301</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="pb_view_person">
+             <property name="text">
+              <string>查看个人薪资信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <spacer name="horizontalSpacer_8">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>301</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="1">
+            <spacer name="verticalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>83</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="3" column="0">
+            <spacer name="horizontalSpacer_10">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>301</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="3" column="1">
+            <widget class="QPushButton" name="pb_view_department">
+             <property name="text">
+              <string>查看部门薪资信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <spacer name="horizontalSpacer_9">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>301</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="4" column="1">
+            <spacer name="verticalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>138</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="page_3">
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="0">
+            <widget class="QWidget" name="widget_2" native="true">
+             <layout class="QGridLayout" name="gridLayout_8">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>姓名：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="le_search_name"/>
+              </item>
+              <item row="0" column="2">
+               <spacer name="horizontalSpacer_13">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>38</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="3">
+               <widget class="QComboBox" name="cb_choose_year">
+                <item>
+                 <property name="text">
+                  <string>2016年</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>2017年</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>2018年</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>2019年</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <spacer name="horizontalSpacer_12">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>57</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="5">
+               <widget class="QComboBox" name="cb_choose_month">
+                <item>
+                 <property name="text">
+                  <string>1月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>2月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>3月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>4月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>5月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>6月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>7月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>8月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>9月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>10月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>11月</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>12月</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="0" column="6">
+               <spacer name="horizontalSpacer_14">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>48</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="7">
+               <widget class="QComboBox" name="cb_choose_view_way">
+                <item>
+                 <property name="text">
+                  <string>表格显示</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>饼状图显示</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="0" column="8">
+               <spacer name="horizontalSpacer_11">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>57</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="9">
+               <widget class="QPushButton" name="pb_watch">
+                <property name="text">
+                 <string>查看</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" colspan="10">
+               <widget class="QStackedWidget" name="stackedWidget_3">
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <widget class="QWidget" name="page_4">
+                 <layout class="QGridLayout" name="gridLayout_9">
+                  <item row="0" column="0">
+                   <widget class="QTextEdit" name="te_salary_info"/>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="page_5"/>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tb_view_attendance">
       <attribute name="title">

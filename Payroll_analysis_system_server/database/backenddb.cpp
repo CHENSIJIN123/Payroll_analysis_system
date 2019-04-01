@@ -18,6 +18,122 @@ backenddb::backenddb()
     //insert_salary();
 }
 
+QString backenddb::AdminqueryWatchTableDisplay(QString info)
+{
+    QStringList yearAndMonth = info.split("/");
+    QSqlQuery query;
+    QString queryString = QString("select * from EmployeeInfo,Salaryinfo where Salaryinfo.Job_ID = EmployeeInfo.Job_ID and"
+                                  " Salaryinfo.year ='%1' and Salaryinfo.month ='%2' and EmployeeInfo.NAME_OF_WORKER = '%3'")
+                                  .arg(yearAndMonth[0])
+                                  .arg(yearAndMonth[1])
+                                  .arg(yearAndMonth[2]);
+    cout << queryString;
+
+    if(query.exec(queryString))
+    {
+        cout << 1;
+        int name_idx = query.record().indexOf("NAME_OF_WORKER");
+        int jobId_idx = query.record().indexOf("Job_ID");
+        int post_idx = query.record().indexOf("post");
+        int depId_idx = query.record().indexOf("DepartmentID");
+        int retryTime_idx = query.record().indexOf("EntryTime");
+        int turn_idx = query.record().indexOf("Turnpositivetime");
+        int edu_idx = query.record().indexOf("Education");
+        int basicWage_idx = query.record().indexOf("Basicwage");
+        int Transport_idx = query.record().indexOf("Transportationsubsidy");
+        int meal_idx = query.record().indexOf("Mealsupplement");
+        int house_idx = query.record().indexOf("Housingsubsidy");
+        int pwd_idx = query.record().indexOf("Password");
+        int year_idx = query.record().indexOf("year");
+        int month_idx = query.record().indexOf("month");
+        int five_one_idx = query.record().indexOf("Fiveinsuranceandonegold");
+        int Tax_idx = query.record().indexOf("Tax deduction");
+        int Absence_idx = query.record().indexOf("Absenceofabsence");
+        int bonus_idx = query.record().indexOf("bonus");
+        int salary_idx = query.record().indexOf("salary");
+
+        if(query.next())
+        {
+            QString search_result = query.value(name_idx).toString()+ "/" +query.value(jobId_idx).toString()
+                    +"/" + query.value(post_idx).toString()+"/"+query.value(depId_idx).toString()
+                    +"/" + query.value(retryTime_idx).toString() + "/"+query.value(turn_idx).toString()
+                    +"/" + query.value(edu_idx).toString() + "/" + query.value(basicWage_idx).toString()
+                    +"/" + query.value(Transport_idx).toString() + "/"+query.value(meal_idx).toString()
+                    +"/" + query.value(house_idx).toString() + "/" + query.value(pwd_idx).toString()
+                    +"/" + query.value(year_idx).toString() + "/" + query.value(month_idx).toString()
+                    +"/" + query.value(five_one_idx).toString() + "/" + query.value(Tax_idx).toString()
+                    +"/" + query.value(Absence_idx).toString() + "/" + query.value(bonus_idx).toString()
+                    +"/" + query.value(salary_idx).toString();
+            return search_result;
+        }else
+        {
+            return "no";
+        }
+    }else
+    {
+        cout << 2;
+        return "no";
+    }
+}
+
+QString backenddb::delete_employee_infomation(QString info)
+{
+    QSqlQuery query;
+    QString queryString = QString("DELETE FROM employeeinfo WHERE NAME_OF_WORKER = '%1'")
+                                    .arg(info);
+    if(query.exec(queryString))
+    {
+        return "ok";
+    }else
+        return "no";
+}
+
+QString backenddb::add_employee_infomation(QString info)
+{
+    QStringList employee_info  = info.split("/");
+    cout << info;
+    QSqlQuery query;
+    QString queryString;
+    if(employee_info[11] == "")
+    {
+        queryString = QString("insert into employeeinfo values ('%0',%1,'%2',%3,'%4','%5','%6','%7','%8','%9','%10','%11')")
+                        .arg(employee_info[0])
+                        .arg(employee_info[1].toInt())
+                        .arg(employee_info[2])
+                        .arg(employee_info[3].toInt())
+                        .arg(employee_info[4])
+                        .arg(employee_info[5])
+                        .arg(employee_info[6])
+                        .arg(employee_info[7].toInt())
+                        .arg(employee_info[8].toInt())
+                        .arg(employee_info[9].toInt())
+                        .arg(employee_info[10].toInt())
+                        .arg(employee_info[11]);
+    }else
+    {
+        queryString = QString("insert into employeeinfo values ('%0',%1,%2,"
+                               "(select DEPARTMENT_ID from departmentinfo where DEPARTMENT_NAME "
+                                "= '%3'),'%4','%5','%6','%7','%8','%9','%10','%11') ")
+                        .arg(employee_info[0])
+                        .arg(employee_info[1].toInt())
+                        .arg(employee_info[2])
+                        .arg(employee_info[3].toInt())
+                        .arg(employee_info[4])
+                        .arg(employee_info[5])
+                        .arg(employee_info[6])
+                        .arg(employee_info[7].toInt())
+                        .arg(employee_info[8].toInt())
+                        .arg(employee_info[9].toInt())
+                        .arg(employee_info[10].toInt())
+                        .arg(employee_info[11]);
+    }
+    cout << queryString;
+    if(query.exec(queryString))
+    {
+        return "ok";
+    }else
+        return "no";
+}
 
 QString backenddb::update_employee_info(QString info)
 {

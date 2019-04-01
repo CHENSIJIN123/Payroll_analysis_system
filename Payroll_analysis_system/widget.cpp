@@ -32,6 +32,12 @@ Widget::Widget(QWidget *parent) :
     connect(my_logicdeal,SIGNAL(tellTheAdminEmployeeInfo(QString)),admin_display,SLOT(dealtellTheAdminEmployeeInfo(QString)));
     connect(admin_display,SIGNAL(ModifyEmployeeInformationSubmission(QString)),my_logicdeal,SLOT(dealModifyEmployeeInformationSubmission(QString)));
     connect(my_logicdeal,SIGNAL(tellTheAdminCommitSucceed(QString)),admin_display,SLOT(dealtellTheAdminCommitSucceed(QString)));
+    connect(admin_display,SIGNAL(AddEmployeeInformation(QString)),my_logicdeal,SLOT(dealAddEmployeeInformation(QString)));
+    connect(my_logicdeal,SIGNAL(tellTheAdminInsertSucceed(QString)),admin_display,SLOT(dealtellTheAdminInsertSucceed(QString)));
+    connect(admin_display,SIGNAL(DeleteEmployeeInfomation(QString)),my_logicdeal,SLOT(dealDeleteEmployeeInfomation(QString)));
+    connect(my_logicdeal,SIGNAL(tellTheAdminDeleteSucceed(QString)),admin_display,SLOT(dealtellTheAdminDeleteSucceed(QString)));
+    connect(admin_display,SIGNAL(admin_table_show_salary_info(QString)),my_logicdeal,SLOT(deal_Admin_table_show_salary_info(QString)));
+    connect(my_logicdeal,SIGNAL(tellTheEmployeeShowSalaryInfo(QString)),admin_display,SLOT(dealtellTheEmployeeShowSalaryInfo(QString)));
 }
 
 

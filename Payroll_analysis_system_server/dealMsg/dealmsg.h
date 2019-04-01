@@ -15,6 +15,9 @@ public:
     void watch_SalaryRankingView(MyProtocol *msg);
     void get_employee_info(MyProtocol *msg);
     void commit_modify_employee_info(MyProtocol *msg);
+    void add_employee_info(MyProtocol *msg);
+    void delete_employee_info(MyProtocol *msg);
+    void Admin_watch_table_display(MyProtocol *msg);
 private:
     bool result;
     backenddb db;
