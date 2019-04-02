@@ -2,6 +2,7 @@
 #include "ui_administratordisplay.h"
 #include <QMessageBox>
 #include <QDebug>
+#include "pie.h"
 
 #define cout qDebug()<<"["<<__FILE__<<":"<<__LINE__<<"]"
 AdministratorDisplay::AdministratorDisplay(QWidget *parent) :
@@ -185,5 +186,42 @@ void AdministratorDisplay::on_pb_watch_clicked()
 
 void AdministratorDisplay::dealtellTheEmployeeShowSalaryInfo(QString info)
 {
-    ui->te_salary_info->setText(info);
+  //  QString employee_info = info;
+    if(ui->stackedWidget_3->currentIndex() == 0)
+        ui->te_salary_info->setText(info);
+    if(ui->stackedWidget_3->currentIndex() == 1)
+    {
+        QStringList salary_info = info.split("/");
+
+
+        QVector<SectorInfo> result;
+
+        SectorInfo info1;
+        info1.description = "五险一金";
+        info1.percent = (salary_info[14].toDouble()/salary_info[7].toDouble())*100;
+        cout << info1.percent;
+        result.push_back(info1);
+
+        info1.description = "扣除税额";
+        info1.percent = (salary_info[15].toDouble()/salary_info[7].toDouble())*100;
+        cout << info1.percent;
+        result.push_back(info1);
+
+        info1.description = "缺勤扣除";
+        info1.percent = (salary_info[16].toDouble()/salary_info[7].toDouble())*100;
+        cout << info1.percent;
+        result.push_back(info1);
+
+        info1.description = "绩效奖金";
+        info1.percent = (salary_info[17].toDouble()/salary_info[7].toDouble())*100;
+        cout << info1.percent;
+        result.push_back(info1);
+
+        info1.description = "实发工资";
+        info1.percent = (salary_info[18].toDouble()/salary_info[7].toDouble())*100;
+        cout << info1.percent;
+        result.push_back(info1);
+
+        ui->w_admin_pie->setData(result);
+    }
 }

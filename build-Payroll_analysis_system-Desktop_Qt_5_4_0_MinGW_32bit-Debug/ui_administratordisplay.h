@@ -24,6 +24,7 @@
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
+#include <pie.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -143,6 +144,8 @@ public:
     QGridLayout *gridLayout_9;
     QTextEdit *te_salary_info;
     QWidget *page_5;
+    QGridLayout *gridLayout_10;
+    Pie *w_admin_pie;
     QWidget *tb_view_attendance;
     QWidget *tb_set_date_of_salary_settlement;
     QWidget *tb_department_salary_compare;
@@ -527,6 +530,13 @@ public:
         stackedWidget_3->addWidget(page_4);
         page_5 = new QWidget();
         page_5->setObjectName(QStringLiteral("page_5"));
+        gridLayout_10 = new QGridLayout(page_5);
+        gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
+        w_admin_pie = new Pie(page_5);
+        w_admin_pie->setObjectName(QStringLiteral("w_admin_pie"));
+
+        gridLayout_10->addWidget(w_admin_pie, 0, 0, 1, 1);
+
         stackedWidget_3->addWidget(page_5);
 
         gridLayout_8->addWidget(stackedWidget_3, 1, 0, 1, 10);

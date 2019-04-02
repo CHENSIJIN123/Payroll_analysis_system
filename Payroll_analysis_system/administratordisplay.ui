@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tb_change_employee_info">
       <attribute name="title">
@@ -1162,7 +1162,13 @@
                   </item>
                  </layout>
                 </widget>
-                <widget class="QWidget" name="page_5"/>
+                <widget class="QWidget" name="page_5">
+                 <layout class="QGridLayout" name="gridLayout_10">
+                  <item row="0" column="0">
+                   <widget class="Pie" name="w_admin_pie" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
                </widget>
               </item>
              </layout>
@@ -1193,6 +1199,14 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Pie</class>
+   <extends>QWidget</extends>
+   <header location="global">pie.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

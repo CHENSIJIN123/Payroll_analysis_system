@@ -223,7 +223,7 @@
            <item row="1" column="0" colspan="8">
             <widget class="QStackedWidget" name="show_way">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="table_show">
               <layout class="QGridLayout" name="gridLayout_4">
@@ -386,7 +386,7 @@
   <customwidget>
    <class>Pie</class>
    <extends>QWidget</extends>
-   <header>pie.h</header>
+   <header location="global">pie.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

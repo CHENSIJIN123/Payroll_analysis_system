@@ -24,7 +24,7 @@
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 #include <histogram.h>
-#include "pie.h"
+#include <pie.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -234,7 +234,7 @@ public:
 
         tabWidget->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(1);
-        show_way->setCurrentIndex(0);
+        show_way->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(EmployeeDisplay);
