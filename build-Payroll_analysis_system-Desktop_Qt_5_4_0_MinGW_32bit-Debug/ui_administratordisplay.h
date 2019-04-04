@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTabWidget>
@@ -147,7 +148,38 @@ public:
     QGridLayout *gridLayout_10;
     Pie *w_admin_pie;
     QWidget *tb_view_attendance;
+    QGridLayout *gridLayout_12;
+    QStackedWidget *stack_attandence_view;
+    QWidget *pb_choose_view_way;
+    QPushButton *pb_view_someday;
+    QPushButton *pb_the_rate_of_attand;
+    QWidget *pb_view_someday_view;
+    QLabel *label_2;
+    QLineEdit *le_search_name_2;
+    QLabel *label_3;
+    QLineEdit *le_search_year;
+    QLabel *label_4;
+    QLineEdit *le_search_month;
+    QLabel *label_5;
+    QLineEdit *le_search_day;
+    QPushButton *pushButton_4;
+    QTextEdit *textEdit;
+    QWidget *pb_the_rate_of_attand_view;
+    QPushButton *pushButton_5;
+    QLineEdit *le_view_attendance_name;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLineEdit *le_view_attendance_year;
+    QLineEdit *le_view_attendance_month;
     QWidget *tb_set_date_of_salary_settlement;
+    QGridLayout *gridLayout_11;
+    QWidget *w_salary_count;
+    QRadioButton *rb_month_end;
+    QRadioButton *rb_month_begin;
+    QRadioButton *rb_some_day;
+    QLineEdit *le_some_day;
+    QPushButton *pb_correct;
     QWidget *tb_department_salary_compare;
 
     void setupUi(QWidget *AdministratorDisplay)
@@ -159,6 +191,7 @@ public:
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         tabWidget = new QTabWidget(AdministratorDisplay);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tabWidget->setEnabled(true);
         tb_change_employee_info = new QWidget();
         tb_change_employee_info->setObjectName(QStringLiteral("tb_change_employee_info"));
         gridLayout_2 = new QGridLayout(tb_change_employee_info);
@@ -551,9 +584,105 @@ public:
         tabWidget->addTab(tb_view_salary, QString());
         tb_view_attendance = new QWidget();
         tb_view_attendance->setObjectName(QStringLiteral("tb_view_attendance"));
+        gridLayout_12 = new QGridLayout(tb_view_attendance);
+        gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
+        stack_attandence_view = new QStackedWidget(tb_view_attendance);
+        stack_attandence_view->setObjectName(QStringLiteral("stack_attandence_view"));
+        pb_choose_view_way = new QWidget();
+        pb_choose_view_way->setObjectName(QStringLiteral("pb_choose_view_way"));
+        pb_view_someday = new QPushButton(pb_choose_view_way);
+        pb_view_someday->setObjectName(QStringLiteral("pb_view_someday"));
+        pb_view_someday->setGeometry(QRect(250, 130, 211, 31));
+        pb_the_rate_of_attand = new QPushButton(pb_choose_view_way);
+        pb_the_rate_of_attand->setObjectName(QStringLiteral("pb_the_rate_of_attand"));
+        pb_the_rate_of_attand->setGeometry(QRect(250, 220, 211, 31));
+        stack_attandence_view->addWidget(pb_choose_view_way);
+        pb_view_someday_view = new QWidget();
+        pb_view_someday_view->setObjectName(QStringLiteral("pb_view_someday_view"));
+        label_2 = new QLabel(pb_view_someday_view);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(30, 20, 41, 21));
+        le_search_name_2 = new QLineEdit(pb_view_someday_view);
+        le_search_name_2->setObjectName(QStringLiteral("le_search_name_2"));
+        le_search_name_2->setGeometry(QRect(70, 20, 81, 21));
+        label_3 = new QLabel(pb_view_someday_view);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(200, 20, 41, 21));
+        le_search_year = new QLineEdit(pb_view_someday_view);
+        le_search_year->setObjectName(QStringLiteral("le_search_year"));
+        le_search_year->setGeometry(QRect(240, 20, 61, 20));
+        label_4 = new QLabel(pb_view_someday_view);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(320, 20, 41, 21));
+        le_search_month = new QLineEdit(pb_view_someday_view);
+        le_search_month->setObjectName(QStringLiteral("le_search_month"));
+        le_search_month->setGeometry(QRect(360, 20, 61, 20));
+        label_5 = new QLabel(pb_view_someday_view);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(440, 20, 31, 21));
+        le_search_day = new QLineEdit(pb_view_someday_view);
+        le_search_day->setObjectName(QStringLiteral("le_search_day"));
+        le_search_day->setGeometry(QRect(470, 20, 61, 20));
+        pushButton_4 = new QPushButton(pb_view_someday_view);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(580, 20, 75, 23));
+        textEdit = new QTextEdit(pb_view_someday_view);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(60, 80, 611, 311));
+        stack_attandence_view->addWidget(pb_view_someday_view);
+        pb_the_rate_of_attand_view = new QWidget();
+        pb_the_rate_of_attand_view->setObjectName(QStringLiteral("pb_the_rate_of_attand_view"));
+        pushButton_5 = new QPushButton(pb_the_rate_of_attand_view);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(580, 20, 75, 23));
+        le_view_attendance_name = new QLineEdit(pb_the_rate_of_attand_view);
+        le_view_attendance_name->setObjectName(QStringLiteral("le_view_attendance_name"));
+        le_view_attendance_name->setGeometry(QRect(70, 20, 81, 21));
+        label_6 = new QLabel(pb_the_rate_of_attand_view);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(200, 20, 41, 21));
+        label_7 = new QLabel(pb_the_rate_of_attand_view);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(30, 20, 41, 21));
+        label_8 = new QLabel(pb_the_rate_of_attand_view);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(320, 20, 41, 21));
+        le_view_attendance_year = new QLineEdit(pb_the_rate_of_attand_view);
+        le_view_attendance_year->setObjectName(QStringLiteral("le_view_attendance_year"));
+        le_view_attendance_year->setGeometry(QRect(240, 20, 61, 20));
+        le_view_attendance_month = new QLineEdit(pb_the_rate_of_attand_view);
+        le_view_attendance_month->setObjectName(QStringLiteral("le_view_attendance_month"));
+        le_view_attendance_month->setGeometry(QRect(360, 20, 61, 20));
+        stack_attandence_view->addWidget(pb_the_rate_of_attand_view);
+
+        gridLayout_12->addWidget(stack_attandence_view, 0, 0, 1, 1);
+
         tabWidget->addTab(tb_view_attendance, QString());
         tb_set_date_of_salary_settlement = new QWidget();
         tb_set_date_of_salary_settlement->setObjectName(QStringLiteral("tb_set_date_of_salary_settlement"));
+        gridLayout_11 = new QGridLayout(tb_set_date_of_salary_settlement);
+        gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
+        w_salary_count = new QWidget(tb_set_date_of_salary_settlement);
+        w_salary_count->setObjectName(QStringLiteral("w_salary_count"));
+        rb_month_end = new QRadioButton(w_salary_count);
+        rb_month_end->setObjectName(QStringLiteral("rb_month_end"));
+        rb_month_end->setGeometry(QRect(80, 70, 89, 16));
+        rb_month_end->setCheckable(true);
+        rb_month_begin = new QRadioButton(w_salary_count);
+        rb_month_begin->setObjectName(QStringLiteral("rb_month_begin"));
+        rb_month_begin->setGeometry(QRect(80, 120, 89, 16));
+        rb_some_day = new QRadioButton(w_salary_count);
+        rb_some_day->setObjectName(QStringLiteral("rb_some_day"));
+        rb_some_day->setGeometry(QRect(80, 170, 89, 16));
+        le_some_day = new QLineEdit(w_salary_count);
+        le_some_day->setObjectName(QStringLiteral("le_some_day"));
+        le_some_day->setGeometry(QRect(170, 170, 113, 20));
+        pb_correct = new QPushButton(w_salary_count);
+        pb_correct->setObjectName(QStringLiteral("pb_correct"));
+        pb_correct->setGeometry(QRect(90, 290, 75, 23));
+
+        gridLayout_11->addWidget(w_salary_count, 0, 0, 1, 1);
+
         tabWidget->addTab(tb_set_date_of_salary_settlement, QString());
         tb_department_salary_compare = new QWidget();
         tb_department_salary_compare->setObjectName(QStringLiteral("tb_department_salary_compare"));
@@ -564,10 +693,11 @@ public:
 
         retranslateUi(AdministratorDisplay);
 
-        tabWidget->setCurrentIndex(1);
-        stackedWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(0);
         stackedWidget_2->setCurrentIndex(1);
         stackedWidget_3->setCurrentIndex(0);
+        stack_attandence_view->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(AdministratorDisplay);
@@ -641,7 +771,22 @@ public:
         );
         pb_watch->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_view_salary), QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213\345\267\245\350\265\204", 0));
+        pb_view_someday->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213\346\237\220\346\227\245\350\200\203\345\213\244", 0));
+        pb_the_rate_of_attand->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213\350\200\203\345\213\244\347\216\207", 0));
+        label_2->setText(QApplication::translate("AdministratorDisplay", "\345\247\223\345\220\215\357\274\232", 0));
+        label_3->setText(QApplication::translate("AdministratorDisplay", "\345\271\264\344\273\275\357\274\232", 0));
+        label_4->setText(QApplication::translate("AdministratorDisplay", "\346\234\210\344\273\275\357\274\232", 0));
+        label_5->setText(QApplication::translate("AdministratorDisplay", "\345\244\251\357\274\232", 0));
+        pushButton_4->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\350\257\242", 0));
+        pushButton_5->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\350\257\242", 0));
+        label_6->setText(QApplication::translate("AdministratorDisplay", "\345\271\264\344\273\275\357\274\232", 0));
+        label_7->setText(QApplication::translate("AdministratorDisplay", "\345\247\223\345\220\215\357\274\232", 0));
+        label_8->setText(QApplication::translate("AdministratorDisplay", "\346\234\210\344\273\275\357\274\232", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_view_attendance), QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213\350\200\203\345\213\244", 0));
+        rb_month_end->setText(QApplication::translate("AdministratorDisplay", "\346\234\210\345\272\225", 0));
+        rb_month_begin->setText(QApplication::translate("AdministratorDisplay", "\346\234\210\345\210\235", 0));
+        rb_some_day->setText(QApplication::translate("AdministratorDisplay", "\345\205\267\344\275\223\346\237\220\345\244\251", 0));
+        pb_correct->setText(QApplication::translate("AdministratorDisplay", "\347\241\256\345\256\232", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_set_date_of_salary_settlement), QApplication::translate("AdministratorDisplay", "\350\256\276\345\256\232\345\267\245\350\265\204\347\273\223\347\256\227\347\232\204\346\227\245\346\234\237", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_department_salary_compare), QApplication::translate("AdministratorDisplay", "\351\203\250\351\227\250\350\226\252\350\265\204\346\257\224\350\276\203", 0));
     } // retranslateUi

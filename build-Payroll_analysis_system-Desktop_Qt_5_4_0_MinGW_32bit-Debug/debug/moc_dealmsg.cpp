@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_dealMsg_t {
-    QByteArrayData data[12];
-    char stringdata[297];
+    QByteArrayData data[13];
+    char stringdata[331];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,7 +40,8 @@ QT_MOC_LITERAL(7, 133, 29), // "signal_watchSalaryRankingView"
 QT_MOC_LITERAL(8, 163, 31), // "signal_change_the_employee_info"
 QT_MOC_LITERAL(9, 195, 34), // "signal_commit_modify_employee..."
 QT_MOC_LITERAL(10, 230, 31), // "signal_add_employee_information"
-QT_MOC_LITERAL(11, 262, 34) // "signal_delete_employee_inform..."
+QT_MOC_LITERAL(11, 262, 34), // "signal_delete_employee_inform..."
+QT_MOC_LITERAL(12, 297, 33) // "signal_watch_attendance_rate_..."
 
     },
     "dealMsg\0returnToLoginButtonResult\0\0"
@@ -51,7 +52,8 @@ QT_MOC_LITERAL(11, 262, 34) // "signal_delete_employee_inform..."
     "signal_change_the_employee_info\0"
     "signal_commit_modify_employee_info\0"
     "signal_add_employee_information\0"
-    "signal_delete_employee_information"
+    "signal_delete_employee_information\0"
+    "signal_watch_attendance_rate_view"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,25 +63,27 @@ static const uint qt_meta_data_dealMsg[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       9,       // signalCount
+      10,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   59,    2, 0x06 /* Public */,
-       4,    1,   62,    2, 0x06 /* Public */,
-       5,    1,   65,    2, 0x06 /* Public */,
-       6,    1,   68,    2, 0x06 /* Public */,
-       7,    1,   71,    2, 0x06 /* Public */,
-       8,    1,   74,    2, 0x06 /* Public */,
-       9,    1,   77,    2, 0x06 /* Public */,
-      10,    1,   80,    2, 0x06 /* Public */,
-      11,    1,   83,    2, 0x06 /* Public */,
+       1,    1,   64,    2, 0x06 /* Public */,
+       4,    1,   67,    2, 0x06 /* Public */,
+       5,    1,   70,    2, 0x06 /* Public */,
+       6,    1,   73,    2, 0x06 /* Public */,
+       7,    1,   76,    2, 0x06 /* Public */,
+       8,    1,   79,    2, 0x06 /* Public */,
+       9,    1,   82,    2, 0x06 /* Public */,
+      10,    1,   85,    2, 0x06 /* Public */,
+      11,    1,   88,    2, 0x06 /* Public */,
+      12,    1,   91,    2, 0x06 /* Public */,
 
  // signals: parameters
+    QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
@@ -107,6 +111,7 @@ void dealMsg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 6: _t->signal_commit_modify_employee_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 7: _t->signal_add_employee_information((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 8: _t->signal_delete_employee_information((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 9: _t->signal_watch_attendance_rate_view((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -166,6 +171,12 @@ void dealMsg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
                 *result = 8;
             }
         }
+        {
+            typedef void (dealMsg::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&dealMsg::signal_watch_attendance_rate_view)) {
+                *result = 9;
+            }
+        }
     }
 }
 
@@ -194,13 +205,13 @@ int dealMsg::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }
@@ -266,5 +277,12 @@ void dealMsg::signal_delete_employee_information(QString _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 8, _a);
+}
+
+// SIGNAL 9
+void dealMsg::signal_watch_attendance_rate_view(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 9, _a);
 }
 QT_END_MOC_NAMESPACE

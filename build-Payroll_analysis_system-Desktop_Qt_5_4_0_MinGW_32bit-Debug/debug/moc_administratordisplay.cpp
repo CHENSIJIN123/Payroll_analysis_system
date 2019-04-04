@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_AdministratorDisplay_t {
-    QByteArrayData data[23];
-    char stringdata[533];
+    QByteArrayData data[36];
+    char stringdata[794];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,20 +38,33 @@ QT_MOC_LITERAL(5, 90, 4), // "info"
 QT_MOC_LITERAL(6, 95, 22), // "AddEmployeeInformation"
 QT_MOC_LITERAL(7, 118, 24), // "DeleteEmployeeInfomation"
 QT_MOC_LITERAL(8, 143, 28), // "admin_table_show_salary_info"
-QT_MOC_LITERAL(9, 172, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(10, 194, 30), // "on_pb_choose_is_change_clicked"
-QT_MOC_LITERAL(11, 225, 28), // "dealtellTheAdminEmployeeInfo"
-QT_MOC_LITERAL(12, 254, 13), // "employee_info"
-QT_MOC_LITERAL(13, 268, 20), // "on_pb_commit_clicked"
-QT_MOC_LITERAL(14, 289, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(15, 313, 29), // "dealtellTheAdminCommitSucceed"
-QT_MOC_LITERAL(16, 343, 30), // "on_pb_inrease_employee_clicked"
-QT_MOC_LITERAL(17, 374, 29), // "dealtellTheAdminInsertSucceed"
-QT_MOC_LITERAL(18, 404, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(19, 428, 20), // "on_pb_delete_clicked"
-QT_MOC_LITERAL(20, 449, 29), // "dealtellTheAdminDeleteSucceed"
-QT_MOC_LITERAL(21, 479, 19), // "on_pb_watch_clicked"
-QT_MOC_LITERAL(22, 499, 33) // "dealtellTheEmployeeShowSalary..."
+QT_MOC_LITERAL(9, 172, 24), // "signal_count_salary_time"
+QT_MOC_LITERAL(10, 197, 4), // "time"
+QT_MOC_LITERAL(11, 202, 24), // "signal_search_attendance"
+QT_MOC_LITERAL(12, 227, 4), // "cond"
+QT_MOC_LITERAL(13, 232, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(14, 254, 30), // "on_pb_choose_is_change_clicked"
+QT_MOC_LITERAL(15, 285, 28), // "dealtellTheAdminEmployeeInfo"
+QT_MOC_LITERAL(16, 314, 13), // "employee_info"
+QT_MOC_LITERAL(17, 328, 20), // "on_pb_commit_clicked"
+QT_MOC_LITERAL(18, 349, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(19, 373, 29), // "dealtellTheAdminCommitSucceed"
+QT_MOC_LITERAL(20, 403, 30), // "on_pb_inrease_employee_clicked"
+QT_MOC_LITERAL(21, 434, 29), // "dealtellTheAdminInsertSucceed"
+QT_MOC_LITERAL(22, 464, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(23, 488, 20), // "on_pb_delete_clicked"
+QT_MOC_LITERAL(24, 509, 29), // "dealtellTheAdminDeleteSucceed"
+QT_MOC_LITERAL(25, 539, 19), // "on_pb_watch_clicked"
+QT_MOC_LITERAL(26, 559, 33), // "dealtellTheEmployeeShowSalary..."
+QT_MOC_LITERAL(27, 593, 21), // "on_pb_correct_clicked"
+QT_MOC_LITERAL(28, 615, 26), // "on_tabWidget_tabBarClicked"
+QT_MOC_LITERAL(29, 642, 5), // "index"
+QT_MOC_LITERAL(30, 648, 26), // "on_pb_view_someday_clicked"
+QT_MOC_LITERAL(31, 675, 32), // "on_pb_the_rate_of_attand_clicked"
+QT_MOC_LITERAL(32, 708, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(33, 732, 30), // "dealtellTheAdminAttendanceRate"
+QT_MOC_LITERAL(34, 763, 6), // "result"
+QT_MOC_LITERAL(35, 770, 23) // "on_pushButton_5_clicked"
 
     },
     "AdministratorDisplay\0admin_change_employee_info\0"
@@ -59,6 +72,8 @@ QT_MOC_LITERAL(22, 499, 33) // "dealtellTheEmployeeShowSalary..."
     "info\0AddEmployeeInformation\0"
     "DeleteEmployeeInfomation\0"
     "admin_table_show_salary_info\0"
+    "signal_count_salary_time\0time\0"
+    "signal_search_attendance\0cond\0"
     "on_pushButton_clicked\0"
     "on_pb_choose_is_change_clicked\0"
     "dealtellTheAdminEmployeeInfo\0employee_info\0"
@@ -69,7 +84,13 @@ QT_MOC_LITERAL(22, 499, 33) // "dealtellTheEmployeeShowSalary..."
     "on_pushButton_3_clicked\0on_pb_delete_clicked\0"
     "dealtellTheAdminDeleteSucceed\0"
     "on_pb_watch_clicked\0"
-    "dealtellTheEmployeeShowSalaryInfo"
+    "dealtellTheEmployeeShowSalaryInfo\0"
+    "on_pb_correct_clicked\0on_tabWidget_tabBarClicked\0"
+    "index\0on_pb_view_someday_clicked\0"
+    "on_pb_the_rate_of_attand_clicked\0"
+    "on_pushButton_4_clicked\0"
+    "dealtellTheAdminAttendanceRate\0result\0"
+    "on_pushButton_5_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -79,34 +100,43 @@ static const uint qt_meta_data_AdministratorDisplay[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       5,       // signalCount
+       7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  104,    2, 0x06 /* Public */,
-       4,    1,  107,    2, 0x06 /* Public */,
-       6,    1,  110,    2, 0x06 /* Public */,
-       7,    1,  113,    2, 0x06 /* Public */,
-       8,    1,  116,    2, 0x06 /* Public */,
+       1,    1,  149,    2, 0x06 /* Public */,
+       4,    1,  152,    2, 0x06 /* Public */,
+       6,    1,  155,    2, 0x06 /* Public */,
+       7,    1,  158,    2, 0x06 /* Public */,
+       8,    1,  161,    2, 0x06 /* Public */,
+       9,    1,  164,    2, 0x06 /* Public */,
+      11,    1,  167,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       9,    0,  119,    2, 0x08 /* Private */,
-      10,    0,  120,    2, 0x08 /* Private */,
-      11,    1,  121,    2, 0x08 /* Private */,
-      13,    0,  124,    2, 0x08 /* Private */,
-      14,    0,  125,    2, 0x08 /* Private */,
-      15,    1,  126,    2, 0x08 /* Private */,
-      16,    0,  129,    2, 0x08 /* Private */,
-      17,    1,  130,    2, 0x08 /* Private */,
-      18,    0,  133,    2, 0x08 /* Private */,
-      19,    0,  134,    2, 0x08 /* Private */,
-      20,    1,  135,    2, 0x08 /* Private */,
-      21,    0,  138,    2, 0x08 /* Private */,
-      22,    1,  139,    2, 0x08 /* Private */,
+      13,    0,  170,    2, 0x08 /* Private */,
+      14,    0,  171,    2, 0x08 /* Private */,
+      15,    1,  172,    2, 0x08 /* Private */,
+      17,    0,  175,    2, 0x08 /* Private */,
+      18,    0,  176,    2, 0x08 /* Private */,
+      19,    1,  177,    2, 0x08 /* Private */,
+      20,    0,  180,    2, 0x08 /* Private */,
+      21,    1,  181,    2, 0x08 /* Private */,
+      22,    0,  184,    2, 0x08 /* Private */,
+      23,    0,  185,    2, 0x08 /* Private */,
+      24,    1,  186,    2, 0x08 /* Private */,
+      25,    0,  189,    2, 0x08 /* Private */,
+      26,    1,  190,    2, 0x08 /* Private */,
+      27,    0,  193,    2, 0x08 /* Private */,
+      28,    1,  194,    2, 0x08 /* Private */,
+      30,    0,  197,    2, 0x08 /* Private */,
+      31,    0,  198,    2, 0x08 /* Private */,
+      32,    0,  199,    2, 0x08 /* Private */,
+      33,    1,  200,    2, 0x08 /* Private */,
+      35,    0,  203,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -114,11 +144,13 @@ static const uint qt_meta_data_AdministratorDisplay[] = {
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void, QMetaType::QString,   10,
+    QMetaType::Void, QMetaType::QString,   12,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   12,
+    QMetaType::Void, QMetaType::QString,   16,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    5,
@@ -129,6 +161,13 @@ static const uint qt_meta_data_AdministratorDisplay[] = {
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   29,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   34,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -143,19 +182,28 @@ void AdministratorDisplay::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 2: _t->AddEmployeeInformation((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 3: _t->DeleteEmployeeInfomation((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 4: _t->admin_table_show_salary_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 5: _t->on_pushButton_clicked(); break;
-        case 6: _t->on_pb_choose_is_change_clicked(); break;
-        case 7: _t->dealtellTheAdminEmployeeInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 8: _t->on_pb_commit_clicked(); break;
-        case 9: _t->on_pushButton_2_clicked(); break;
-        case 10: _t->dealtellTheAdminCommitSucceed((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 11: _t->on_pb_inrease_employee_clicked(); break;
-        case 12: _t->dealtellTheAdminInsertSucceed((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 13: _t->on_pushButton_3_clicked(); break;
-        case 14: _t->on_pb_delete_clicked(); break;
-        case 15: _t->dealtellTheAdminDeleteSucceed((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 16: _t->on_pb_watch_clicked(); break;
-        case 17: _t->dealtellTheEmployeeShowSalaryInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 5: _t->signal_count_salary_time((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 6: _t->signal_search_attendance((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 7: _t->on_pushButton_clicked(); break;
+        case 8: _t->on_pb_choose_is_change_clicked(); break;
+        case 9: _t->dealtellTheAdminEmployeeInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 10: _t->on_pb_commit_clicked(); break;
+        case 11: _t->on_pushButton_2_clicked(); break;
+        case 12: _t->dealtellTheAdminCommitSucceed((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 13: _t->on_pb_inrease_employee_clicked(); break;
+        case 14: _t->dealtellTheAdminInsertSucceed((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 15: _t->on_pushButton_3_clicked(); break;
+        case 16: _t->on_pb_delete_clicked(); break;
+        case 17: _t->dealtellTheAdminDeleteSucceed((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 18: _t->on_pb_watch_clicked(); break;
+        case 19: _t->dealtellTheEmployeeShowSalaryInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 20: _t->on_pb_correct_clicked(); break;
+        case 21: _t->on_tabWidget_tabBarClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 22: _t->on_pb_view_someday_clicked(); break;
+        case 23: _t->on_pb_the_rate_of_attand_clicked(); break;
+        case 24: _t->on_pushButton_4_clicked(); break;
+        case 25: _t->dealtellTheAdminAttendanceRate((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 26: _t->on_pushButton_5_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -191,6 +239,18 @@ void AdministratorDisplay::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
                 *result = 4;
             }
         }
+        {
+            typedef void (AdministratorDisplay::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&AdministratorDisplay::signal_count_salary_time)) {
+                *result = 5;
+            }
+        }
+        {
+            typedef void (AdministratorDisplay::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&AdministratorDisplay::signal_search_attendance)) {
+                *result = 6;
+            }
+        }
     }
 }
 
@@ -219,13 +279,13 @@ int AdministratorDisplay::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 27;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 27)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 18;
+        _id -= 27;
     }
     return _id;
 }
@@ -263,5 +323,19 @@ void AdministratorDisplay::admin_table_show_salary_info(QString _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
+}
+
+// SIGNAL 5
+void AdministratorDisplay::signal_count_salary_time(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void AdministratorDisplay::signal_search_attendance(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 6, _a);
 }
 QT_END_MOC_NAMESPACE

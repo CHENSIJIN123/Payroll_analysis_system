@@ -232,7 +232,7 @@ public:
 
         retranslateUi(EmployeeDisplay);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
         stackedWidget->setCurrentIndex(1);
         show_way->setCurrentIndex(1);
 
@@ -282,7 +282,7 @@ public:
         );
         pb_search->setText(QApplication::translate("EmployeeDisplay", "\346\237\245\350\257\242", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_view_salary), QApplication::translate("EmployeeDisplay", "\346\237\245\347\234\213\345\267\245\350\265\204", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tb_attendance_rate), QApplication::translate("EmployeeDisplay", "\346\237\245\347\234\213\350\200\203\345\213\244\347\216\207", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tb_attendance_rate), QApplication::translate("EmployeeDisplay", "\346\237\245\347\234\213\350\200\203\345\213\244", 0));
         lb_result->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tb_competitive_analysis), QApplication::translate("EmployeeDisplay", "\347\253\236\344\272\211\345\212\233\345\210\206\346\236\220", 0));
     } // retranslateUi

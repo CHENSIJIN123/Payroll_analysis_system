@@ -18,6 +18,35 @@ backenddb::backenddb()
     //insert_salary();
 }
 
+QString backenddb::AdminqueryWatchAttendanceRate(QString info)
+{
+    QStringList querycondition = info.split("/");
+    QSqlQuery query;
+    QString queryString = QString("select AttendanceInfo.[Workinghours],attendanceinfo.[Aftergetoffworktime] "
+                                  "from ATTENDANCEINFO,employeeinfo where employeeinfo.[NAME_OF_WORKER] = '%1' "
+                                  "and employeeinfo.[Job_ID]=ATTENDANCEINFO.[Job_ID] and ATTENDANCEINFO.[year]=  "
+                                  "'%2' and attendanceinfo.[month]='%3' and attendanceinfo.[day]='%4';")
+                                    .arg(querycondition[0])
+                                    .arg(querycondition[1])
+                                    .arg(querycondition[2])
+                                    .arg(querycondition[3]);
+    if(query.exec(queryString))
+    {
+        int gowork = query.record().indexOf("Workinghours");
+        int afterwork = query.record().indexOf("Aftergetoffworktime");
+        if(query.next())
+        {
+            QString attendance_result = query.value(gowork).toString() + "/"
+                                    + query.value(afterwork).toString();
+            return attendance_result;
+        }
+    }else
+    {
+        return "no";
+    }
+
+}
+
 QString backenddb::AdminqueryWatchTableDisplay(QString info)
 {
     QStringList yearAndMonth = info.split("/");

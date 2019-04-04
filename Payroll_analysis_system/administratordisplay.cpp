@@ -11,6 +11,7 @@ AdministratorDisplay::AdministratorDisplay(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+    ui->le_some_day->setEnabled(false);
 }
 
 AdministratorDisplay::~AdministratorDisplay()
@@ -223,5 +224,79 @@ void AdministratorDisplay::dealtellTheEmployeeShowSalaryInfo(QString info)
         result.push_back(info1);
 
         ui->w_admin_pie->setData(result);
+    }
+}
+
+void AdministratorDisplay::on_pb_correct_clicked()
+{
+    QString count_salary_time;
+    if(ui->rb_month_begin->isDown())
+        count_salary_time = "began";
+    if(ui->rb_month_end->isDown())
+        count_salary_time = "end";
+    if(ui->rb_some_day->isDown())
+    {
+        ui->le_some_day->setEnabled(true);
+        count_salary_time = ui->le_some_day->text();
+    }
+    emit signal_count_salary_time(count_salary_time);
+    QMessageBox::information(this,"设置薪资结算日期","设置成功",QMessageBox::Ok);   //输出提示信息
+}
+
+void AdministratorDisplay::on_tabWidget_tabBarClicked(int index)
+{
+    if(index == 0)
+        ui->stackedWidget->setCurrentIndex(0);
+    if(index == 2)
+        ui->stack_attandence_view->setCurrentIndex(0);
+}
+
+void AdministratorDisplay::on_pb_view_someday_clicked()
+{
+    ui->stack_attandence_view->setCurrentIndex(1);
+    ui->le_search_name_2->clear();
+    ui->le_search_year->clear();
+    ui->le_search_month->clear();
+    ui->le_search_day->clear();
+    ui->textEdit->clear();
+}
+
+void AdministratorDisplay::on_pb_the_rate_of_attand_clicked()
+{
+    ui->stack_attandence_view->setCurrentIndex(2);
+    ui->le_view_attendance_name->clear();
+    ui->le_view_attendance_year->clear();
+    ui->le_view_attendance_month->clear();
+}
+
+void AdministratorDisplay::on_pushButton_4_clicked()
+{
+    if((ui->le_search_name_2->text() == "")||(ui->le_search_year->text() == "") || (ui->le_search_month->text() == "") || (ui->le_search_day->text() == ""))
+    {
+        QMessageBox::information(this,"考勤查询","请输入指定的查询条件",QMessageBox::Ok);   //输出提示信息
+    }else
+    {
+        QString search_condition = ui->le_search_name_2->text() + "/"+
+                ui->le_search_year->text() + "/"+
+                ui->le_search_month->text() + "/"+
+                ui->le_search_day->text();
+        emit signal_search_attendance(search_condition);
+    }
+}
+
+void AdministratorDisplay::dealtellTheAdminAttendanceRate(QString result)
+{
+    QStringList attendance = result.split("/");
+    QString AttendanceResult = ui->le_search_name_2->text() + "在" + ui->le_search_year->text() + "年"
+                               + ui->le_search_month->text() + "月" + ui->le_search_day->text() + "日"
+                               + "在  早上打卡时间为 " + attendance[0] + "  下班打卡时间为 " + attendance[1];
+    ui->textEdit->setText(AttendanceResult);
+}
+
+void AdministratorDisplay::on_pushButton_5_clicked()
+{
+    if((ui->le_view_attendance_name->text() == "") || (ui->le_view_attendance_month->text() == "") || (ui->le_view_attendance_year->text() == ""))
+    {
+        QMessageBox::information(this,"考勤查询","请输入指定的查询条件",QMessageBox::Ok);   //输出提示信息
     }
 }

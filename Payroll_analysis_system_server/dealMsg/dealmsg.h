@@ -7,6 +7,7 @@ class dealMsg
 {
 public:
     dealMsg();
+    static QString salary_count_time;
     void judge_operator(MyProtocol *msg);
     void judgeAccountPsw(MyProtocol *msg);
     void judgeAccountPswAndPunch(MyProtocol *msg);
@@ -18,6 +19,8 @@ public:
     void add_employee_info(MyProtocol *msg);
     void delete_employee_info(MyProtocol *msg);
     void Admin_watch_table_display(MyProtocol *msg);
+    void set_date_of_salary_count(MyProtocol *msg);
+    void watch_attendance_rate_view(MyProtocol *msg);
 private:
     bool result;
     backenddb db;

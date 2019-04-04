@@ -19,6 +19,12 @@ LogicDeal::LogicDeal(QWidget *parent) :
     connect(deal,SIGNAL(signal_commit_modify_employee_info(QString)),this,SLOT(slot_commit_modify_employee_info(QString)));
     connect(deal,SIGNAL(signal_add_employee_information(QString)),this,SLOT(slot_add_employee_information(QString)));
     connect(deal,SIGNAL(signal_delete_employee_information(QString)),this,SLOT(slot_delete_employee_information(QString)));
+    connect(deal,SIGNAL(signal_watch_attendance_rate_view(QString)),this,SLOT(slot_watch_attendance_rate_view(QString)));
+}
+
+void LogicDeal::slot_watch_attendance_rate_view(QString result)
+{
+    emit tellTheAdminAttendanceRate(result);
 }
 
 void LogicDeal::slot_delete_employee_information(QString info)
@@ -289,3 +295,38 @@ void LogicDeal::dealDeleteEmployeeInfomation(QString info)
 
     dealSocket::tcpsocket->write(block);
 }
+
+void LogicDeal::slot_count_salary_time(QString time)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+
+    msg->setMsgName(name.toUtf8());
+    msg->setMsgOperate(SET_THE_DATE_OF_SALARY);
+    msg->setMsgContent(time);
+    msg->setMsgStatus(ADMINISTRATOR);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}
+
+void LogicDeal::slot_search_attendance(QString cond)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+
+    msg->setMsgOperate(WATCH_ATTENDANCE_RATE);
+    msg->setMsgCommand(TABLE_DISPLAY);
+    msg->setMsgContent(cond);
+    msg->setMsgStatus(ADMINISTRATOR);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}
+
+
+
+
+

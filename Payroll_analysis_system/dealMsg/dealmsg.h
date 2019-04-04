@@ -19,6 +19,7 @@ public:
     void add_employee_information(MyProtocol *msg);
     void delete_employee_information(MyProtocol *msg);
     void admin_watch_table_display(MyProtocol *msg);
+    void watch_attendance_rate_view(MyProtocol *msg);
 
 signals:
     void returnToLoginButtonResult(QString result);
@@ -30,6 +31,7 @@ signals:
     void signal_commit_modify_employee_info(QString result);
     void signal_add_employee_information(QString result);
     void signal_delete_employee_information(QString result);
+    void signal_watch_attendance_rate_view(QString result);
 };
 
 #endif // DEALMSG_H

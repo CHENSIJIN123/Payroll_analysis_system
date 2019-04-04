@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tb_view_salary">
       <attribute name="title">
@@ -338,7 +338,7 @@
      </widget>
      <widget class="QWidget" name="tb_attendance_rate">
       <attribute name="title">
-       <string>查看考勤率</string>
+       <string>查看考勤</string>
       </attribute>
      </widget>
      <widget class="QWidget" name="tb_competitive_analysis">
@@ -378,15 +378,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>Histogram</class>
-   <extends>QWidget</extends>
-   <header location="global">histogram.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>Pie</class>
    <extends>QWidget</extends>
    <header location="global">pie.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Histogram</class>
+   <extends>QWidget</extends>
+   <header location="global">histogram.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

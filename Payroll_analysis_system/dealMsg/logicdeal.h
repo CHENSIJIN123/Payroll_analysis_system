@@ -30,6 +30,9 @@ public slots:
     void dealDeleteEmployeeInfomation(QString info);
     void slot_delete_employee_information(QString info);
     void deal_Admin_table_show_salary_info(QString info);
+    void slot_count_salary_time(QString time);
+    void slot_search_attendance(QString cond);
+    void slot_watch_attendance_rate_view(QString result);
 
 signals:
     void tellTheWidgetIfItCanLoginSuccess(bool);
@@ -41,6 +44,7 @@ signals:
     void tellTheAdminCommitSucceed(QString info);
     void tellTheAdminInsertSucceed(QString info);
     void tellTheAdminDeleteSucceed(QString info);
+    void tellTheAdminAttendanceRate(QString info);
 
 public:
     MyProtocol *msg;

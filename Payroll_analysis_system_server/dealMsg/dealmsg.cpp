@@ -2,6 +2,7 @@
 #include <QDebug>
 
 #define cout qDebug()<<"["<<__FILE__<<":"<<__LINE__<<"]"
+QString dealMsg::salary_count_time="";
 dealMsg::dealMsg()
 {
 
@@ -60,6 +61,17 @@ void dealMsg::judge_operator(MyProtocol *msg)
             break;
         }
         case WATCH_ATTENDANCE_RATE:     //查看考勤率
+        {
+            switch(msg->getMsgCommand())
+            {
+                case TABLE_DISPLAY:
+                {
+                    watch_attendance_rate_view(msg);
+                    break;
+                }
+            }
+            break;
+        }
         case COMPETITIVE_ANALYSIS:
         {
             switch(msg->getMsgCommand())
@@ -72,6 +84,10 @@ void dealMsg::judge_operator(MyProtocol *msg)
             }
         }
         case SET_THE_DATE_OF_SALARY:    //设置工资结算日期
+        {
+            set_date_of_salary_count(msg);
+            break;
+        }
         case MODIFY_EMPLOYEE_INFO:      //修改员工信息
         {
             switch(msg->getMsgCommand())
@@ -100,8 +116,25 @@ void dealMsg::judge_operator(MyProtocol *msg)
             break;
         }
         case DEPARTMENT_SALARY_COMPARE:{}
-
     }
+}
+
+/*
+ * 管理员查看员工考勤情况
+*/
+void dealMsg::watch_attendance_rate_view(MyProtocol *msg)
+{
+    QString result = db.AdminqueryWatchAttendanceRate(msg->getMsgContent());
+    cout << result;
+    msg->setMsgContent(result);
+}
+
+/*
+ * 管理员设置工资结算日期
+*/
+void dealMsg::set_date_of_salary_count(MyProtocol *msg)
+{
+    salary_count_time = msg->getMsgContent();
 }
 
 /*

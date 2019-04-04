@@ -60,7 +60,17 @@ void dealMsg::judge_operator(MyProtocol *msg)
             break;
         }
         case WATCH_ATTENDANCE_RATE:     //查看考勤率
-        break;
+        {
+            switch(msg->getMsgCommand())
+            {
+                case TABLE_DISPLAY:
+                {
+                    watch_attendance_rate_view(msg);
+                    break;
+                }
+            }
+            break;
+        }
         case COMPETITIVE_ANALYSIS:      //竞争力分析
         {
             switch(msg->getMsgCommand())
@@ -106,10 +116,17 @@ void dealMsg::judge_operator(MyProtocol *msg)
     }
 }
 
+void dealMsg::watch_attendance_rate_view(MyProtocol *msg)
+{
+    cout << msg->getMsgContent();
+    emit signal_watch_attendance_rate_view(msg->getMsgContent());
+
+}
+
 void dealMsg::admin_watch_table_display(MyProtocol *msg)
 {
     cout << msg->getMsgContent();
-    signal_watch_table_display(msg->getMsgContent());
+    emit signal_watch_table_display(msg->getMsgContent());
 }
 
 void dealMsg::delete_employee_information(MyProtocol *msg)
