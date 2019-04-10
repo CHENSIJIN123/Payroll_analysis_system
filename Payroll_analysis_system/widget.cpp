@@ -116,7 +116,6 @@ void Widget::on_pb_punch_clicked()   //打卡按钮按下
     if(ui->le_name->text()=="")
     {
             ui->le_name->setPlaceholderText("请输入账号");
-
     }
     if(ui->le_psw->text()=="")
     {

@@ -697,7 +697,7 @@ public:
         stackedWidget->setCurrentIndex(0);
         stackedWidget_2->setCurrentIndex(1);
         stackedWidget_3->setCurrentIndex(0);
-        stack_attandence_view->setCurrentIndex(2);
+        stack_attandence_view->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(AdministratorDisplay);

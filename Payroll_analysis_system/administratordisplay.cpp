@@ -261,6 +261,9 @@ void AdministratorDisplay::on_pb_view_someday_clicked()
     ui->textEdit->clear();
 }
 
+/*
+ * 查看考勤率
+*/
 void AdministratorDisplay::on_pb_the_rate_of_attand_clicked()
 {
     ui->stack_attandence_view->setCurrentIndex(2);

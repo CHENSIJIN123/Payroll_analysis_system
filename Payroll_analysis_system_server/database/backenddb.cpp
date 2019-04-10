@@ -385,7 +385,7 @@ bool backenddb::queryAccountPsw(QString account,QString password)
 }
 
 /*
- * 函数查看数据库中是否有对应的账号和密码,如果存在则网数据库中插入打卡记录一条，否则不插，并返回false
+ * 函数查看数据库中是否有对应的账号和密码,如果存在则往数据库中插入打卡记录一条，否则不插，并返回false
  * 返回：true :存在
  *      false:不存在
 */
@@ -423,22 +423,63 @@ bool backenddb::queryAccountPswAndPunch(QString account,QString pwdAndTime)
                 */
                 if((timeList[0].toInt()>=0) && (timeList[0].toInt()< 12))
                 {
-                    queryString = QString("insert into AttendanceInfo(Job_ID,year,month,day,Workinghours) "
-                                          "values(%1,'%2'','%3'','%4'','%5'')")
-                                            .arg(jobId)
-                                            .arg(current_year_month_day[0])
-                                            .arg(current_year_month_day[1])
-                                            .arg(current_year_month_day[2])
-                                            .arg(list[1]);
+                    queryString= QString("select Workinghours from AttendanceInfo where Job_ID = '%1'")
+                                        .arg(jobId);
+                    query.exec(queryString);
+                    int worktimeID = query.record().indexOf("Workinghours");
+                    QString worktimes;
+                    if(query.next())
+                    {
+                            worktimes = query.value(worktimeID).toString();
+                    }
+                    QDateTime begintime = QDateTime::fromString(worktimes, "hh:mm:ss");
+                    current;
+                    QTime m_time;
+                    int i = 0;
+
+                    m_time.setHMS(0, 0, 0, 0);                                       //初始化数据，时 分 秒 毫秒
+                    m_time.addSecs(begintime.secsTo(current)).toString("hh:mm:ss");
+                    if(m_time < QTime(9,0,0))
+                    {
+                        i = 1;
+                    }
+                    QString time_interval = m_time.toString("hh:mm:ss");
+                    cout << time_interval << "         " << i;
+
                 }
                 else{
-                    queryString = QString("insert into AttendanceInfo(Job_ID,year,month,day,Aftergetoffworktime) "
-                                          "values(%1,'%2'','%3'','%4'','%5'')")
-                                            .arg(jobId)
-                                            .arg(current_year_month_day[0])
-                                            .arg(current_year_month_day[1])
-                                            .arg(current_year_month_day[2])
-                                            .arg(list[1]);
+                    queryString= QString("select Workinghours from AttendanceInfo where Job_ID = '%1'")
+                                        .arg(jobId);
+                    query.exec(queryString);
+                    int worktimeID = query.record().indexOf("Workinghours");
+                    QString worktimes;
+                    if(query.next())
+                    {
+                            worktimes = query.value(worktimeID).toString();
+                    }
+                    QDateTime begintime = QDateTime::fromString(worktimes, "hh:mm:ss");
+
+                    int i = 0;
+                    qint64 intervalTime = begintime.secsTo(current); //求时间差
+                    QString interval = QObject::tr("%1").arg(intervalTime);
+                    cout << interval.toLongLong();
+                    int hh = (interval.toLongLong()%(24*3600)/3600);
+                    int mm = (interval.toLongLong()%3600)/60;
+                    int ss = (interval.toLongLong()%60);
+                    QString time_interval = QString::number(hh) + ":" +  QString::number(mm) + ":" +  QString::number(ss);
+                    cout << time_interval;
+                    if(interval.toLongLong()%(24*3600)/3600 < 9)
+                    {
+                        i = 1;
+                    }
+                    queryString = QString("UPDATE AttendanceInfo SET Aftergetoffworktime = '%1',"
+                                          "worktime = '%2',issuccess = '%3' WHERE Job_ID = '%4'")
+                                            .arg(list[1])
+                                            .arg(time_interval)
+                                            .arg(i)
+                                            .arg(jobId);
+                    cout << queryString;
+                    query.exec(queryString);
                 }
                 return true;
 

@@ -1191,7 +1191,7 @@
        <item row="0" column="0">
         <widget class="QStackedWidget" name="stack_attandence_view">
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="pb_choose_view_way">
           <widget class="QPushButton" name="pb_view_someday">
