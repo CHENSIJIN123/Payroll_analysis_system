@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_AdministratorDisplay_t {
-    QByteArrayData data[38];
-    char stringdata[858];
+    QByteArrayData data[41];
+    char stringdata[931];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -66,7 +66,10 @@ QT_MOC_LITERAL(33, 738, 23), // "on_pushButton_4_clicked"
 QT_MOC_LITERAL(34, 762, 30), // "dealtellTheAdminAttendanceRate"
 QT_MOC_LITERAL(35, 793, 6), // "result"
 QT_MOC_LITERAL(36, 800, 23), // "on_pushButton_5_clicked"
-QT_MOC_LITERAL(37, 824, 33) // "dealtellTheAdminAttendancePie..."
+QT_MOC_LITERAL(37, 824, 33), // "dealtellTheAdminAttendancePie..."
+QT_MOC_LITERAL(38, 858, 23), // "on_rb_month_end_clicked"
+QT_MOC_LITERAL(39, 882, 25), // "on_rb_month_begin_clicked"
+QT_MOC_LITERAL(40, 908, 22) // "on_rb_some_day_clicked"
 
     },
     "AdministratorDisplay\0admin_change_employee_info\0"
@@ -94,7 +97,10 @@ QT_MOC_LITERAL(37, 824, 33) // "dealtellTheAdminAttendancePie..."
     "on_pushButton_4_clicked\0"
     "dealtellTheAdminAttendanceRate\0result\0"
     "on_pushButton_5_clicked\0"
-    "dealtellTheAdminAttendancePieRate"
+    "dealtellTheAdminAttendancePieRate\0"
+    "on_rb_month_end_clicked\0"
+    "on_rb_month_begin_clicked\0"
+    "on_rb_some_day_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -104,7 +110,7 @@ static const uint qt_meta_data_AdministratorDisplay[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      29,   14, // methods
+      32,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -112,37 +118,40 @@ static const uint qt_meta_data_AdministratorDisplay[] = {
        8,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  159,    2, 0x06 /* Public */,
-       4,    1,  162,    2, 0x06 /* Public */,
-       6,    1,  165,    2, 0x06 /* Public */,
-       7,    1,  168,    2, 0x06 /* Public */,
-       8,    1,  171,    2, 0x06 /* Public */,
-       9,    1,  174,    2, 0x06 /* Public */,
-      11,    1,  177,    2, 0x06 /* Public */,
-      13,    1,  180,    2, 0x06 /* Public */,
+       1,    1,  174,    2, 0x06 /* Public */,
+       4,    1,  177,    2, 0x06 /* Public */,
+       6,    1,  180,    2, 0x06 /* Public */,
+       7,    1,  183,    2, 0x06 /* Public */,
+       8,    1,  186,    2, 0x06 /* Public */,
+       9,    1,  189,    2, 0x06 /* Public */,
+      11,    1,  192,    2, 0x06 /* Public */,
+      13,    1,  195,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      14,    0,  183,    2, 0x08 /* Private */,
-      15,    0,  184,    2, 0x08 /* Private */,
-      16,    1,  185,    2, 0x08 /* Private */,
-      18,    0,  188,    2, 0x08 /* Private */,
-      19,    0,  189,    2, 0x08 /* Private */,
-      20,    1,  190,    2, 0x08 /* Private */,
-      21,    0,  193,    2, 0x08 /* Private */,
-      22,    1,  194,    2, 0x08 /* Private */,
-      23,    0,  197,    2, 0x08 /* Private */,
-      24,    0,  198,    2, 0x08 /* Private */,
-      25,    1,  199,    2, 0x08 /* Private */,
-      26,    0,  202,    2, 0x08 /* Private */,
-      27,    1,  203,    2, 0x08 /* Private */,
-      28,    0,  206,    2, 0x08 /* Private */,
-      29,    1,  207,    2, 0x08 /* Private */,
-      31,    0,  210,    2, 0x08 /* Private */,
-      32,    0,  211,    2, 0x08 /* Private */,
-      33,    0,  212,    2, 0x08 /* Private */,
-      34,    1,  213,    2, 0x08 /* Private */,
-      36,    0,  216,    2, 0x08 /* Private */,
-      37,    1,  217,    2, 0x08 /* Private */,
+      14,    0,  198,    2, 0x08 /* Private */,
+      15,    0,  199,    2, 0x08 /* Private */,
+      16,    1,  200,    2, 0x08 /* Private */,
+      18,    0,  203,    2, 0x08 /* Private */,
+      19,    0,  204,    2, 0x08 /* Private */,
+      20,    1,  205,    2, 0x08 /* Private */,
+      21,    0,  208,    2, 0x08 /* Private */,
+      22,    1,  209,    2, 0x08 /* Private */,
+      23,    0,  212,    2, 0x08 /* Private */,
+      24,    0,  213,    2, 0x08 /* Private */,
+      25,    1,  214,    2, 0x08 /* Private */,
+      26,    0,  217,    2, 0x08 /* Private */,
+      27,    1,  218,    2, 0x08 /* Private */,
+      28,    0,  221,    2, 0x08 /* Private */,
+      29,    1,  222,    2, 0x08 /* Private */,
+      31,    0,  225,    2, 0x08 /* Private */,
+      32,    0,  226,    2, 0x08 /* Private */,
+      33,    0,  227,    2, 0x08 /* Private */,
+      34,    1,  228,    2, 0x08 /* Private */,
+      36,    0,  231,    2, 0x08 /* Private */,
+      37,    1,  232,    2, 0x08 /* Private */,
+      38,    0,  235,    2, 0x08 /* Private */,
+      39,    0,  236,    2, 0x08 /* Private */,
+      40,    0,  237,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -176,6 +185,9 @@ static const uint qt_meta_data_AdministratorDisplay[] = {
     QMetaType::Void, QMetaType::QString,   35,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   35,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -214,6 +226,9 @@ void AdministratorDisplay::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 26: _t->dealtellTheAdminAttendanceRate((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 27: _t->on_pushButton_5_clicked(); break;
         case 28: _t->dealtellTheAdminAttendancePieRate((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 29: _t->on_rb_month_end_clicked(); break;
+        case 30: _t->on_rb_month_begin_clicked(); break;
+        case 31: _t->on_rb_some_day_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -295,13 +310,13 @@ int AdministratorDisplay::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 29)
+        if (_id < 32)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 29;
+        _id -= 32;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 29)
+        if (_id < 32)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 29;
+        _id -= 32;
     }
     return _id;
 }

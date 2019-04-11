@@ -697,7 +697,7 @@ public:
 
         retranslateUi(AdministratorDisplay);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(3);
         stackedWidget->setCurrentIndex(0);
         stackedWidget_2->setCurrentIndex(1);
         stackedWidget_3->setCurrentIndex(0);

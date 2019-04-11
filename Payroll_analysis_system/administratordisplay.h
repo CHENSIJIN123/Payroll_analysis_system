@@ -66,6 +66,12 @@ private slots:
 
     void dealtellTheAdminAttendancePieRate(QString result);
 
+    void on_rb_month_end_clicked();
+
+    void on_rb_month_begin_clicked();
+
+    void on_rb_some_day_clicked();
+
 private:
     Ui::AdministratorDisplay *ui;
 };

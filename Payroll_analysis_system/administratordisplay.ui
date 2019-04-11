@@ -20,7 +20,7 @@
       <bool>true</bool>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tb_change_employee_info">
       <attribute name="title">
@@ -1791,11 +1791,6 @@
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QWidget" name="tb_department_salary_compare">
-      <attribute name="title">
-       <string>部门薪资比较</string>
-      </attribute>
      </widget>
     </widget>
    </item>

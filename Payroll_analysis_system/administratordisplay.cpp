@@ -11,7 +11,7 @@ AdministratorDisplay::AdministratorDisplay(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
-    ui->le_some_day->setEnabled(false);
+   // ui->le_some_day->setEnabled(false);
 }
 
 AdministratorDisplay::~AdministratorDisplay()
@@ -231,9 +231,13 @@ void AdministratorDisplay::on_pb_correct_clicked()
 {
     QString count_salary_time;
     if(ui->rb_month_begin->isDown())
+    {
         count_salary_time = "began";
+    }
     if(ui->rb_month_end->isDown())
+    {
         count_salary_time = "end";
+    }
     if(ui->rb_some_day->isDown())
     {
         ui->le_some_day->setEnabled(true);
@@ -330,4 +334,19 @@ void AdministratorDisplay::dealtellTheAdminAttendancePieRate(QString result)
     test.push_back(info1);
 
     ui->wg_pie_show_attendance_Rate->setData(test);
+}
+
+void AdministratorDisplay::on_rb_month_end_clicked()
+{
+    ui->le_some_day->setEnabled(false);
+}
+
+void AdministratorDisplay::on_rb_month_begin_clicked()
+{
+    ui->le_some_day->setEnabled(false);
+}
+
+void AdministratorDisplay::on_rb_some_day_clicked()
+{
+    ui->le_some_day->setEnabled(true);
 }

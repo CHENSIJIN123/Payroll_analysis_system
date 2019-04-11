@@ -31,4 +31,7 @@ FORMS    += widget.ui \
     administratordisplay.ui
 CONFIG += C++11
 
+RESOURCES += \
+    static.qrc
+
 
