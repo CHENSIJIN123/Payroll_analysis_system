@@ -13,6 +13,7 @@ EmployeeDisplay::EmployeeDisplay(QWidget *parent) :
     ui->setupUi(this);
     ui->show_way->setCurrentIndex(0);
     ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
 }
 
 EmployeeDisplay::~EmployeeDisplay()
@@ -113,6 +114,7 @@ void EmployeeDisplay::on_tabWidget_tabBarClicked(int index)
         }
         case 1:{  //考勤率查看
             ui->stackedWidget->setCurrentIndex(1);
+            ui->stackedWidget_2->setCurrentIndex(0);
             break;
         }
         case 2:{   //竞争力分析
@@ -154,4 +156,60 @@ void EmployeeDisplay::on_pb_search_clicked()
     //发送查询多月得工资信息
     emit show_multi_salary_info(tmp_year[0]);
 
+}
+
+void EmployeeDisplay::on_pb_someday_view_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(1);
+}
+
+void EmployeeDisplay::on_pb_some_month_view_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(2);
+}
+
+void EmployeeDisplay::on_pushButton_4_clicked()
+{
+    QString attendance_view = ui->le_search_year->text() + "/"
+                            + ui->le_search_month->currentText() + "/"
+                            + ui->le_search_day->currentText();
+    emit show_employee_attendance_table_view(attendance_view);
+}
+
+void EmployeeDisplay::slottellTheAdminAttendanceRate(QString result)
+{
+    QStringList attendance = result.split("/");
+    QString AttendanceResult = "您在" + ui->le_search_year->text() + "年"
+                               + ui->le_search_month->currentText() + "月" + ui->le_search_day->currentText() + "日"
+                               + "在  早上打卡时间为 " + attendance[0] + "  下班打卡时间为 " + attendance[1];
+    ui->textEdit_2->setText(AttendanceResult);
+}
+
+void EmployeeDisplay::on_pushButton_5_clicked()
+{
+    QString attendance_view = ui->le_view_attendance_year->text() + "/"
+                        + ui->le_view_attendance_month->currentText();
+    cout << attendance_view;
+    emit show_employee_attendace_pie_view(attendance_view);
+}
+
+void EmployeeDisplay::deal_tellTheAdminAttendancePieRate(QString result)
+{
+    cout << result;
+    QStringList list = result.split("/");
+
+    QVector<SectorInfo> test;
+
+    SectorInfo info1;
+    info1.description = "正常考勤";
+    info1.percent = (list[0].toDouble()/(list[0].toDouble()+list[1].toDouble()))*100;
+    cout << info1.percent;
+    test.push_back(info1);
+
+    info1.description = "异常考勤";
+    info1.percent = (list[1].toDouble()/(list[0].toDouble()+list[1].toDouble()))*100;
+    cout << info1.percent;
+    test.push_back(info1);
+
+    ui->w_employee_attendance_pie_show->setData(test);
 }

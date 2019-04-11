@@ -21,6 +21,9 @@ public:
     void Admin_watch_table_display(MyProtocol *msg);
     void set_date_of_salary_count(MyProtocol *msg);
     void watch_attendance_rate_view(MyProtocol *msg);
+    void watch_attendance_rate_pie_view(MyProtocol *msg);
+    void watch_employee_attendance_rate_view(MyProtocol *msg);
+    void watch_employee_attendance_rate__pie_view(MyProtocol *msg);
 private:
     bool result;
     backenddb db;

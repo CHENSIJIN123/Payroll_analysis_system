@@ -68,6 +68,11 @@ void dealMsg::judge_operator(MyProtocol *msg)
                     watch_attendance_rate_view(msg);
                     break;
                 }
+                case PIE_CHART_DISPLAY:
+                {
+                    watch_attendance_rate_pie_view(msg);
+                    break;
+                }
             }
             break;
         }
@@ -114,6 +119,12 @@ void dealMsg::judge_operator(MyProtocol *msg)
         case DEPARTMENT_SALARY_COMPARE:{}
         break;
     }
+}
+
+void dealMsg::watch_attendance_rate_pie_view(MyProtocol *msg)
+{
+    cout << msg->getMsgContent();
+    emit signal_watch_attendance_rate_pie_view(msg->getMsgContent());
 }
 
 void dealMsg::watch_attendance_rate_view(MyProtocol *msg)

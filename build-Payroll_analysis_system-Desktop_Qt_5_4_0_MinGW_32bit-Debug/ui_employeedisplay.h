@@ -17,6 +17,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
@@ -69,6 +70,27 @@ public:
     QSpacerItem *horizontalSpacer_8;
     Histogram *w_his_view;
     QWidget *tb_attendance_rate;
+    QGridLayout *gridLayout_9;
+    QStackedWidget *stackedWidget_2;
+    QWidget *attendance_choose;
+    QPushButton *pb_someday_view;
+    QPushButton *pb_some_month_view;
+    QWidget *pg_someday_view;
+    QComboBox *le_search_day;
+    QComboBox *le_search_month;
+    QLabel *label_3;
+    QLabel *label_4;
+    QTextEdit *textEdit_2;
+    QPushButton *pushButton_4;
+    QLabel *label_5;
+    QLineEdit *le_search_year;
+    QWidget *pg_some_month_view;
+    QLineEdit *le_view_attendance_year;
+    QPushButton *pushButton_5;
+    QComboBox *le_view_attendance_month;
+    QLabel *label_6;
+    QLabel *label_8;
+    Pie *w_employee_attendance_pie_show;
     QWidget *tb_competitive_analysis;
     QTextEdit *te_process;
     QLabel *lb_result;
@@ -215,6 +237,70 @@ public:
         tabWidget->addTab(tb_view_salary, QString());
         tb_attendance_rate = new QWidget();
         tb_attendance_rate->setObjectName(QStringLiteral("tb_attendance_rate"));
+        gridLayout_9 = new QGridLayout(tb_attendance_rate);
+        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
+        stackedWidget_2 = new QStackedWidget(tb_attendance_rate);
+        stackedWidget_2->setObjectName(QStringLiteral("stackedWidget_2"));
+        attendance_choose = new QWidget();
+        attendance_choose->setObjectName(QStringLiteral("attendance_choose"));
+        pb_someday_view = new QPushButton(attendance_choose);
+        pb_someday_view->setObjectName(QStringLiteral("pb_someday_view"));
+        pb_someday_view->setGeometry(QRect(340, 130, 171, 31));
+        pb_some_month_view = new QPushButton(attendance_choose);
+        pb_some_month_view->setObjectName(QStringLiteral("pb_some_month_view"));
+        pb_some_month_view->setGeometry(QRect(340, 210, 171, 31));
+        stackedWidget_2->addWidget(attendance_choose);
+        pg_someday_view = new QWidget();
+        pg_someday_view->setObjectName(QStringLiteral("pg_someday_view"));
+        le_search_day = new QComboBox(pg_someday_view);
+        le_search_day->setObjectName(QStringLiteral("le_search_day"));
+        le_search_day->setGeometry(QRect(330, 30, 69, 22));
+        le_search_month = new QComboBox(pg_someday_view);
+        le_search_month->setObjectName(QStringLiteral("le_search_month"));
+        le_search_month->setGeometry(QRect(220, 30, 69, 22));
+        label_3 = new QLabel(pg_someday_view);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(60, 30, 41, 21));
+        label_4 = new QLabel(pg_someday_view);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(180, 30, 41, 21));
+        textEdit_2 = new QTextEdit(pg_someday_view);
+        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
+        textEdit_2->setGeometry(QRect(50, 80, 621, 311));
+        pushButton_4 = new QPushButton(pg_someday_view);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(550, 30, 75, 23));
+        label_5 = new QLabel(pg_someday_view);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(300, 30, 31, 21));
+        le_search_year = new QLineEdit(pg_someday_view);
+        le_search_year->setObjectName(QStringLiteral("le_search_year"));
+        le_search_year->setGeometry(QRect(100, 30, 61, 20));
+        stackedWidget_2->addWidget(pg_someday_view);
+        pg_some_month_view = new QWidget();
+        pg_some_month_view->setObjectName(QStringLiteral("pg_some_month_view"));
+        le_view_attendance_year = new QLineEdit(pg_some_month_view);
+        le_view_attendance_year->setObjectName(QStringLiteral("le_view_attendance_year"));
+        le_view_attendance_year->setGeometry(QRect(170, 30, 61, 20));
+        pushButton_5 = new QPushButton(pg_some_month_view);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(510, 30, 75, 23));
+        le_view_attendance_month = new QComboBox(pg_some_month_view);
+        le_view_attendance_month->setObjectName(QStringLiteral("le_view_attendance_month"));
+        le_view_attendance_month->setGeometry(QRect(290, 30, 69, 22));
+        label_6 = new QLabel(pg_some_month_view);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(130, 30, 41, 21));
+        label_8 = new QLabel(pg_some_month_view);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(250, 30, 41, 21));
+        w_employee_attendance_pie_show = new Pie(pg_some_month_view);
+        w_employee_attendance_pie_show->setObjectName(QStringLiteral("w_employee_attendance_pie_show"));
+        w_employee_attendance_pie_show->setGeometry(QRect(130, 80, 561, 331));
+        stackedWidget_2->addWidget(pg_some_month_view);
+
+        gridLayout_9->addWidget(stackedWidget_2, 0, 0, 1, 1);
+
         tabWidget->addTab(tb_attendance_rate, QString());
         tb_competitive_analysis = new QWidget();
         tb_competitive_analysis->setObjectName(QStringLiteral("tb_competitive_analysis"));
@@ -232,9 +318,10 @@ public:
 
         retranslateUi(EmployeeDisplay);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(1);
         stackedWidget->setCurrentIndex(1);
         show_way->setCurrentIndex(1);
+        stackedWidget_2->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(EmployeeDisplay);
@@ -282,6 +369,80 @@ public:
         );
         pb_search->setText(QApplication::translate("EmployeeDisplay", "\346\237\245\350\257\242", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_view_salary), QApplication::translate("EmployeeDisplay", "\346\237\245\347\234\213\345\267\245\350\265\204", 0));
+        pb_someday_view->setText(QApplication::translate("EmployeeDisplay", "\346\237\245\347\234\213\346\237\220\346\227\245\350\200\203\345\213\244", 0));
+        pb_some_month_view->setText(QApplication::translate("EmployeeDisplay", "\346\237\245\347\234\213\346\237\220\346\234\210\350\200\203\345\213\244\347\216\207", 0));
+        le_search_day->clear();
+        le_search_day->insertItems(0, QStringList()
+         << QApplication::translate("EmployeeDisplay", "01", 0)
+         << QApplication::translate("EmployeeDisplay", "02", 0)
+         << QApplication::translate("EmployeeDisplay", "03", 0)
+         << QApplication::translate("EmployeeDisplay", "04", 0)
+         << QApplication::translate("EmployeeDisplay", "05", 0)
+         << QApplication::translate("EmployeeDisplay", "06", 0)
+         << QApplication::translate("EmployeeDisplay", "07", 0)
+         << QApplication::translate("EmployeeDisplay", "08", 0)
+         << QApplication::translate("EmployeeDisplay", "09", 0)
+         << QApplication::translate("EmployeeDisplay", "10", 0)
+         << QApplication::translate("EmployeeDisplay", "11", 0)
+         << QApplication::translate("EmployeeDisplay", "12", 0)
+         << QApplication::translate("EmployeeDisplay", "13", 0)
+         << QApplication::translate("EmployeeDisplay", "14", 0)
+         << QApplication::translate("EmployeeDisplay", "15", 0)
+         << QApplication::translate("EmployeeDisplay", "16", 0)
+         << QApplication::translate("EmployeeDisplay", "17", 0)
+         << QApplication::translate("EmployeeDisplay", "18", 0)
+         << QApplication::translate("EmployeeDisplay", "19", 0)
+         << QApplication::translate("EmployeeDisplay", "20", 0)
+         << QApplication::translate("EmployeeDisplay", "21", 0)
+         << QApplication::translate("EmployeeDisplay", "22", 0)
+         << QApplication::translate("EmployeeDisplay", "23", 0)
+         << QApplication::translate("EmployeeDisplay", "24", 0)
+         << QApplication::translate("EmployeeDisplay", "25", 0)
+         << QApplication::translate("EmployeeDisplay", "26", 0)
+         << QApplication::translate("EmployeeDisplay", "27", 0)
+         << QApplication::translate("EmployeeDisplay", "28", 0)
+         << QApplication::translate("EmployeeDisplay", "29", 0)
+         << QApplication::translate("EmployeeDisplay", "30", 0)
+         << QApplication::translate("EmployeeDisplay", "31", 0)
+         << QString()
+        );
+        le_search_month->clear();
+        le_search_month->insertItems(0, QStringList()
+         << QApplication::translate("EmployeeDisplay", "01", 0)
+         << QApplication::translate("EmployeeDisplay", "02", 0)
+         << QApplication::translate("EmployeeDisplay", "03", 0)
+         << QApplication::translate("EmployeeDisplay", "04", 0)
+         << QApplication::translate("EmployeeDisplay", "05", 0)
+         << QApplication::translate("EmployeeDisplay", "06", 0)
+         << QApplication::translate("EmployeeDisplay", "07", 0)
+         << QApplication::translate("EmployeeDisplay", "08", 0)
+         << QApplication::translate("EmployeeDisplay", "09", 0)
+         << QApplication::translate("EmployeeDisplay", "10", 0)
+         << QApplication::translate("EmployeeDisplay", "11", 0)
+         << QApplication::translate("EmployeeDisplay", "12", 0)
+        );
+        label_3->setText(QApplication::translate("EmployeeDisplay", "\345\271\264\344\273\275\357\274\232", 0));
+        label_4->setText(QApplication::translate("EmployeeDisplay", "\346\234\210\344\273\275\357\274\232", 0));
+        pushButton_4->setText(QApplication::translate("EmployeeDisplay", "\346\237\245\350\257\242", 0));
+        label_5->setText(QApplication::translate("EmployeeDisplay", "\345\244\251\357\274\232", 0));
+        pushButton_5->setText(QApplication::translate("EmployeeDisplay", "\346\237\245\350\257\242", 0));
+        le_view_attendance_month->clear();
+        le_view_attendance_month->insertItems(0, QStringList()
+         << QApplication::translate("EmployeeDisplay", "01", 0)
+         << QApplication::translate("EmployeeDisplay", "02", 0)
+         << QApplication::translate("EmployeeDisplay", "03", 0)
+         << QApplication::translate("EmployeeDisplay", "04", 0)
+         << QApplication::translate("EmployeeDisplay", "05", 0)
+         << QApplication::translate("EmployeeDisplay", "06", 0)
+         << QApplication::translate("EmployeeDisplay", "07", 0)
+         << QApplication::translate("EmployeeDisplay", "08", 0)
+         << QApplication::translate("EmployeeDisplay", "09", 0)
+         << QApplication::translate("EmployeeDisplay", "10", 0)
+         << QApplication::translate("EmployeeDisplay", "11", 0)
+         << QApplication::translate("EmployeeDisplay", "12", 0)
+        );
+        label_6->setText(QApplication::translate("EmployeeDisplay", "\345\271\264\344\273\275\357\274\232", 0));
+        label_8->setText(QApplication::translate("EmployeeDisplay", "\346\234\210\344\273\275\357\274\232", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_attendance_rate), QApplication::translate("EmployeeDisplay", "\346\237\245\347\234\213\350\200\203\345\213\244", 0));
         lb_result->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tb_competitive_analysis), QApplication::translate("EmployeeDisplay", "\347\253\236\344\272\211\345\212\233\345\210\206\346\236\220", 0));

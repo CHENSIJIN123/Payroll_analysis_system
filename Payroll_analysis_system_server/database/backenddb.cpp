@@ -18,6 +18,96 @@ backenddb::backenddb()
     //insert_salary();
 }
 
+QString backenddb::EmployeeQueryWatchAttendanceRatePie(QString name,QString info)
+{
+    QStringList querycondition = info.split("/");
+    QSqlQuery query;
+    QString queryString = QString("select issuccess from attendanceinfo,EMPLOYEEINFO "
+                                  "where EMPLOYEEINFO.[NAME_OF_WORKER]='%1' and "
+                                  "employeeinfo.[Job_ID] = attendanceinfo.[Job_ID] "
+                                  "and attendanceinfo.[year]='%2' and attendanceinfo.[month]='%3'")
+                                    .arg(name)
+                                    .arg(querycondition[0])
+                                    .arg(querycondition[1]);
+    cout << queryString;
+    int count_0 = 0;
+    int count_1 = 0;
+    if(query.exec(queryString))
+    {
+        int issuccess = query.record().indexOf("issuccess");
+        while(query.next())
+        {
+            QString success = query.value(issuccess).toString();
+            if(success == "1")
+            {count_1++;}
+            if(success == "0")
+            {count_0++;}
+        }
+    }
+    cout << count_0 << count_1;
+    return QString::number(count_0)+"/"+QString::number(count_1);
+}
+
+QString backenddb::EmployeeQueryWatchAttendanceRate(QString name,QString info)
+{
+    QStringList querycondition = info.split("/");
+    QSqlQuery query;
+    QString queryString = QString("select AttendanceInfo.[Workinghours],attendanceinfo.[Aftergetoffworktime] "
+                                  "from ATTENDANCEINFO,employeeinfo where employeeinfo.[NAME_OF_WORKER] = '%1' "
+                                  "and employeeinfo.[Job_ID]=ATTENDANCEINFO.[Job_ID] and ATTENDANCEINFO.[year]=  "
+                                  "'%2' and attendanceinfo.[month]='%3' and attendanceinfo.[day]='%4';")
+                                    .arg(name)
+                                    .arg(querycondition[0])
+                                    .arg(querycondition[1])
+                                    .arg(querycondition[2]);
+    cout << queryString;
+    if(query.exec(queryString))
+    {
+        int gowork = query.record().indexOf("Workinghours");
+        int afterwork = query.record().indexOf("Aftergetoffworktime");
+        if(query.next())
+        {
+            QString attendance_result = query.value(gowork).toString() + "/"
+                                    + query.value(afterwork).toString();
+            return attendance_result;
+        }
+    }else
+    {
+        return "no";
+    }
+
+}
+
+QString backenddb::AdminQueryWatchAttendanceRatePie(QString info)
+{
+    QStringList querycondition = info.split("/");
+    QSqlQuery query;
+    QString queryString = QString("select issuccess from attendanceinfo,EMPLOYEEINFO "
+                                  "where EMPLOYEEINFO.[NAME_OF_WORKER]='%1' and "
+                                  "employeeinfo.[Job_ID] = attendanceinfo.[Job_ID] "
+                                  "and attendanceinfo.[year]='%2' and attendanceinfo.[month]='%3'")
+                                    .arg(querycondition[0])
+                                    .arg(querycondition[1])
+                                    .arg(querycondition[2]);
+    cout << queryString;
+    int count_0 = 0;
+    int count_1 = 0;
+    if(query.exec(queryString))
+    {
+        int issuccess = query.record().indexOf("issuccess");
+        while(query.next())
+        {
+            QString success = query.value(issuccess).toString();
+            if(success == "1")
+            {count_1++;}
+            if(success == "0")
+            {count_0++;}
+        }
+    }
+    cout << count_0 << count_1;
+    return QString::number(count_0)+"/"+QString::number(count_1);
+}
+
 QString backenddb::AdminqueryWatchAttendanceRate(QString info)
 {
     QStringList querycondition = info.split("/");
@@ -30,6 +120,7 @@ QString backenddb::AdminqueryWatchAttendanceRate(QString info)
                                     .arg(querycondition[1])
                                     .arg(querycondition[2])
                                     .arg(querycondition[3]);
+    cout << queryString;
     if(query.exec(queryString))
     {
         int gowork = query.record().indexOf("Workinghours");

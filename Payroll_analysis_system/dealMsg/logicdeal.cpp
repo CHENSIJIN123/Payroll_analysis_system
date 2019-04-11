@@ -20,6 +20,12 @@ LogicDeal::LogicDeal(QWidget *parent) :
     connect(deal,SIGNAL(signal_add_employee_information(QString)),this,SLOT(slot_add_employee_information(QString)));
     connect(deal,SIGNAL(signal_delete_employee_information(QString)),this,SLOT(slot_delete_employee_information(QString)));
     connect(deal,SIGNAL(signal_watch_attendance_rate_view(QString)),this,SLOT(slot_watch_attendance_rate_view(QString)));
+    connect(deal,SIGNAL(signal_watch_attendance_rate_pie_view(QString)),this,SLOT(slot_watch_attendance_rate_pie_view(QString)));
+}
+
+void LogicDeal::slot_watch_attendance_rate_pie_view(QString result)
+{
+    emit tellTheAdminAttendancePieRate(result);
 }
 
 void LogicDeal::slot_watch_attendance_rate_view(QString result)
@@ -311,6 +317,9 @@ void LogicDeal::slot_count_salary_time(QString time)
     dealSocket::tcpsocket->write(block);
 }
 
+/*
+ * 管理员查看员工考勤
+*/
 void LogicDeal::slot_search_attendance(QString cond)
 {
     QByteArray block;
@@ -326,7 +335,56 @@ void LogicDeal::slot_search_attendance(QString cond)
     dealSocket::tcpsocket->write(block);
 }
 
+/*
+ * 管理员查看员工考勤率
+*/
+void LogicDeal::slot_search_attendance_rate(QString cond)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
 
+    msg->setMsgOperate(WATCH_ATTENDANCE_RATE);
+    msg->setMsgCommand(PIE_CHART_DISPLAY);
+    msg->setMsgContent(cond);
+    msg->setMsgStatus(ADMINISTRATOR);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
 
+    dealSocket::tcpsocket->write(block);
+}
 
+/*
+ * 员工自己查看 某日考勤
+*/
+void LogicDeal::deal_show_employee_attendance_table_view(QString info)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+    msg->setMsgName(name.toUtf8());
+    msg->setMsgOperate(WATCH_ATTENDANCE_RATE);
+    msg->setMsgCommand(TABLE_DISPLAY);
+    msg->setMsgContent(info);
+    msg->setMsgStatus(EMPLOYEE);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
 
+    dealSocket::tcpsocket->write(block);
+}
+
+/*
+ * 员工自己查看某月考勤率
+*/
+void LogicDeal::dealshow_employee_attendace_pie_view(QString info)
+{
+    QByteArray block;
+    msg->clearMsgPackage();
+    msg->setMsgName(name.toUtf8());
+    msg->setMsgOperate(WATCH_ATTENDANCE_RATE);
+    msg->setMsgCommand(PIE_CHART_DISPLAY);
+    msg->setMsgContent(info);
+    msg->setMsgStatus(EMPLOYEE);
+    msg->setMsgLength(qint16(block.size() + sizeof(qint16)));
+    block = *(msg->packageMsg());
+
+    dealSocket::tcpsocket->write(block);
+}

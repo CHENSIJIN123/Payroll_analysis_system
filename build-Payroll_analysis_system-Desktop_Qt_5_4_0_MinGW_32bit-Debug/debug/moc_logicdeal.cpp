@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_LogicDeal_t {
-    QByteArrayData data[38];
-    char stringdata[945];
+    QByteArrayData data[43];
+    char stringdata[1117];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,31 +42,36 @@ QT_MOC_LITERAL(9, 205, 25), // "tellTheAdminCommitSucceed"
 QT_MOC_LITERAL(10, 231, 25), // "tellTheAdminInsertSucceed"
 QT_MOC_LITERAL(11, 257, 25), // "tellTheAdminDeleteSucceed"
 QT_MOC_LITERAL(12, 283, 26), // "tellTheAdminAttendanceRate"
-QT_MOC_LITERAL(13, 310, 29), // "dealreturnToLoginButtonResult"
-QT_MOC_LITERAL(14, 340, 6), // "result"
-QT_MOC_LITERAL(15, 347, 34), // "dealreturnToLoginButtonResult..."
-QT_MOC_LITERAL(16, 382, 26), // "dealtable_show_salary_info"
-QT_MOC_LITERAL(17, 409, 24), // "slot_watch_table_display"
-QT_MOC_LITERAL(18, 434, 26), // "dealshow_multi_salary_info"
-QT_MOC_LITERAL(19, 461, 30), // "slot_watch_multi_month_display"
-QT_MOC_LITERAL(20, 492, 21), // "dealSalaryRankingView"
-QT_MOC_LITERAL(21, 514, 27), // "slot_watchSalaryRankingView"
-QT_MOC_LITERAL(22, 542, 30), // "dealadmin_change_employee_info"
-QT_MOC_LITERAL(23, 573, 13), // "employee_name"
-QT_MOC_LITERAL(24, 587, 29), // "slot_change_the_employee_info"
-QT_MOC_LITERAL(25, 617, 13), // "employee_info"
-QT_MOC_LITERAL(26, 631, 39), // "dealModifyEmployeeInformation..."
-QT_MOC_LITERAL(27, 671, 32), // "slot_commit_modify_employee_info"
-QT_MOC_LITERAL(28, 704, 26), // "dealAddEmployeeInformation"
-QT_MOC_LITERAL(29, 731, 29), // "slot_add_employee_information"
-QT_MOC_LITERAL(30, 761, 28), // "dealDeleteEmployeeInfomation"
-QT_MOC_LITERAL(31, 790, 32), // "slot_delete_employee_information"
-QT_MOC_LITERAL(32, 823, 33), // "deal_Admin_table_show_salary_..."
-QT_MOC_LITERAL(33, 857, 22), // "slot_count_salary_time"
-QT_MOC_LITERAL(34, 880, 4), // "time"
-QT_MOC_LITERAL(35, 885, 22), // "slot_search_attendance"
-QT_MOC_LITERAL(36, 908, 4), // "cond"
-QT_MOC_LITERAL(37, 913, 31) // "slot_watch_attendance_rate_view"
+QT_MOC_LITERAL(13, 310, 29), // "tellTheAdminAttendancePieRate"
+QT_MOC_LITERAL(14, 340, 29), // "dealreturnToLoginButtonResult"
+QT_MOC_LITERAL(15, 370, 6), // "result"
+QT_MOC_LITERAL(16, 377, 34), // "dealreturnToLoginButtonResult..."
+QT_MOC_LITERAL(17, 412, 26), // "dealtable_show_salary_info"
+QT_MOC_LITERAL(18, 439, 24), // "slot_watch_table_display"
+QT_MOC_LITERAL(19, 464, 26), // "dealshow_multi_salary_info"
+QT_MOC_LITERAL(20, 491, 30), // "slot_watch_multi_month_display"
+QT_MOC_LITERAL(21, 522, 21), // "dealSalaryRankingView"
+QT_MOC_LITERAL(22, 544, 27), // "slot_watchSalaryRankingView"
+QT_MOC_LITERAL(23, 572, 30), // "dealadmin_change_employee_info"
+QT_MOC_LITERAL(24, 603, 13), // "employee_name"
+QT_MOC_LITERAL(25, 617, 29), // "slot_change_the_employee_info"
+QT_MOC_LITERAL(26, 647, 13), // "employee_info"
+QT_MOC_LITERAL(27, 661, 39), // "dealModifyEmployeeInformation..."
+QT_MOC_LITERAL(28, 701, 32), // "slot_commit_modify_employee_info"
+QT_MOC_LITERAL(29, 734, 26), // "dealAddEmployeeInformation"
+QT_MOC_LITERAL(30, 761, 29), // "slot_add_employee_information"
+QT_MOC_LITERAL(31, 791, 28), // "dealDeleteEmployeeInfomation"
+QT_MOC_LITERAL(32, 820, 32), // "slot_delete_employee_information"
+QT_MOC_LITERAL(33, 853, 33), // "deal_Admin_table_show_salary_..."
+QT_MOC_LITERAL(34, 887, 22), // "slot_count_salary_time"
+QT_MOC_LITERAL(35, 910, 4), // "time"
+QT_MOC_LITERAL(36, 915, 22), // "slot_search_attendance"
+QT_MOC_LITERAL(37, 938, 4), // "cond"
+QT_MOC_LITERAL(38, 943, 31), // "slot_watch_attendance_rate_view"
+QT_MOC_LITERAL(39, 975, 27), // "slot_search_attendance_rate"
+QT_MOC_LITERAL(40, 1003, 35), // "slot_watch_attendance_rate_pi..."
+QT_MOC_LITERAL(41, 1039, 40), // "deal_show_employee_attendance..."
+QT_MOC_LITERAL(42, 1080, 36) // "dealshow_employee_attendace_p..."
 
     },
     "LogicDeal\0tellTheWidgetIfItCanLoginSuccess\0"
@@ -79,6 +84,7 @@ QT_MOC_LITERAL(37, 913, 31) // "slot_watch_attendance_rate_view"
     "tellTheAdminInsertSucceed\0"
     "tellTheAdminDeleteSucceed\0"
     "tellTheAdminAttendanceRate\0"
+    "tellTheAdminAttendancePieRate\0"
     "dealreturnToLoginButtonResult\0result\0"
     "dealreturnToLoginButtonResultPunch\0"
     "dealtable_show_salary_info\0"
@@ -97,7 +103,11 @@ QT_MOC_LITERAL(37, 913, 31) // "slot_watch_attendance_rate_view"
     "deal_Admin_table_show_salary_info\0"
     "slot_count_salary_time\0time\0"
     "slot_search_attendance\0cond\0"
-    "slot_watch_attendance_rate_view"
+    "slot_watch_attendance_rate_view\0"
+    "slot_search_attendance_rate\0"
+    "slot_watch_attendance_rate_pie_view\0"
+    "deal_show_employee_attendance_table_view\0"
+    "dealshow_employee_attendace_pie_view"
 };
 #undef QT_MOC_LITERAL
 
@@ -107,46 +117,51 @@ static const uint qt_meta_data_LogicDeal[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      30,   14, // methods
+      35,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      10,       // signalCount
+      11,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  164,    2, 0x06 /* Public */,
-       3,    1,  167,    2, 0x06 /* Public */,
-       4,    1,  170,    2, 0x06 /* Public */,
-       6,    1,  173,    2, 0x06 /* Public */,
-       7,    1,  176,    2, 0x06 /* Public */,
-       8,    1,  179,    2, 0x06 /* Public */,
-       9,    1,  182,    2, 0x06 /* Public */,
-      10,    1,  185,    2, 0x06 /* Public */,
-      11,    1,  188,    2, 0x06 /* Public */,
-      12,    1,  191,    2, 0x06 /* Public */,
+       1,    1,  189,    2, 0x06 /* Public */,
+       3,    1,  192,    2, 0x06 /* Public */,
+       4,    1,  195,    2, 0x06 /* Public */,
+       6,    1,  198,    2, 0x06 /* Public */,
+       7,    1,  201,    2, 0x06 /* Public */,
+       8,    1,  204,    2, 0x06 /* Public */,
+       9,    1,  207,    2, 0x06 /* Public */,
+      10,    1,  210,    2, 0x06 /* Public */,
+      11,    1,  213,    2, 0x06 /* Public */,
+      12,    1,  216,    2, 0x06 /* Public */,
+      13,    1,  219,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      13,    1,  194,    2, 0x0a /* Public */,
-      15,    1,  197,    2, 0x0a /* Public */,
-      16,    1,  200,    2, 0x0a /* Public */,
-      17,    1,  203,    2, 0x0a /* Public */,
-      18,    1,  206,    2, 0x0a /* Public */,
-      19,    1,  209,    2, 0x0a /* Public */,
-      20,    0,  212,    2, 0x0a /* Public */,
-      21,    1,  213,    2, 0x0a /* Public */,
-      22,    1,  216,    2, 0x0a /* Public */,
-      24,    1,  219,    2, 0x0a /* Public */,
-      26,    1,  222,    2, 0x0a /* Public */,
-      27,    1,  225,    2, 0x0a /* Public */,
-      28,    1,  228,    2, 0x0a /* Public */,
-      29,    1,  231,    2, 0x0a /* Public */,
-      30,    1,  234,    2, 0x0a /* Public */,
-      31,    1,  237,    2, 0x0a /* Public */,
-      32,    1,  240,    2, 0x0a /* Public */,
-      33,    1,  243,    2, 0x0a /* Public */,
-      35,    1,  246,    2, 0x0a /* Public */,
-      37,    1,  249,    2, 0x0a /* Public */,
+      14,    1,  222,    2, 0x0a /* Public */,
+      16,    1,  225,    2, 0x0a /* Public */,
+      17,    1,  228,    2, 0x0a /* Public */,
+      18,    1,  231,    2, 0x0a /* Public */,
+      19,    1,  234,    2, 0x0a /* Public */,
+      20,    1,  237,    2, 0x0a /* Public */,
+      21,    0,  240,    2, 0x0a /* Public */,
+      22,    1,  241,    2, 0x0a /* Public */,
+      23,    1,  244,    2, 0x0a /* Public */,
+      25,    1,  247,    2, 0x0a /* Public */,
+      27,    1,  250,    2, 0x0a /* Public */,
+      28,    1,  253,    2, 0x0a /* Public */,
+      29,    1,  256,    2, 0x0a /* Public */,
+      30,    1,  259,    2, 0x0a /* Public */,
+      31,    1,  262,    2, 0x0a /* Public */,
+      32,    1,  265,    2, 0x0a /* Public */,
+      33,    1,  268,    2, 0x0a /* Public */,
+      34,    1,  271,    2, 0x0a /* Public */,
+      36,    1,  274,    2, 0x0a /* Public */,
+      38,    1,  277,    2, 0x0a /* Public */,
+      39,    1,  280,    2, 0x0a /* Public */,
+      40,    1,  283,    2, 0x0a /* Public */,
+      41,    1,  286,    2, 0x0a /* Public */,
+      42,    1,  289,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -159,18 +174,19 @@ static const uint qt_meta_data_LogicDeal[] = {
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void, QMetaType::QString,    5,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QString,   14,
-    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   15,
+    QMetaType::Void, QMetaType::QString,   15,
     QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   15,
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,   23,
-    QMetaType::Void, QMetaType::QString,   25,
+    QMetaType::Void, QMetaType::QString,   24,
+    QMetaType::Void, QMetaType::QString,   26,
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::QString,    5,
@@ -178,9 +194,13 @@ static const uint qt_meta_data_LogicDeal[] = {
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,   34,
-    QMetaType::Void, QMetaType::QString,   36,
-    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   35,
+    QMetaType::Void, QMetaType::QString,   37,
+    QMetaType::Void, QMetaType::QString,   15,
+    QMetaType::Void, QMetaType::QString,   37,
+    QMetaType::Void, QMetaType::QString,   15,
+    QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void, QMetaType::QString,    5,
 
        0        // eod
 };
@@ -200,26 +220,31 @@ void LogicDeal::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 7: _t->tellTheAdminInsertSucceed((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 8: _t->tellTheAdminDeleteSucceed((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 9: _t->tellTheAdminAttendanceRate((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 10: _t->dealreturnToLoginButtonResult((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 11: _t->dealreturnToLoginButtonResultPunch((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 12: _t->dealtable_show_salary_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 13: _t->slot_watch_table_display((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 14: _t->dealshow_multi_salary_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 15: _t->slot_watch_multi_month_display((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 16: _t->dealSalaryRankingView(); break;
-        case 17: _t->slot_watchSalaryRankingView((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 18: _t->dealadmin_change_employee_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 19: _t->slot_change_the_employee_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 20: _t->dealModifyEmployeeInformationSubmission((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 21: _t->slot_commit_modify_employee_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 22: _t->dealAddEmployeeInformation((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 23: _t->slot_add_employee_information((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 24: _t->dealDeleteEmployeeInfomation((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 25: _t->slot_delete_employee_information((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 26: _t->deal_Admin_table_show_salary_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 27: _t->slot_count_salary_time((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 28: _t->slot_search_attendance((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 29: _t->slot_watch_attendance_rate_view((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 10: _t->tellTheAdminAttendancePieRate((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 11: _t->dealreturnToLoginButtonResult((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 12: _t->dealreturnToLoginButtonResultPunch((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 13: _t->dealtable_show_salary_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 14: _t->slot_watch_table_display((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 15: _t->dealshow_multi_salary_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 16: _t->slot_watch_multi_month_display((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 17: _t->dealSalaryRankingView(); break;
+        case 18: _t->slot_watchSalaryRankingView((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 19: _t->dealadmin_change_employee_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 20: _t->slot_change_the_employee_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 21: _t->dealModifyEmployeeInformationSubmission((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 22: _t->slot_commit_modify_employee_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 23: _t->dealAddEmployeeInformation((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 24: _t->slot_add_employee_information((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 25: _t->dealDeleteEmployeeInfomation((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 26: _t->slot_delete_employee_information((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 27: _t->deal_Admin_table_show_salary_info((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 28: _t->slot_count_salary_time((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 29: _t->slot_search_attendance((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 30: _t->slot_watch_attendance_rate_view((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 31: _t->slot_search_attendance_rate((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 32: _t->slot_watch_attendance_rate_pie_view((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 33: _t->deal_show_employee_attendance_table_view((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 34: _t->dealshow_employee_attendace_pie_view((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -285,6 +310,12 @@ void LogicDeal::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
                 *result = 9;
             }
         }
+        {
+            typedef void (LogicDeal::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&LogicDeal::tellTheAdminAttendancePieRate)) {
+                *result = 10;
+            }
+        }
     }
 }
 
@@ -313,13 +344,13 @@ int LogicDeal::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 30)
+        if (_id < 35)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 30;
+        _id -= 35;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 30)
+        if (_id < 35)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 30;
+        _id -= 35;
     }
     return _id;
 }
@@ -392,5 +423,12 @@ void LogicDeal::tellTheAdminAttendanceRate(QString _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 9, _a);
+}
+
+// SIGNAL 10
+void LogicDeal::tellTheAdminAttendancePieRate(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 10, _a);
 }
 QT_END_MOC_NAMESPACE

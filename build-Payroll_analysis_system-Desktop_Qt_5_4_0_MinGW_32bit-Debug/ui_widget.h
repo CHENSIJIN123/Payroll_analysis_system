@@ -38,7 +38,9 @@ public:
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
         Widget->resize(819, 494);
-        Widget->setStyleSheet(QStringLiteral(""));
+        Widget->setStyleSheet(QLatin1String("background: green;\n"
+"background-size: cover;\n"
+""));
         widget = new QWidget(Widget);
         widget->setObjectName(QStringLiteral("widget"));
         widget->setGeometry(QRect(200, 120, 371, 241));

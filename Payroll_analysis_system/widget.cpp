@@ -41,6 +41,12 @@ Widget::Widget(QWidget *parent) :
     connect(admin_display,SIGNAL(signal_count_salary_time(QString)),my_logicdeal,SLOT(slot_count_salary_time(QString)));
     connect(admin_display,SIGNAL(signal_search_attendance(QString)),my_logicdeal,SLOT(slot_search_attendance(QString)));
     connect(my_logicdeal,SIGNAL(tellTheAdminAttendanceRate(QString)),admin_display,SLOT(dealtellTheAdminAttendanceRate(QString)));
+    connect(admin_display,SIGNAL(signal_search_attendance_rate(QString)),my_logicdeal,SLOT(slot_search_attendance_rate(QString)));
+    connect(my_logicdeal,SIGNAL(tellTheAdminAttendancePieRate(QString)),admin_display,SLOT(dealtellTheAdminAttendancePieRate(QString)));
+    connect(employee_display,SIGNAL(show_employee_attendance_table_view(QString)),my_logicdeal,SLOT(deal_show_employee_attendance_table_view(QString)));
+    connect(my_logicdeal,SIGNAL(tellTheAdminAttendanceRate(QString)),employee_display,SLOT(slottellTheAdminAttendanceRate(QString)));
+    connect(employee_display,SIGNAL(show_employee_attendace_pie_view(QString)),my_logicdeal,SLOT(dealshow_employee_attendace_pie_view(QString)));
+    connect(my_logicdeal,SIGNAL(tellTheAdminAttendancePieRate(QString)),employee_display,SLOT(deal_tellTheAdminAttendancePieRate(QString)));
 }
 
 

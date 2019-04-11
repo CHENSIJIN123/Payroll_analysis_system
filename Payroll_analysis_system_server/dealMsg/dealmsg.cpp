@@ -66,7 +66,18 @@ void dealMsg::judge_operator(MyProtocol *msg)
             {
                 case TABLE_DISPLAY:
                 {
-                    watch_attendance_rate_view(msg);
+                    if(msg->getMsgStatus() == ADMINISTRATOR)
+                        watch_attendance_rate_view(msg);
+                    if(msg->getMsgStatus() == EMPLOYEE)
+                        watch_employee_attendance_rate_view(msg);
+                    break;
+                }
+                case PIE_CHART_DISPLAY:
+                {
+                    if(msg->getMsgStatus() == ADMINISTRATOR)
+                        watch_attendance_rate_pie_view(msg);
+                    if(msg->getMsgStatus() == EMPLOYEE)
+                        watch_employee_attendance_rate__pie_view(msg);
                     break;
                 }
             }
@@ -117,6 +128,36 @@ void dealMsg::judge_operator(MyProtocol *msg)
         }
         case DEPARTMENT_SALARY_COMPARE:{}
     }
+}
+
+/*
+ * 员工自己查看考勤率
+*/
+void dealMsg::watch_employee_attendance_rate__pie_view(MyProtocol *msg)
+{
+    QString result = db.EmployeeQueryWatchAttendanceRatePie(msg->getMsgName(),msg->getMsgContent());
+    cout << result;
+    msg->setMsgContent(result);
+}
+
+/*
+ * 员工自己查看考勤情况
+*/
+void dealMsg::watch_employee_attendance_rate_view(MyProtocol *msg)
+{
+    QString result = db.EmployeeQueryWatchAttendanceRate(msg->getMsgName(),msg->getMsgContent());
+    cout << result;
+    msg->setMsgContent(result);
+}
+
+/*
+ * 管理员查看员工某月考勤率
+*/
+void dealMsg::watch_attendance_rate_pie_view(MyProtocol *msg)
+{
+    QString result = db.AdminQueryWatchAttendanceRatePie(msg->getMsgContent());
+    cout << result;
+    msg->setMsgContent(result);
 }
 
 /*

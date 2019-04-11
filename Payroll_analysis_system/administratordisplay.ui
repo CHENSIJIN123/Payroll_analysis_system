@@ -1191,7 +1191,7 @@
        <item row="0" column="0">
         <widget class="QStackedWidget" name="stack_attandence_view">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="pb_choose_view_way">
           <widget class="QPushButton" name="pb_view_someday">
@@ -1281,16 +1281,6 @@
             <string>月份：</string>
            </property>
           </widget>
-          <widget class="QLineEdit" name="le_search_month">
-           <property name="geometry">
-            <rect>
-             <x>360</x>
-             <y>20</y>
-             <width>61</width>
-             <height>20</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_5">
            <property name="geometry">
             <rect>
@@ -1302,16 +1292,6 @@
            </property>
            <property name="text">
             <string>天：</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="le_search_day">
-           <property name="geometry">
-            <rect>
-             <x>470</x>
-             <y>20</y>
-             <width>61</width>
-             <height>20</height>
-            </rect>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButton_4">
@@ -1336,6 +1316,246 @@
              <height>311</height>
             </rect>
            </property>
+          </widget>
+          <widget class="QComboBox" name="le_search_month">
+           <property name="geometry">
+            <rect>
+             <x>360</x>
+             <y>20</y>
+             <width>69</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>01</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QComboBox" name="le_search_day">
+           <property name="geometry">
+            <rect>
+             <x>470</x>
+             <y>20</y>
+             <width>69</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>01</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>14</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>17</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>21</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>22</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>23</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>24</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>25</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>26</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>27</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>28</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>29</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>30</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>31</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
           </widget>
          </widget>
          <widget class="QWidget" name="pb_the_rate_of_attand_view">
@@ -1411,13 +1631,83 @@
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="le_view_attendance_month">
+          <widget class="QComboBox" name="le_view_attendance_month">
            <property name="geometry">
             <rect>
              <x>360</x>
              <y>20</y>
-             <width>61</width>
-             <height>20</height>
+             <width>69</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>01</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="Pie" name="wg_pie_show_attendance_Rate" native="true">
+           <property name="geometry">
+            <rect>
+             <x>170</x>
+             <y>70</y>
+             <width>571</width>
+             <height>341</height>
             </rect>
            </property>
           </widget>

@@ -22,6 +22,7 @@ signals:
     void admin_table_show_salary_info(QString info);
     void signal_count_salary_time(QString time);
     void signal_search_attendance(QString cond);
+    void signal_search_attendance_rate(QString cond);
 private slots:
     void on_pushButton_clicked();
 
@@ -62,6 +63,8 @@ private slots:
     void dealtellTheAdminAttendanceRate(QString result);
 
     void on_pushButton_5_clicked();
+
+    void dealtellTheAdminAttendancePieRate(QString result);
 
 private:
     Ui::AdministratorDisplay *ui;

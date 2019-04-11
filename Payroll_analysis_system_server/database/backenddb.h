@@ -19,6 +19,9 @@ public:
     static QString delete_employee_infomation(QString info);
     static QString AdminqueryWatchTableDisplay(QString info);
     static QString AdminqueryWatchAttendanceRate(QString info);
+    static QString AdminQueryWatchAttendanceRatePie(QString info);
+    static QString EmployeeQueryWatchAttendanceRate(QString name,QString info);
+    static QString EmployeeQueryWatchAttendanceRatePie(QString name,QString info);
     void insert_test();
     void insert_putch();
     void insert_salary();

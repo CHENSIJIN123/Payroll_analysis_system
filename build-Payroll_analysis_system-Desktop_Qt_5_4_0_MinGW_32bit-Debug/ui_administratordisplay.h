@@ -159,11 +159,11 @@ public:
     QLabel *label_3;
     QLineEdit *le_search_year;
     QLabel *label_4;
-    QLineEdit *le_search_month;
     QLabel *label_5;
-    QLineEdit *le_search_day;
     QPushButton *pushButton_4;
     QTextEdit *textEdit;
+    QComboBox *le_search_month;
+    QComboBox *le_search_day;
     QWidget *pb_the_rate_of_attand_view;
     QPushButton *pushButton_5;
     QLineEdit *le_view_attendance_name;
@@ -171,7 +171,8 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QLineEdit *le_view_attendance_year;
-    QLineEdit *le_view_attendance_month;
+    QComboBox *le_view_attendance_month;
+    Pie *wg_pie_show_attendance_Rate;
     QWidget *tb_set_date_of_salary_settlement;
     QGridLayout *gridLayout_11;
     QWidget *w_salary_count;
@@ -614,21 +615,21 @@ public:
         label_4 = new QLabel(pb_view_someday_view);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(320, 20, 41, 21));
-        le_search_month = new QLineEdit(pb_view_someday_view);
-        le_search_month->setObjectName(QStringLiteral("le_search_month"));
-        le_search_month->setGeometry(QRect(360, 20, 61, 20));
         label_5 = new QLabel(pb_view_someday_view);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(440, 20, 31, 21));
-        le_search_day = new QLineEdit(pb_view_someday_view);
-        le_search_day->setObjectName(QStringLiteral("le_search_day"));
-        le_search_day->setGeometry(QRect(470, 20, 61, 20));
         pushButton_4 = new QPushButton(pb_view_someday_view);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(580, 20, 75, 23));
         textEdit = new QTextEdit(pb_view_someday_view);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(60, 80, 611, 311));
+        le_search_month = new QComboBox(pb_view_someday_view);
+        le_search_month->setObjectName(QStringLiteral("le_search_month"));
+        le_search_month->setGeometry(QRect(360, 20, 69, 22));
+        le_search_day = new QComboBox(pb_view_someday_view);
+        le_search_day->setObjectName(QStringLiteral("le_search_day"));
+        le_search_day->setGeometry(QRect(470, 20, 69, 22));
         stack_attandence_view->addWidget(pb_view_someday_view);
         pb_the_rate_of_attand_view = new QWidget();
         pb_the_rate_of_attand_view->setObjectName(QStringLiteral("pb_the_rate_of_attand_view"));
@@ -650,9 +651,12 @@ public:
         le_view_attendance_year = new QLineEdit(pb_the_rate_of_attand_view);
         le_view_attendance_year->setObjectName(QStringLiteral("le_view_attendance_year"));
         le_view_attendance_year->setGeometry(QRect(240, 20, 61, 20));
-        le_view_attendance_month = new QLineEdit(pb_the_rate_of_attand_view);
+        le_view_attendance_month = new QComboBox(pb_the_rate_of_attand_view);
         le_view_attendance_month->setObjectName(QStringLiteral("le_view_attendance_month"));
-        le_view_attendance_month->setGeometry(QRect(360, 20, 61, 20));
+        le_view_attendance_month->setGeometry(QRect(360, 20, 69, 22));
+        wg_pie_show_attendance_Rate = new Pie(pb_the_rate_of_attand_view);
+        wg_pie_show_attendance_Rate->setObjectName(QStringLiteral("wg_pie_show_attendance_Rate"));
+        wg_pie_show_attendance_Rate->setGeometry(QRect(170, 70, 571, 341));
         stack_attandence_view->addWidget(pb_the_rate_of_attand_view);
 
         gridLayout_12->addWidget(stack_attandence_view, 0, 0, 1, 1);
@@ -697,7 +701,7 @@ public:
         stackedWidget->setCurrentIndex(0);
         stackedWidget_2->setCurrentIndex(1);
         stackedWidget_3->setCurrentIndex(0);
-        stack_attandence_view->setCurrentIndex(0);
+        stack_attandence_view->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(AdministratorDisplay);
@@ -778,10 +782,75 @@ public:
         label_4->setText(QApplication::translate("AdministratorDisplay", "\346\234\210\344\273\275\357\274\232", 0));
         label_5->setText(QApplication::translate("AdministratorDisplay", "\345\244\251\357\274\232", 0));
         pushButton_4->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\350\257\242", 0));
+        le_search_month->clear();
+        le_search_month->insertItems(0, QStringList()
+         << QApplication::translate("AdministratorDisplay", "01", 0)
+         << QApplication::translate("AdministratorDisplay", "02", 0)
+         << QApplication::translate("AdministratorDisplay", "03", 0)
+         << QApplication::translate("AdministratorDisplay", "04", 0)
+         << QApplication::translate("AdministratorDisplay", "05", 0)
+         << QApplication::translate("AdministratorDisplay", "06", 0)
+         << QApplication::translate("AdministratorDisplay", "07", 0)
+         << QApplication::translate("AdministratorDisplay", "08", 0)
+         << QApplication::translate("AdministratorDisplay", "09", 0)
+         << QApplication::translate("AdministratorDisplay", "10", 0)
+         << QApplication::translate("AdministratorDisplay", "11", 0)
+         << QApplication::translate("AdministratorDisplay", "12", 0)
+        );
+        le_search_day->clear();
+        le_search_day->insertItems(0, QStringList()
+         << QApplication::translate("AdministratorDisplay", "01", 0)
+         << QApplication::translate("AdministratorDisplay", "02", 0)
+         << QApplication::translate("AdministratorDisplay", "03", 0)
+         << QApplication::translate("AdministratorDisplay", "04", 0)
+         << QApplication::translate("AdministratorDisplay", "05", 0)
+         << QApplication::translate("AdministratorDisplay", "06", 0)
+         << QApplication::translate("AdministratorDisplay", "07", 0)
+         << QApplication::translate("AdministratorDisplay", "08", 0)
+         << QApplication::translate("AdministratorDisplay", "09", 0)
+         << QApplication::translate("AdministratorDisplay", "10", 0)
+         << QApplication::translate("AdministratorDisplay", "11", 0)
+         << QApplication::translate("AdministratorDisplay", "12", 0)
+         << QApplication::translate("AdministratorDisplay", "13", 0)
+         << QApplication::translate("AdministratorDisplay", "14", 0)
+         << QApplication::translate("AdministratorDisplay", "15", 0)
+         << QApplication::translate("AdministratorDisplay", "16", 0)
+         << QApplication::translate("AdministratorDisplay", "17", 0)
+         << QApplication::translate("AdministratorDisplay", "18", 0)
+         << QApplication::translate("AdministratorDisplay", "19", 0)
+         << QApplication::translate("AdministratorDisplay", "20", 0)
+         << QApplication::translate("AdministratorDisplay", "21", 0)
+         << QApplication::translate("AdministratorDisplay", "22", 0)
+         << QApplication::translate("AdministratorDisplay", "23", 0)
+         << QApplication::translate("AdministratorDisplay", "24", 0)
+         << QApplication::translate("AdministratorDisplay", "25", 0)
+         << QApplication::translate("AdministratorDisplay", "26", 0)
+         << QApplication::translate("AdministratorDisplay", "27", 0)
+         << QApplication::translate("AdministratorDisplay", "28", 0)
+         << QApplication::translate("AdministratorDisplay", "29", 0)
+         << QApplication::translate("AdministratorDisplay", "30", 0)
+         << QApplication::translate("AdministratorDisplay", "31", 0)
+         << QString()
+        );
         pushButton_5->setText(QApplication::translate("AdministratorDisplay", "\346\237\245\350\257\242", 0));
         label_6->setText(QApplication::translate("AdministratorDisplay", "\345\271\264\344\273\275\357\274\232", 0));
         label_7->setText(QApplication::translate("AdministratorDisplay", "\345\247\223\345\220\215\357\274\232", 0));
         label_8->setText(QApplication::translate("AdministratorDisplay", "\346\234\210\344\273\275\357\274\232", 0));
+        le_view_attendance_month->clear();
+        le_view_attendance_month->insertItems(0, QStringList()
+         << QApplication::translate("AdministratorDisplay", "01", 0)
+         << QApplication::translate("AdministratorDisplay", "02", 0)
+         << QApplication::translate("AdministratorDisplay", "03", 0)
+         << QApplication::translate("AdministratorDisplay", "04", 0)
+         << QApplication::translate("AdministratorDisplay", "05", 0)
+         << QApplication::translate("AdministratorDisplay", "06", 0)
+         << QApplication::translate("AdministratorDisplay", "07", 0)
+         << QApplication::translate("AdministratorDisplay", "08", 0)
+         << QApplication::translate("AdministratorDisplay", "09", 0)
+         << QApplication::translate("AdministratorDisplay", "10", 0)
+         << QApplication::translate("AdministratorDisplay", "11", 0)
+         << QApplication::translate("AdministratorDisplay", "12", 0)
+        );
         tabWidget->setTabText(tabWidget->indexOf(tb_view_attendance), QApplication::translate("AdministratorDisplay", "\346\237\245\347\234\213\350\200\203\345\213\244", 0));
         rb_month_end->setText(QApplication::translate("AdministratorDisplay", "\346\234\210\345\272\225", 0));
         rb_month_begin->setText(QApplication::translate("AdministratorDisplay", "\346\234\210\345\210\235", 0));

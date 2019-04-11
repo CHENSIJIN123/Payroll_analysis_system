@@ -14,7 +14,9 @@
    <string>Widget</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background: green;
+background-size: cover;
+</string>
   </property>
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">

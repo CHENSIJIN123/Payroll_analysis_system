@@ -256,8 +256,8 @@ void AdministratorDisplay::on_pb_view_someday_clicked()
     ui->stack_attandence_view->setCurrentIndex(1);
     ui->le_search_name_2->clear();
     ui->le_search_year->clear();
-    ui->le_search_month->clear();
-    ui->le_search_day->clear();
+    ui->le_search_month->setCurrentIndex(0);
+    ui->le_search_day->setCurrentIndex(0);
     ui->textEdit->clear();
 }
 
@@ -269,20 +269,20 @@ void AdministratorDisplay::on_pb_the_rate_of_attand_clicked()
     ui->stack_attandence_view->setCurrentIndex(2);
     ui->le_view_attendance_name->clear();
     ui->le_view_attendance_year->clear();
-    ui->le_view_attendance_month->clear();
+    ui->le_view_attendance_month->setCurrentIndex(0);
 }
 
 void AdministratorDisplay::on_pushButton_4_clicked()
 {
-    if((ui->le_search_name_2->text() == "")||(ui->le_search_year->text() == "") || (ui->le_search_month->text() == "") || (ui->le_search_day->text() == ""))
+    if((ui->le_search_name_2->text() == "")||(ui->le_search_year->text() == "") || (ui->le_search_month->currentText() == "") || (ui->le_search_day->currentText() == ""))
     {
         QMessageBox::information(this,"考勤查询","请输入指定的查询条件",QMessageBox::Ok);   //输出提示信息
     }else
     {
         QString search_condition = ui->le_search_name_2->text() + "/"+
                 ui->le_search_year->text() + "/"+
-                ui->le_search_month->text() + "/"+
-                ui->le_search_day->text();
+                ui->le_search_month->currentText() + "/"+
+                ui->le_search_day->currentText();
         emit signal_search_attendance(search_condition);
     }
 }
@@ -291,15 +291,43 @@ void AdministratorDisplay::dealtellTheAdminAttendanceRate(QString result)
 {
     QStringList attendance = result.split("/");
     QString AttendanceResult = ui->le_search_name_2->text() + "在" + ui->le_search_year->text() + "年"
-                               + ui->le_search_month->text() + "月" + ui->le_search_day->text() + "日"
+                               + ui->le_search_month->currentText() + "月" + ui->le_search_day->currentText() + "日"
                                + "在  早上打卡时间为 " + attendance[0] + "  下班打卡时间为 " + attendance[1];
     ui->textEdit->setText(AttendanceResult);
 }
 
 void AdministratorDisplay::on_pushButton_5_clicked()
 {
-    if((ui->le_view_attendance_name->text() == "") || (ui->le_view_attendance_month->text() == "") || (ui->le_view_attendance_year->text() == ""))
+    if((ui->le_view_attendance_name->text() == "") || (ui->le_view_attendance_month->currentText() == "") || (ui->le_view_attendance_year->text() == ""))
     {
         QMessageBox::information(this,"考勤查询","请输入指定的查询条件",QMessageBox::Ok);   //输出提示信息
+    }else
+    {
+        QString cond = ui->le_view_attendance_name->text() + "/"
+                + ui->le_view_attendance_year->text() + "/"
+                + ui->le_view_attendance_month->currentText();
+        emit signal_search_attendance_rate(cond);
     }
+
+}
+
+void AdministratorDisplay::dealtellTheAdminAttendancePieRate(QString result)
+{
+    cout << result;
+    QStringList list = result.split("/");
+
+    QVector<SectorInfo> test;
+
+    SectorInfo info1;
+    info1.description = "正常考勤";
+    info1.percent = (list[0].toDouble()/(list[0].toDouble()+list[1].toDouble()))*100;
+    cout << info1.percent;
+    test.push_back(info1);
+
+    info1.description = "异常考勤";
+    info1.percent = (list[1].toDouble()/(list[0].toDouble()+list[1].toDouble()))*100;
+    cout << info1.percent;
+    test.push_back(info1);
+
+    ui->wg_pie_show_attendance_Rate->setData(test);
 }
