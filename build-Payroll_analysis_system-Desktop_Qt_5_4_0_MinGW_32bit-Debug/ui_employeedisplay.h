@@ -19,7 +19,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
@@ -33,6 +32,8 @@ class Ui_EmployeeDisplay
 {
 public:
     QGridLayout *gridLayout;
+    QWidget *widget_2;
+    QGridLayout *gridLayout_10;
     QTabWidget *tabWidget;
     QWidget *tb_view_salary;
     QGridLayout *gridLayout_2;
@@ -41,13 +42,8 @@ public:
     QPushButton *pb_view_one_month_info;
     QPushButton *pb_view_multi_month_info;
     QWidget *pb_choose_one_month_view;
-    QGridLayout *gridLayout_3;
-    QSpacerItem *horizontalSpacer_2;
     QComboBox *cb_choose_month;
     QComboBox *cb_choose_year;
-    QSpacerItem *horizontalSpacer_3;
-    QSpacerItem *horizontalSpacer_4;
-    QSpacerItem *horizontalSpacer;
     QComboBox *cb_choose_view_way;
     QPushButton *pb_watch;
     QStackedWidget *show_way;
@@ -60,14 +56,9 @@ public:
     QGridLayout *gridLayout_6;
     Pie *w_pie_view;
     QWidget *pg_choose_more_month_view;
-    QGridLayout *gridLayout_7;
     QWidget *widget;
-    QGridLayout *gridLayout_8;
-    QSpacerItem *horizontalSpacer_5;
     QComboBox *cb_year_choose;
-    QSpacerItem *horizontalSpacer_7;
     QPushButton *pb_search;
-    QSpacerItem *horizontalSpacer_8;
     Histogram *w_his_view;
     QWidget *tb_attendance_rate;
     QGridLayout *gridLayout_9;
@@ -100,9 +91,15 @@ public:
         if (EmployeeDisplay->objectName().isEmpty())
             EmployeeDisplay->setObjectName(QStringLiteral("EmployeeDisplay"));
         EmployeeDisplay->resize(752, 466);
+        EmployeeDisplay->setStyleSheet(QStringLiteral("border-image: url(:/new/prefix1/static/images/bg.jpg);"));
         gridLayout = new QGridLayout(EmployeeDisplay);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        tabWidget = new QTabWidget(EmployeeDisplay);
+        widget_2 = new QWidget(EmployeeDisplay);
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+        widget_2->setStyleSheet(QStringLiteral(""));
+        gridLayout_10 = new QGridLayout(widget_2);
+        gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
+        tabWidget = new QTabWidget(widget_2);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tb_view_salary = new QWidget();
         tb_view_salary->setObjectName(QStringLiteral("tb_view_salary"));
@@ -114,53 +111,66 @@ public:
         pg_choose_view_way->setObjectName(QStringLiteral("pg_choose_view_way"));
         pb_view_one_month_info = new QPushButton(pg_choose_view_way);
         pb_view_one_month_info->setObjectName(QStringLiteral("pb_view_one_month_info"));
-        pb_view_one_month_info->setGeometry(QRect(240, 130, 201, 31));
+        pb_view_one_month_info->setGeometry(QRect(220, 130, 201, 31));
+        pb_view_one_month_info->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         pb_view_multi_month_info = new QPushButton(pg_choose_view_way);
         pb_view_multi_month_info->setObjectName(QStringLiteral("pb_view_multi_month_info"));
-        pb_view_multi_month_info->setGeometry(QRect(240, 200, 201, 31));
+        pb_view_multi_month_info->setGeometry(QRect(220, 200, 201, 31));
+        pb_view_multi_month_info->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         stackedWidget->addWidget(pg_choose_view_way);
         pb_choose_one_month_view = new QWidget();
         pb_choose_one_month_view->setObjectName(QStringLiteral("pb_choose_one_month_view"));
-        gridLayout_3 = new QGridLayout(pb_choose_one_month_view);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        horizontalSpacer_2 = new QSpacerItem(91, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer_2, 0, 3, 1, 1);
-
         cb_choose_month = new QComboBox(pb_choose_one_month_view);
         cb_choose_month->setObjectName(QStringLiteral("cb_choose_month"));
-
-        gridLayout_3->addWidget(cb_choose_month, 0, 2, 1, 1);
-
+        cb_choose_month->setGeometry(QRect(146, 9, 51, 16));
+        cb_choose_month->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         cb_choose_year = new QComboBox(pb_choose_one_month_view);
         cb_choose_year->setObjectName(QStringLiteral("cb_choose_year"));
-
-        gridLayout_3->addWidget(cb_choose_year, 0, 0, 1, 1);
-
-        horizontalSpacer_3 = new QSpacerItem(92, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer_3, 0, 1, 1, 1);
-
-        horizontalSpacer_4 = new QSpacerItem(91, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer_4, 0, 7, 1, 1);
-
-        horizontalSpacer = new QSpacerItem(92, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer, 0, 5, 1, 1);
-
+        cb_choose_year->setGeometry(QRect(9, 9, 71, 16));
+        cb_choose_year->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         cb_choose_view_way = new QComboBox(pb_choose_one_month_view);
         cb_choose_view_way->setObjectName(QStringLiteral("cb_choose_view_way"));
-
-        gridLayout_3->addWidget(cb_choose_view_way, 0, 4, 1, 1);
-
+        cb_choose_view_way->setGeometry(QRect(283, 9, 77, 16));
+        cb_choose_view_way->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         pb_watch = new QPushButton(pb_choose_one_month_view);
         pb_watch->setObjectName(QStringLiteral("pb_watch"));
-
-        gridLayout_3->addWidget(pb_watch, 0, 6, 1, 1);
-
+        pb_watch->setGeometry(QRect(550, 20, 61, 16));
+        pb_watch->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         show_way = new QStackedWidget(pb_choose_one_month_view);
         show_way->setObjectName(QStringLiteral("show_way"));
+        show_way->setGeometry(QRect(9, 41, 681, 351));
+        show_way->setStyleSheet(QLatin1String("\n"
+"border-image:none;"));
         table_show = new QWidget();
         table_show->setObjectName(QStringLiteral("table_show"));
         gridLayout_4 = new QGridLayout(table_show);
@@ -171,6 +181,7 @@ public:
         gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
         textEdit = new QTextEdit(table_show_widget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setStyleSheet(QStringLiteral("border-image: none;"));
 
         gridLayout_5->addWidget(textEdit, 0, 0, 1, 1);
 
@@ -184,52 +195,40 @@ public:
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         w_pie_view = new Pie(pie_chart_show);
         w_pie_view->setObjectName(QStringLiteral("w_pie_view"));
+        w_pie_view->setStyleSheet(QStringLiteral("border-image: none;"));
 
         gridLayout_6->addWidget(w_pie_view, 0, 0, 1, 1);
 
         show_way->addWidget(pie_chart_show);
-
-        gridLayout_3->addWidget(show_way, 1, 0, 1, 8);
-
         stackedWidget->addWidget(pb_choose_one_month_view);
         pg_choose_more_month_view = new QWidget();
         pg_choose_more_month_view->setObjectName(QStringLiteral("pg_choose_more_month_view"));
-        gridLayout_7 = new QGridLayout(pg_choose_more_month_view);
-        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
         widget = new QWidget(pg_choose_more_month_view);
         widget->setObjectName(QStringLiteral("widget"));
-        gridLayout_8 = new QGridLayout(widget);
-        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
-        horizontalSpacer_5 = new QSpacerItem(166, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_8->addItem(horizontalSpacer_5, 0, 0, 1, 1);
-
+        widget->setGeometry(QRect(9, 9, 676, 371));
+        widget->setStyleSheet(QStringLiteral("border-image:none;"));
         cb_year_choose = new QComboBox(widget);
         cb_year_choose->setObjectName(QStringLiteral("cb_year_choose"));
-
-        gridLayout_8->addWidget(cb_year_choose, 0, 1, 1, 1);
-
-        horizontalSpacer_7 = new QSpacerItem(165, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_8->addItem(horizontalSpacer_7, 0, 2, 1, 1);
-
+        cb_year_choose->setGeometry(QRect(170, 20, 62, 20));
+        cb_year_choose->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         pb_search = new QPushButton(widget);
         pb_search->setObjectName(QStringLiteral("pb_search"));
-
-        gridLayout_8->addWidget(pb_search, 0, 3, 1, 1);
-
-        horizontalSpacer_8 = new QSpacerItem(166, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_8->addItem(horizontalSpacer_8, 0, 4, 1, 1);
-
+        pb_search->setGeometry(QRect(410, 20, 75, 23));
+        pb_search->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         w_his_view = new Histogram(widget);
         w_his_view->setObjectName(QStringLiteral("w_his_view"));
-
-        gridLayout_8->addWidget(w_his_view, 1, 0, 1, 5);
-
-
-        gridLayout_7->addWidget(widget, 0, 0, 1, 1);
-
+        w_his_view->setGeometry(QRect(9, 57, 658, 321));
+        w_his_view->setStyleSheet(QStringLiteral("border-image: none;"));
         stackedWidget->addWidget(pg_choose_more_month_view);
 
         gridLayout_2->addWidget(stackedWidget, 0, 0, 1, 1);
@@ -245,58 +244,129 @@ public:
         attendance_choose->setObjectName(QStringLiteral("attendance_choose"));
         pb_someday_view = new QPushButton(attendance_choose);
         pb_someday_view->setObjectName(QStringLiteral("pb_someday_view"));
-        pb_someday_view->setGeometry(QRect(340, 130, 171, 31));
+        pb_someday_view->setGeometry(QRect(220, 130, 201, 31));
+        pb_someday_view->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         pb_some_month_view = new QPushButton(attendance_choose);
         pb_some_month_view->setObjectName(QStringLiteral("pb_some_month_view"));
-        pb_some_month_view->setGeometry(QRect(340, 210, 171, 31));
+        pb_some_month_view->setGeometry(QRect(220, 200, 201, 31));
+        pb_some_month_view->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         stackedWidget_2->addWidget(attendance_choose);
         pg_someday_view = new QWidget();
         pg_someday_view->setObjectName(QStringLiteral("pg_someday_view"));
         le_search_day = new QComboBox(pg_someday_view);
         le_search_day->setObjectName(QStringLiteral("le_search_day"));
-        le_search_day->setGeometry(QRect(330, 30, 69, 22));
+        le_search_day->setGeometry(QRect(300, 30, 69, 22));
+        le_search_day->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         le_search_month = new QComboBox(pg_someday_view);
         le_search_month->setObjectName(QStringLiteral("le_search_month"));
-        le_search_month->setGeometry(QRect(220, 30, 69, 22));
+        le_search_month->setGeometry(QRect(190, 30, 69, 22));
+        le_search_month->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         label_3 = new QLabel(pg_someday_view);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(60, 30, 41, 21));
+        label_3->setGeometry(QRect(20, 30, 51, 21));
+        label_3->setStyleSheet(QLatin1String("text-align:center;\n"
+"color:#fff;\n"
+"border-image: none;"));
         label_4 = new QLabel(pg_someday_view);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(180, 30, 41, 21));
+        label_4->setGeometry(QRect(150, 30, 41, 21));
+        label_4->setStyleSheet(QLatin1String("text-align:center;\n"
+"color:#fff;\n"
+"border-image: none;"));
         textEdit_2 = new QTextEdit(pg_someday_view);
         textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
-        textEdit_2->setGeometry(QRect(50, 80, 621, 311));
+        textEdit_2->setGeometry(QRect(10, 80, 701, 321));
+        textEdit_2->setStyleSheet(QStringLiteral("border-image: none;"));
         pushButton_4 = new QPushButton(pg_someday_view);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(550, 30, 75, 23));
+        pushButton_4->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         label_5 = new QLabel(pg_someday_view);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(300, 30, 31, 21));
+        label_5->setGeometry(QRect(260, 30, 31, 21));
+        label_5->setStyleSheet(QLatin1String("text-align:center;\n"
+"color:#fff;\n"
+"border-image: none;"));
         le_search_year = new QLineEdit(pg_someday_view);
         le_search_year->setObjectName(QStringLiteral("le_search_year"));
-        le_search_year->setGeometry(QRect(100, 30, 61, 20));
+        le_search_year->setGeometry(QRect(70, 30, 61, 20));
+        le_search_year->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         stackedWidget_2->addWidget(pg_someday_view);
         pg_some_month_view = new QWidget();
         pg_some_month_view->setObjectName(QStringLiteral("pg_some_month_view"));
         le_view_attendance_year = new QLineEdit(pg_some_month_view);
         le_view_attendance_year->setObjectName(QStringLiteral("le_view_attendance_year"));
-        le_view_attendance_year->setGeometry(QRect(170, 30, 61, 20));
+        le_view_attendance_year->setGeometry(QRect(70, 20, 61, 20));
+        le_view_attendance_year->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         pushButton_5 = new QPushButton(pg_some_month_view);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(510, 30, 75, 23));
+        pushButton_5->setGeometry(QRect(530, 20, 75, 23));
+        pushButton_5->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         le_view_attendance_month = new QComboBox(pg_some_month_view);
         le_view_attendance_month->setObjectName(QStringLiteral("le_view_attendance_month"));
-        le_view_attendance_month->setGeometry(QRect(290, 30, 69, 22));
+        le_view_attendance_month->setGeometry(QRect(190, 20, 69, 22));
+        le_view_attendance_month->setStyleSheet(QLatin1String("background: rgba(154, 207, 206,0.5);\n"
+"color: rgb(255, 255, 255);\n"
+"border:none;\n"
+"border-radius:7px;\n"
+"cursor:pointer;\n"
+"border-image:none;"));
         label_6 = new QLabel(pg_some_month_view);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(130, 30, 41, 21));
+        label_6->setGeometry(QRect(30, 20, 41, 21));
+        label_6->setStyleSheet(QLatin1String("text-align:center;\n"
+"color:#fff;\n"
+"border-image: none;"));
         label_8 = new QLabel(pg_some_month_view);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(250, 30, 41, 21));
+        label_8->setGeometry(QRect(150, 20, 41, 21));
+        label_8->setStyleSheet(QLatin1String("text-align:center;\n"
+"color:#fff;\n"
+"border-image: none;"));
         w_employee_attendance_pie_show = new Pie(pg_some_month_view);
         w_employee_attendance_pie_show->setObjectName(QStringLiteral("w_employee_attendance_pie_show"));
-        w_employee_attendance_pie_show->setGeometry(QRect(130, 80, 561, 331));
+        w_employee_attendance_pie_show->setGeometry(QRect(20, 60, 671, 351));
+        w_employee_attendance_pie_show->setStyleSheet(QStringLiteral("border-image: none;"));
         stackedWidget_2->addWidget(pg_some_month_view);
 
         gridLayout_9->addWidget(stackedWidget_2, 0, 0, 1, 1);
@@ -307,19 +377,32 @@ public:
         te_process = new QTextEdit(tb_competitive_analysis);
         te_process->setObjectName(QStringLiteral("te_process"));
         te_process->setGeometry(QRect(50, 30, 631, 131));
+        te_process->setStyleSheet(QLatin1String("border-radius: 10px;\n"
+"border: 1px solid #4288CE;\n"
+"background:rgba(0,0,0,0.2);\n"
+"color:#fff;\n"
+"border-image:none;"));
         lb_result = new QLabel(tb_competitive_analysis);
         lb_result->setObjectName(QStringLiteral("lb_result"));
         lb_result->setGeometry(QRect(110, 230, 521, 101));
-        lb_result->setStyleSheet(QStringLiteral("background-color: rgb(248, 138, 255);"));
+        lb_result->setStyleSheet(QLatin1String("background-color: rgb(248, 138, 255);\n"
+"border-radius: 10px;\n"
+"border: 1px solid #4288CE;\n"
+"background:rgba(0,0,0,0.2);\n"
+"color:#fff;\n"
+"border-image:none;"));
         tabWidget->addTab(tb_competitive_analysis, QString());
 
-        gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
+        gridLayout_10->addWidget(tabWidget, 0, 0, 1, 1);
+
+
+        gridLayout->addWidget(widget_2, 0, 0, 1, 1);
 
 
         retranslateUi(EmployeeDisplay);
 
-        tabWidget->setCurrentIndex(1);
-        stackedWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(2);
         show_way->setCurrentIndex(1);
         stackedWidget_2->setCurrentIndex(2);
 

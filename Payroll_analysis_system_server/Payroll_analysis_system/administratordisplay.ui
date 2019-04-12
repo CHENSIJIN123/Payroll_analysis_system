@@ -1,0 +1,2189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdministratorDisplay</class>
+ <widget class="QWidget" name="AdministratorDisplay">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>784</width>
+    <height>477</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-image: url(:/new/prefix1/static/images/bg.jpg);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="tb_change_employee_info">
+         <attribute name="title">
+          <string>修改员工信息</string>
+         </attribute>
+         <widget class="QStackedWidget" name="stackedWidget">
+          <property name="geometry">
+           <rect>
+            <x>9</x>
+            <y>9</y>
+            <width>742</width>
+            <height>416</height>
+           </rect>
+          </property>
+          <property name="currentIndex">
+           <number>3</number>
+          </property>
+          <widget class="QWidget" name="pb_choose">
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="1">
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>63</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>237</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="pushButton">
+              <property name="minimumSize">
+               <size>
+                <width>230</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: rgba(154, 207, 206,0.5);
+color: rgb(255, 255, 255);
+border:none;
+border-radius:7px;
+cursor:pointer;
+border-image:none;</string>
+              </property>
+              <property name="text">
+               <string>修改员工信息</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>248</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="1">
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>55</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="minimumSize">
+               <size>
+                <width>230</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: rgba(154, 207, 206,0.5);
+color: rgb(255, 255, 255);
+border:none;
+border-radius:7px;
+cursor:pointer;
+border-image:none;</string>
+              </property>
+              <property name="text">
+               <string>增加员工信息</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>248</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="4" column="0">
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>237</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="4" column="1">
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>55</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="5" column="1">
+             <widget class="QPushButton" name="pushButton_3">
+              <property name="minimumSize">
+               <size>
+                <width>230</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: rgba(154, 207, 206,0.5);
+color: rgb(255, 255, 255);
+border:none;
+border-radius:7px;
+cursor:pointer;
+border-image:none;</string>
+              </property>
+              <property name="text">
+               <string>删除员工信息</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>237</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="6" column="1">
+             <spacer name="verticalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>63</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="6" column="2">
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>248</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pb_change_employee_info">
+           <widget class="QLineEdit" name="le_choose_employee_name">
+            <property name="geometry">
+             <rect>
+              <x>170</x>
+              <y>10</y>
+              <width>131</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_info">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>141</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>请输入要修改的员工名字：</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pb_choose_is_change">
+            <property name="geometry">
+             <rect>
+              <x>310</x>
+              <y>10</y>
+              <width>61</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgba(154, 207, 206,0.5);
+color: rgb(255, 255, 255);
+border:none;
+border-radius:7px;
+cursor:pointer;
+border-image:none;</string>
+            </property>
+            <property name="text">
+             <string>修改</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_name">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>70</y>
+              <width>61</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>姓名：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_job_id">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>120</y>
+              <width>54</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>工号：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_post">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>170</y>
+              <width>54</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>岗位：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_department">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>220</y>
+              <width>61</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>所属部门：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_entry_time">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>270</y>
+              <width>61</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>入职时间：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_turn_time">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>320</y>
+              <width>54</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>转正时间：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_education">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>72</y>
+              <width>54</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>教育经历：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_basic_wage">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>120</y>
+              <width>54</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>基本工资：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_trasport">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>170</y>
+              <width>61</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>交通补贴：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_food">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>220</y>
+              <width>61</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>餐补：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_house">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>270</y>
+              <width>61</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>住房补贴：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="lb_pwd">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>320</y>
+              <width>61</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+            </property>
+            <property name="text">
+             <string>密码：</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_name">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>70</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_job_id">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>120</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_post">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>170</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_department">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>220</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_entry_time">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>270</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_turn_time">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>320</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_education">
+            <property name="geometry">
+             <rect>
+              <x>470</x>
+              <y>70</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_basic_wage">
+            <property name="geometry">
+             <rect>
+              <x>470</x>
+              <y>120</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_transport">
+            <property name="geometry">
+             <rect>
+              <x>470</x>
+              <y>170</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_meal">
+            <property name="geometry">
+             <rect>
+              <x>470</x>
+              <y>220</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_house">
+            <property name="geometry">
+             <rect>
+              <x>470</x>
+              <y>270</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="le_pwd">
+            <property name="geometry">
+             <rect>
+              <x>470</x>
+              <y>320</y>
+              <width>151</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pb_commit">
+            <property name="geometry">
+             <rect>
+              <x>280</x>
+              <y>370</y>
+              <width>75</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgba(154, 207, 206,0.5);
+color: rgb(255, 255, 255);
+border:none;
+border-radius:7px;
+cursor:pointer;
+border-image:none;</string>
+            </property>
+            <property name="text">
+             <string>提交</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="pb_increase_employee_info">
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QWidget" name="widget" native="true">
+              <property name="styleSheet">
+               <string notr="true">
+border-image: none;</string>
+              </property>
+              <widget class="QLineEdit" name="le_job_id_2">
+               <property name="geometry">
+                <rect>
+                 <x>140</x>
+                 <y>100</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_house_2">
+               <property name="geometry">
+                <rect>
+                 <x>410</x>
+                 <y>250</y>
+                 <width>61</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>住房补贴：</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_basic_wage_2">
+               <property name="geometry">
+                <rect>
+                 <x>410</x>
+                 <y>100</y>
+                 <width>54</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>基本工资：</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_pwd_2">
+               <property name="geometry">
+                <rect>
+                 <x>500</x>
+                 <y>300</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_education_2">
+               <property name="geometry">
+                <rect>
+                 <x>410</x>
+                 <y>52</y>
+                 <width>54</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>教育经历：</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_food_2">
+               <property name="geometry">
+                <rect>
+                 <x>410</x>
+                 <y>200</y>
+                 <width>61</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>餐补：</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_department_2">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>200</y>
+                 <width>61</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>所属部门：</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_trasport_2">
+               <property name="geometry">
+                <rect>
+                 <x>410</x>
+                 <y>150</y>
+                 <width>61</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>交通补贴：</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_transport_2">
+               <property name="geometry">
+                <rect>
+                 <x>500</x>
+                 <y>150</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_basic_wage_2">
+               <property name="geometry">
+                <rect>
+                 <x>500</x>
+                 <y>100</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_name_2">
+               <property name="geometry">
+                <rect>
+                 <x>140</x>
+                 <y>50</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_education_2">
+               <property name="geometry">
+                <rect>
+                 <x>500</x>
+                 <y>50</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_turn_time_2">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>300</y>
+                 <width>54</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>转正时间：</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_department_2">
+               <property name="geometry">
+                <rect>
+                 <x>140</x>
+                 <y>200</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_pwd_2">
+               <property name="geometry">
+                <rect>
+                 <x>410</x>
+                 <y>300</y>
+                 <width>61</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>密码：</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_meal_2">
+               <property name="geometry">
+                <rect>
+                 <x>500</x>
+                 <y>200</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_entry_time_2">
+               <property name="geometry">
+                <rect>
+                 <x>140</x>
+                 <y>250</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_entry_time_2">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>250</y>
+                 <width>61</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>入职时间：</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_post_2">
+               <property name="geometry">
+                <rect>
+                 <x>140</x>
+                 <y>150</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_name_2">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>50</y>
+                 <width>61</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>姓名：</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_job_id_2">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>100</y>
+                 <width>54</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>工号：</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_turn_time_2">
+               <property name="geometry">
+                <rect>
+                 <x>140</x>
+                 <y>300</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="le_house_2">
+               <property name="geometry">
+                <rect>
+                 <x>500</x>
+                 <y>250</y>
+                 <width>151</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="lb_post_2">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>150</y>
+                 <width>54</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">text-align:center;
+color:#fff;
+border-image: none;</string>
+               </property>
+               <property name="text">
+                <string>岗位：</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pb_inrease_employee">
+               <property name="geometry">
+                <rect>
+                 <x>300</x>
+                 <y>350</y>
+                 <width>121</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background: rgba(154, 207, 206,0.5);
+color: rgb(255, 255, 255);
+border:none;
+border-radius:7px;
+cursor:pointer;
+border-image:none;</string>
+               </property>
+               <property name="text">
+                <string>添加该员工</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page">
+           <widget class="QLineEdit" name="le_delete_name">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>160</y>
+              <width>191</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-radius: 10px;
+border: 1px solid #4288CE;
+background:rgba(0,0,0,0.2);
+color:#fff;
+border-image:none;</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pb_delete">
+            <property name="geometry">
+             <rect>
+              <x>400</x>
+              <y>160</y>
+              <width>75</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgba(154, 207, 206,0.5);
+color: rgb(255, 255, 255);
+border:none;
+border-radius:7px;
+cursor:pointer;
+border-image:none;</string>
+            </property>
+            <property name="text">
+             <string>删除</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tb_view_salary">
+         <attribute name="title">
+          <string>查看工资</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QStackedWidget" name="stackedWidget_2">
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <widget class="QWidget" name="page_2">
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="1">
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>98</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="0">
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>301</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="1">
+               <widget class="QPushButton" name="pb_view_person">
+                <property name="text">
+                 <string>查看个人薪资信息</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <spacer name="horizontalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>301</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="2" column="1">
+               <spacer name="verticalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>83</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="3" column="0">
+               <spacer name="horizontalSpacer_10">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>301</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="3" column="1">
+               <widget class="QPushButton" name="pb_view_department">
+                <property name="text">
+                 <string>查看部门薪资信息</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <spacer name="horizontalSpacer_9">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>301</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="4" column="1">
+               <spacer name="verticalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>138</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_3">
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <widget class="QWidget" name="widget_2" native="true">
+                <layout class="QGridLayout" name="gridLayout_8">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>姓名：</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="le_search_name"/>
+                 </item>
+                 <item row="0" column="2">
+                  <spacer name="horizontalSpacer_13">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>38</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QComboBox" name="cb_choose_year">
+                   <item>
+                    <property name="text">
+                     <string>2016年</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>2017年</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>2018年</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>2019年</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
+                  <spacer name="horizontalSpacer_12">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>57</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="0" column="5">
+                  <widget class="QComboBox" name="cb_choose_month">
+                   <item>
+                    <property name="text">
+                     <string>1月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>2月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>3月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>4月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>5月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>6月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>7月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>8月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>9月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>10月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>11月</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>12月</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="0" column="6">
+                  <spacer name="horizontalSpacer_14">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>48</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="0" column="7">
+                  <widget class="QComboBox" name="cb_choose_view_way">
+                   <item>
+                    <property name="text">
+                     <string>表格显示</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>饼状图显示</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="0" column="8">
+                  <spacer name="horizontalSpacer_11">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>57</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="0" column="9">
+                  <widget class="QPushButton" name="pb_watch">
+                   <property name="text">
+                    <string>查看</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="10">
+                  <widget class="QStackedWidget" name="stackedWidget_3">
+                   <property name="currentIndex">
+                    <number>0</number>
+                   </property>
+                   <widget class="QWidget" name="page_4">
+                    <layout class="QGridLayout" name="gridLayout_9">
+                     <item row="0" column="0">
+                      <widget class="QTextEdit" name="te_salary_info"/>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="page_5">
+                    <layout class="QGridLayout" name="gridLayout_10">
+                     <item row="0" column="0">
+                      <widget class="Pie" name="w_admin_pie" native="true"/>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tb_view_attendance">
+         <attribute name="title">
+          <string>查看考勤</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_12">
+          <item row="0" column="0">
+           <widget class="QStackedWidget" name="stack_attandence_view">
+            <property name="currentIndex">
+             <number>2</number>
+            </property>
+            <widget class="QWidget" name="pb_choose_view_way">
+             <widget class="QPushButton" name="pb_view_someday">
+              <property name="geometry">
+               <rect>
+                <x>250</x>
+                <y>130</y>
+                <width>211</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>查看某日考勤</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="pb_the_rate_of_attand">
+              <property name="geometry">
+               <rect>
+                <x>250</x>
+                <y>220</y>
+                <width>211</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>查看考勤率</string>
+              </property>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="pb_view_someday_view">
+             <widget class="QLabel" name="label_2">
+              <property name="geometry">
+               <rect>
+                <x>30</x>
+                <y>20</y>
+                <width>41</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>姓名：</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="le_search_name_2">
+              <property name="geometry">
+               <rect>
+                <x>70</x>
+                <y>20</y>
+                <width>81</width>
+                <height>21</height>
+               </rect>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_3">
+              <property name="geometry">
+               <rect>
+                <x>200</x>
+                <y>20</y>
+                <width>41</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>年份：</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="le_search_year">
+              <property name="geometry">
+               <rect>
+                <x>240</x>
+                <y>20</y>
+                <width>61</width>
+                <height>20</height>
+               </rect>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_4">
+              <property name="geometry">
+               <rect>
+                <x>320</x>
+                <y>20</y>
+                <width>41</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>月份：</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_5">
+              <property name="geometry">
+               <rect>
+                <x>440</x>
+                <y>20</y>
+                <width>31</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>天：</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="pushButton_4">
+              <property name="geometry">
+               <rect>
+                <x>580</x>
+                <y>20</y>
+                <width>75</width>
+                <height>23</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>查询</string>
+              </property>
+             </widget>
+             <widget class="QTextEdit" name="textEdit">
+              <property name="geometry">
+               <rect>
+                <x>60</x>
+                <y>80</y>
+                <width>611</width>
+                <height>311</height>
+               </rect>
+              </property>
+             </widget>
+             <widget class="QComboBox" name="le_search_month">
+              <property name="geometry">
+               <rect>
+                <x>360</x>
+                <y>20</y>
+                <width>69</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <item>
+               <property name="text">
+                <string>01</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>02</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>03</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>04</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>05</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>06</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>07</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>08</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>09</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>11</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>12</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="QComboBox" name="le_search_day">
+              <property name="geometry">
+               <rect>
+                <x>470</x>
+                <y>20</y>
+                <width>69</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <item>
+               <property name="text">
+                <string>01</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>02</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>03</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>04</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>05</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>06</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>07</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>08</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>09</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>11</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>12</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>13</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>14</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>15</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>16</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>17</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>18</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>19</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>20</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>21</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>22</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>23</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>24</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>25</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>26</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>27</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>28</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>29</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>30</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>31</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="pb_the_rate_of_attand_view">
+             <widget class="QPushButton" name="pushButton_5">
+              <property name="geometry">
+               <rect>
+                <x>580</x>
+                <y>20</y>
+                <width>75</width>
+                <height>23</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>查询</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="le_view_attendance_name">
+              <property name="geometry">
+               <rect>
+                <x>70</x>
+                <y>20</y>
+                <width>81</width>
+                <height>21</height>
+               </rect>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_6">
+              <property name="geometry">
+               <rect>
+                <x>200</x>
+                <y>20</y>
+                <width>41</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>年份：</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_7">
+              <property name="geometry">
+               <rect>
+                <x>30</x>
+                <y>20</y>
+                <width>41</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>姓名：</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_8">
+              <property name="geometry">
+               <rect>
+                <x>320</x>
+                <y>20</y>
+                <width>41</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>月份：</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="le_view_attendance_year">
+              <property name="geometry">
+               <rect>
+                <x>240</x>
+                <y>20</y>
+                <width>61</width>
+                <height>20</height>
+               </rect>
+              </property>
+             </widget>
+             <widget class="QComboBox" name="le_view_attendance_month">
+              <property name="geometry">
+               <rect>
+                <x>360</x>
+                <y>20</y>
+                <width>69</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <item>
+               <property name="text">
+                <string>01</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>02</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>03</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>04</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>05</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>06</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>07</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>08</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>09</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>11</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>12</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="Pie" name="wg_pie_show_attendance_Rate" native="true">
+              <property name="geometry">
+               <rect>
+                <x>170</x>
+                <y>70</y>
+                <width>571</width>
+                <height>341</height>
+               </rect>
+              </property>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tb_set_date_of_salary_settlement">
+         <attribute name="title">
+          <string>设定工资结算的日期</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_11">
+          <item row="0" column="0">
+           <widget class="QWidget" name="w_salary_count" native="true">
+            <widget class="QRadioButton" name="rb_month_end">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>70</y>
+               <width>89</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>月底</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+            <widget class="QRadioButton" name="rb_month_begin">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>120</y>
+               <width>89</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>月初</string>
+             </property>
+            </widget>
+            <widget class="QRadioButton" name="rb_some_day">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>170</y>
+               <width>89</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>具体某天</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="le_some_day">
+             <property name="geometry">
+              <rect>
+               <x>170</x>
+               <y>170</y>
+               <width>113</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="pb_correct">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>290</y>
+               <width>75</width>
+               <height>23</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>确定</string>
+             </property>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Pie</class>
+   <extends>QWidget</extends>
+   <header location="global">pie.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

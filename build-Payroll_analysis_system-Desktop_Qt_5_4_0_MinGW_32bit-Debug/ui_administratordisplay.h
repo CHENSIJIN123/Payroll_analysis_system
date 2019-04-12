@@ -33,9 +33,10 @@ class Ui_AdministratorDisplay
 {
 public:
     QGridLayout *gridLayout_3;
+    QWidget *widget_3;
+    QGridLayout *gridLayout_2;
     QTabWidget *tabWidget;
     QWidget *tb_change_employee_info;
-    QGridLayout *gridLayout_2;
     QStackedWidget *stackedWidget;
     QWidget *pb_choose;
     QGridLayout *gridLayout;
@@ -181,24 +182,27 @@ public:
     QRadioButton *rb_some_day;
     QLineEdit *le_some_day;
     QPushButton *pb_correct;
-    QWidget *tb_department_salary_compare;
 
     void setupUi(QWidget *AdministratorDisplay)
     {
         if (AdministratorDisplay->objectName().isEmpty())
             AdministratorDisplay->setObjectName(QStringLiteral("AdministratorDisplay"));
         AdministratorDisplay->resize(784, 477);
+        AdministratorDisplay->setStyleSheet(QStringLiteral("border-image: url(:/new/prefix1/static/images/bg.jpg);"));
         gridLayout_3 = new QGridLayout(AdministratorDisplay);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        tabWidget = new QTabWidget(AdministratorDisplay);
+        widget_3 = new QWidget(AdministratorDisplay);
+        widget_3->setObjectName(QStringLiteral("widget_3"));
+        gridLayout_2 = new QGridLayout(widget_3);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        tabWidget = new QTabWidget(widget_3);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setEnabled(true);
         tb_change_employee_info = new QWidget();
         tb_change_employee_info->setObjectName(QStringLiteral("tb_change_employee_info"));
-        gridLayout_2 = new QGridLayout(tb_change_employee_info);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         stackedWidget = new QStackedWidget(tb_change_employee_info);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+        stackedWidget->setGeometry(QRect(9, 9, 742, 416));
         pb_choose = new QWidget();
         pb_choose->setObjectName(QStringLiteral("pb_choose"));
         gridLayout = new QGridLayout(pb_choose);
@@ -443,9 +447,6 @@ public:
         pb_delete->setObjectName(QStringLiteral("pb_delete"));
         pb_delete->setGeometry(QRect(400, 160, 75, 31));
         stackedWidget->addWidget(page);
-
-        gridLayout_2->addWidget(stackedWidget, 0, 0, 1, 1);
-
         tabWidget->addTab(tb_change_employee_info, QString());
         tb_view_salary = new QWidget();
         tb_view_salary->setObjectName(QStringLiteral("tb_view_salary"));
@@ -688,16 +689,16 @@ public:
         gridLayout_11->addWidget(w_salary_count, 0, 0, 1, 1);
 
         tabWidget->addTab(tb_set_date_of_salary_settlement, QString());
-        tb_department_salary_compare = new QWidget();
-        tb_department_salary_compare->setObjectName(QStringLiteral("tb_department_salary_compare"));
-        tabWidget->addTab(tb_department_salary_compare, QString());
 
-        gridLayout_3->addWidget(tabWidget, 0, 0, 1, 1);
+        gridLayout_2->addWidget(tabWidget, 0, 0, 1, 1);
+
+
+        gridLayout_3->addWidget(widget_3, 0, 0, 1, 1);
 
 
         retranslateUi(AdministratorDisplay);
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(0);
         stackedWidget_2->setCurrentIndex(1);
         stackedWidget_3->setCurrentIndex(0);
@@ -857,7 +858,6 @@ public:
         rb_some_day->setText(QApplication::translate("AdministratorDisplay", "\345\205\267\344\275\223\346\237\220\345\244\251", 0));
         pb_correct->setText(QApplication::translate("AdministratorDisplay", "\347\241\256\345\256\232", 0));
         tabWidget->setTabText(tabWidget->indexOf(tb_set_date_of_salary_settlement), QApplication::translate("AdministratorDisplay", "\350\256\276\345\256\232\345\267\245\350\265\204\347\273\223\347\256\227\347\232\204\346\227\245\346\234\237", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tb_department_salary_compare), QApplication::translate("AdministratorDisplay", "\351\203\250\351\227\250\350\226\252\350\265\204\346\257\224\350\276\203", 0));
     } // retranslateUi
 
 };

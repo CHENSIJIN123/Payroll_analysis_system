@@ -9,6 +9,7 @@ INPUT(
 ./release\widget.o
 ./release\employeedisplay.o
 ./release\administratordisplay.o
+./release\qrc_static.o
 ./release\moc_dealsocket.o
 ./release\moc_logicdeal.o
 ./release\moc_dealmsg.o
